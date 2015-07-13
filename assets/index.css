@@ -22,7 +22,8 @@
 }
 .rc-checkbox .rc-checkbox-checkbox:after {
   -webkit-transform: rotate(45deg);
-  transform: rotate(45deg);
+  -ms-transform: rotate(45deg);
+      transform: rotate(45deg);
   position: absolute;
   left: 4px;
   top: 1px;
@@ -68,7 +69,8 @@
 }
 .rc-checkbox-checked .rc-checkbox-checkbox:after {
   -webkit-transform: rotate(45deg);
-  transform: rotate(45deg);
+  -ms-transform: rotate(45deg);
+      transform: rotate(45deg);
   position: absolute;
   left: 4px;
   top: 1px;
