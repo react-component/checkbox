@@ -1,109 +1,176 @@
-@switchPrefixCls:rc-switch;
-
-@duration:.3s;
-
-.@{switchPrefixCls}{
-  position: relative;
-  display: inline-block;
-  box-sizing: border-box;
-  width: 44px;
-  height: 22px;
-  line-height: 20px;
-  vertical-align: middle;
-  border-radius: 20px 20px;
-  border: 1px solid #ccc;
-  background-color: #ccc;
+@checkboxWarpPrefixCls: rc-checkbox;
+@checkboxPrefixCls: ~"@{checkboxWarpPrefixCls}-checkbox";
+@labelPrefixCls: ~"@{checkboxWarpPrefixCls}-label";
+/* 一般状态 */
+.@{checkboxWarpPrefixCls} {
+  line-height: 1.5;
+  white-space: nowrap;
   cursor: pointer;
-  transition: all @duration cubic-bezier(0.35, 0, 0.25, 1);
+  outline: none;
+  display: inline-block;
 
-  &-inner {
-    color:#fff;
-    font-size: 12px;
-    position: absolute;
-    left:24px;
-  }
-
-  &:after{
-    position: absolute;
-    width: 18px;
-    height: 18px;
-    left: 2px;
-    top:1px;
-    border-radius: 50% 50%;
-    background-color: #ffffff;
-    content: " ";
-    cursor: pointer;
-    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.26);
-    transform: scale(1);
-    transition: left @duration cubic-bezier(0.35, 0, 0.25, 1);
-    animation-timing-function: cubic-bezier(0.35, 0, 0.25, 1);
-    animation-duration: @duration;
-    animation-name: rcSwitchOff;
-  }
-
-  &:hover:after{
-    transform: scale(1.1);
-    animation-name: rcSwitchOn;
-  }
-
-  &-checked{
-    border: 1px solid #87d068;
-    background-color: #87d068;
-
-    .@{switchPrefixCls}-inner {
-      left:6px;
+  .@{checkboxPrefixCls} {
+    &:after {
+      -webkit-transform: rotate(45deg);
+      transform: rotate(45deg);
+      position: absolute;
+      left: 4px;
+      top: 1px;
+      display: table;
+      width: 5px;
+      height: 8px;
+      border: 2px solid #ffffff;
+      border-top: 0;
+      border-left: 0;
+      content: ' ';
+      -webkit-animation-timing-function: cubic-bezier(0.68, -0.55, 0.27, 1.55);
+      animation-timing-function: cubic-bezier(0.68, -0.55, 0.27, 1.55);
+      -webkit-animation-duration: 0.3s;
+      animation-duration: 0.3s;
+      -webkit-animation-name: amCheckboxOut;
+      animation-name: amCheckboxOut;
     }
-
-    &:after{
-      left: 22px;
+    &:hover {
+      border-color: #bcbcbc;
     }
-  }
-
-  &-disabled{
-    cursor: no-drop;
-    background: #ccc;
-    border-color:#ccc;
-
-    &:after{
-      background: #9e9e9e;
-      animation-name: none;
-      cursor: no-drop;
-    }
-
-    &:hover:after{
-      transform: scale(1);
-      animation-name: none;
-    }
-  }
-
-  &-label {
+    position: relative;
+    top: 2px;
+    left: 0;
     display: inline-block;
-    line-height: 20px;
-    font-size: 14px;
-    padding-left: 10px;
-    vertical-align: middle;
+    width: 14px;
+    height: 14px;
+    border-width: 1px;
+    border-style: solid;
+    border-radius: 3px;
+    border-color: #d9d9d9;
+    background-color: #ffffff;
+    transition: border-color 0.3s cubic-bezier(0.68, -0.55, 0.27, 1.55), background-color 0.3s cubic-bezier(0.68, -0.55, 0.27, 1.55);
+  }
+
+  .@{labelPrefixCls} {
+    position: relative;
+    padding-left: 8px;
+    display: inline-block;
+    font-size: 12px;
+    line-height: 1.5;
+    vertical-align: baseline;
+    border: 1px dotted transparent;
     white-space: normal;
     pointer-events: none;
+    -webkit-user-select: text;
+    -moz-user-select: text;
+    -ms-user-select: text;
     user-select: text;
+  }
+
+}
+
+/* 选中状态 */
+.@{checkboxWarpPrefixCls}-checked {
+  .@{checkboxPrefixCls} {
+    border-color: #3dbcf6;
+    background-color: #3dbcf6;
+    &:hover {
+      border-color: #3dbcf6;
+    }
+    &:after {
+      -webkit-transform: rotate(45deg);
+      transform: rotate(45deg);
+      position: absolute;
+      left: 4px;
+      top: 1px;
+      display: table;
+      width: 5px;
+      height: 8px;
+      border: 2px solid #ffffff;
+      border-top: 0;
+      border-left: 0;
+      content: ' ';
+      -webkit-animation-timing-function: cubic-bezier(0.68, -0.55, 0.27, 1.55);
+      animation-timing-function: cubic-bezier(0.68, -0.55, 0.27, 1.55);
+      -webkit-animation-duration: 0.3s;
+      animation-duration: 0.3s;
+      -webkit-animation-name: amCheckboxOut;
+      animation-name: amCheckboxOut;
+    }
   }
 }
 
-@keyframes rcSwitchOn {
-  0% {
-    transform: scale(1);
+.@{checkboxWarpPrefixCls}-disabled {
+
+  &.@{checkboxWarpPrefixCls}-checked {
+    .@{checkboxPrefixCls} {
+      background-color: #f3f3f3;
+      border-color: #d9d9d9;
+      &:hover {
+        border-color: #f3f3f3;
+      }
+      &:after {
+        -webkit-animation-name: none;
+        animation-name: none;
+        border-color: #cccccc;
+      }
+    }
   }
-  50% {
-    transform: scale(1.25);
-  }
-  100% {
-    transform: scale(1.1);
+  .@{checkboxPrefixCls} {
+    border-color: #d9d9d9;
+    background-color: #f3f3f3;
+    &:after {
+      -webkit-animation-name: none;
+      animation-name: none;
+      border-color: #f3f3f3;
+    }
   }
 }
-@keyframes rcSwitchOff {
+
+@-webkit-keyframes amCheckboxIn {
   0% {
-    transform: scale(1.1);
+    opacity: 0;
+    -webkit-transform-origin: 50% 50%;
+    transform-origin: 50% 50%;
+    -webkit-transform: scale(0, 0) rotate(45deg);
+    transform: scale(0, 0) rotate(45deg);
   }
   100% {
-    transform: scale(1);
+    opacity: 1;
+    -webkit-transform-origin: 50% 50%;
+    transform-origin: 50% 50%;
+    -webkit-transform: scale(1, 1) rotate(45deg);
+    transform: scale(1, 1) rotate(45deg);
+  }
+}
+
+@keyframes amCheckboxIn {
+  0% {
+    opacity: 0;
+    -webkit-transform-origin: 50% 50%;
+    transform-origin: 50% 50%;
+    -webkit-transform: scale(0, 0) rotate(45deg);
+    transform: scale(0, 0) rotate(45deg);
+  }
+  100% {
+    opacity: 1;
+    -webkit-transform-origin: 50% 50%;
+    transform-origin: 50% 50%;
+    -webkit-transform: scale(1, 1) rotate(45deg);
+    transform: scale(1, 1) rotate(45deg);
+  }
+}
+
+@-webkit-keyframes amCheckboxOut {
+  0% {
+    opacity: 1;
+  }
+  100% {
+    opacity: 0;
+  }
+}
+
+@keyframes amCheckboxOut {
+  0% {
+    opacity: 1;
+  }
+  100% {
+    opacity: 0;
   }
 }

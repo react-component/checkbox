@@ -1,9 +1,9 @@
-require('../assets/index.css');
+require('../assets/checkbox.css');
 var React = require('react');
-var Switch = require('rc-switch');
+var Checkbox = require('../src/index');
 
 function onChange(value) {
-  console.log('switch checked:' + value);
+  console.log('checkbox checked:' + value);
 }
 
 
@@ -20,10 +20,8 @@ var Test = React.createClass({
   },
   render() {
     return <div style={{margin: 20}}>
-      <Switch onChange={onChange}
+      <Checkbox onChange={onChange}
         disabled={this.state.disabled}
-        checkedChildren={'开'}
-        unCheckedChildren={'关'}
       />
       <div>
         <button onClick={this.toggle}>toggle disabled</button>
