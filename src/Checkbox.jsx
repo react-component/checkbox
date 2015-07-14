@@ -26,7 +26,7 @@ var Checkbox = React.createClass({
         className: '',
         defaultChecked: false,
         onChange: noop,
-        label: '你好'
+        label: ''
       };
     },
     componentWillReceiveProps(nextProps) {

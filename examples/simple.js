@@ -20,12 +20,35 @@ var Test = React.createClass({
   },
   render() {
     return <div style={{margin: 20}}>
-      <Checkbox onChange={onChange}
-        disabled={this.state.disabled}
-      />
-      <div>
-        <button onClick={this.toggle}>toggle disabled</button>
-      </div>
+
+      <ul>
+        <li>
+          <Checkbox onChange={onChange}
+                    disabled={true}
+                    label={"不可用,不选中"}/>
+        </li>
+        <li>
+          <Checkbox onChange={onChange}
+                    disabled={true}
+                    checked={true}
+                    label={"不可用,选中"}/>
+        </li>
+        <li>
+          <Checkbox onChange={onChange}
+                    label={"可用"}/>
+        </li>
+        <li>
+          <Checkbox onChange={onChange}
+                    disabled={this.state.disabled}
+                    label={"可用,动态控制"}/>
+          <button onClick={this.toggle}>toggle disabled</button>
+        </li>
+        <li>
+
+        </li>
+      </ul>
+
+
     </div>;
   }
 });
