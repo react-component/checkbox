@@ -1,1 +1,1 @@
-module.exports = require('./Switch');
+module.exports = require('./Checkbox');
