@@ -6,7 +6,7 @@ var rcUtil = require('rc-util');
 function noop() {
 }
 
-var Switch = React.createClass({
+var Checkbox = React.createClass({
     getInitialState() {
       var props = this.props;
       var checked = false;
@@ -21,13 +21,12 @@ var Switch = React.createClass({
     },
     getDefaultProps() {
       return {
-        prefixCls: 'rc-switch',
+        prefixCls: 'rc-checkbox',
         style: {},
-        checkedChildren: null,
-        unCheckedChildren: null,
         className: '',
         defaultChecked: false,
-        onChange: noop
+        onChange: noop,
+        label: ''
       };
     },
     componentWillReceiveProps(nextProps) {
@@ -50,9 +49,9 @@ var Switch = React.createClass({
           onClick = {props.disabled ? noop : this.toggle}
           style={props.style}
         >
-          <span className={`${prefixCls}-inner`}>{this.state.checked ?
-            props.checkedChildren :
-            props.unCheckedChildren}</span>
+          <span className={`${prefixCls}-checkbox`}></span>
+
+          {this.props.label ? <label className={`${prefixCls}-label`}>{this.props.label}</label> : null }
         </span>
       );
     },
@@ -66,4 +65,4 @@ var Switch = React.createClass({
   }
 );
 
-module.exports = Switch;
+module.exports = Checkbox;

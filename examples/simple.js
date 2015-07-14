@@ -1,9 +1,9 @@
 require('../assets/index.css');
 var React = require('react');
-var Switch = require('rc-switch');
+var Checkbox = require('../src/index');
 
 function onChange(value) {
-  console.log('switch checked:' + value);
+  console.log('checkbox checked:' + value);
 }
 
 
@@ -20,14 +20,35 @@ var Test = React.createClass({
   },
   render() {
     return <div style={{margin: 20}}>
-      <Switch onChange={onChange}
-        disabled={this.state.disabled}
-        checkedChildren={'开'}
-        unCheckedChildren={'关'}
-      />
-      <div>
-        <button onClick={this.toggle}>toggle disabled</button>
-      </div>
+
+      <ul>
+        <li>
+          <Checkbox onChange={onChange}
+                    disabled={true}
+                    label={"不可用,不选中"}/>
+        </li>
+        <li>
+          <Checkbox onChange={onChange}
+                    disabled={true}
+                    checked={true}
+                    label={"不可用,选中"}/>
+        </li>
+        <li>
+          <Checkbox onChange={onChange}
+                    label={"可用"}/>
+        </li>
+        <li>
+          <Checkbox onChange={onChange}
+                    disabled={this.state.disabled}
+                    label={"可用,动态控制"}/>
+          <button onClick={this.toggle}>toggle disabled</button>
+        </li>
+        <li>
+
+        </li>
+      </ul>
+
+
     </div>;
   }
 });
