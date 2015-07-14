@@ -22,7 +22,11 @@ var Test = React.createClass({
     return <div style={{margin: 20}}>
 
       <ul>
-        <li>
+          <li style={{
+          padding: "7px 0",
+          "margin-bottom": "20px",
+          background: "url(https://t.alipayobjects.com/images/T15CNeXb0lXXXXXXXX.jpg) repeat 0 0",
+        }}>
           <Checkbox onChange={onChange}
                     disabled={true}
                     label={"不可用,不选中"}/>
