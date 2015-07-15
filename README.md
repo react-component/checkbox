@@ -4,7 +4,7 @@
 checkbox ui component for react
 
 [![NPM version][npm-image]][npm-url]
-[![SPM version](http://spmjs.io/badge/rc-switch)](http://spmjs.io/package/rc-checkbox)
+[![SPM version](http://spmjs.io/badge/rc-checkbox)](http://spmjs.io/package/rc-checkbox)
 [![build status][travis-image]][travis-url]
 [![Test coverage][coveralls-image]][coveralls-url]
 [![gemnasium deps][gemnasium-image]][gemnasium-url]
@@ -34,14 +34,14 @@ checkbox ui component for react
 
 ## install
 
-[![rc-switch](https://nodei.co/npm/rc-switch.png)](https://npmjs.org/package/rc-switch)
+[![rc-checkbox](https://nodei.co/npm/rc-checkbox.png)](https://npmjs.org/package/rc-checkbox)
 
 ## Usage
 
 ```js
-var Switch = require('rc-switch');
+var Checkbox = require('rc-checkbox');
 var React = require('react');
-React.render(<Switch />, container);
+React.render(<Checkbox />, container);
 ```
 
 ## API
@@ -61,7 +61,7 @@ React.render(<Switch />, container);
         <tr>
           <td>prefixCls</td>
           <td>String</td>
-          <td>rc-switch</td>
+          <td>rc-checkbox</td>
           <td></td>
         </tr>
         <tr>
@@ -74,18 +74,18 @@ React.render(<Switch />, container);
           <td>checked</td>
           <td>boolean</td>
           <td>false</td>
-          <td>whether switch is checked</td>
+          <td>whether checkbox is checked</td>
         </tr>
         <tr>
           <td>defaultChecked</td>
           <td>boolean</td>
           <td>false</td>
-          <td>whether switch is checked on init</td>
+          <td>whether checkbox is checked on init</td>
         <tr>
           <td>onChange</td>
           <td>Function</td>
           <td></td>
-          <td>called when switch is checked or unchecked</td>
+          <td>called when checkbox is checked or unchecked</td>
         </tr>
     </tbody>
 </table>
@@ -101,7 +101,7 @@ npm start
 
 http://localhost:8001/examples/
 
-online example: http://react-component.github.io/switch/examples/
+online example: http://react-component.github.io/checkbox/examples/
 
 ## Test Case
 
@@ -113,4 +113,4 @@ http://localhost:8001/node_modules/rc-server/node_modules/node-jscover/lib/front
 
 ## License
 
-rc-switch is released under the MIT license.
+rc-checkbox is released under the MIT license.
