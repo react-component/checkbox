@@ -1,6 +1,6 @@
-require('../assets/index.css');
+require('rc-checkbox/assets/index.css');
 var React = require('react');
-var Checkbox = require('../src/index');
+var Checkbox = require('rc-checkbox');
 
 function onChange(value) {
   console.log('checkbox checked:' + value);

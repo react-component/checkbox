@@ -326,7 +326,13 @@ webpackJsonp([0,1],[
 
 	'use strict';
 	
-	function _defineProperty(obj, key, value) { if (key in obj) { Object.defineProperty(obj, key, { value: value, enumerable: true, configurable: true, writable: true }); } else { obj[key] = value; } return obj; }
+	function _defineProperty(obj, key, value) {
+	  if (key in obj) {
+	    Object.defineProperty(obj, key, { value: value, enumerable: true, configurable: true, writable: true });
+	  } else {
+	    obj[key] = value;
+	  }return obj;
+	}
 	
 	var React = __webpack_require__(6);
 	var classnames = __webpack_require__(9);
@@ -369,20 +375,15 @@ webpackJsonp([0,1],[
 	
 	    var props = this.props;
 	    var prefixCls = props.prefixCls;
-	    return React.createElement(
-	      'span',
-	      { className: classnames((_classnames = {}, _defineProperty(_classnames, props.className, !!props.className), _defineProperty(_classnames, prefixCls, 1), _defineProperty(_classnames, prefixCls + '-checked', this.state.checked), _defineProperty(_classnames, prefixCls + '-disabled', props.disabled), _classnames)),
-	        style: props.style
-	      },
-	      React.createElement('span', { className: prefixCls + '-inner' }),
-	      React.createElement('input', { type: 'checkbox',
-	        className: prefixCls + '-input',
-	        name: props.name,
-	        disabled: props.disabled,
-	        checked: this.state.checked,
-	        onChange: this.handleChange
-	      })
-	    );
+	    return React.createElement('span', { className: classnames((_classnames = {}, _defineProperty(_classnames, props.className, !!props.className), _defineProperty(_classnames, prefixCls, 1), _defineProperty(_classnames, prefixCls + '-checked', this.state.checked), _defineProperty(_classnames, prefixCls + '-disabled', props.disabled), _classnames)),
+	      style: props.style
+	    }, React.createElement('span', { className: prefixCls + '-inner' }), React.createElement('input', { type: 'checkbox',
+	      className: prefixCls + '-input',
+	      name: props.name,
+	      disabled: props.disabled,
+	      checked: this.state.checked,
+	      onChange: this.handleChange
+	    }));
 	  },
 	  handleChange: function handleChange(e) {
 	    var checked = e.target.checked;

@@ -1,10 +1,9 @@
 # rc-checkbox
 ---
 
-checkbox ui component for react
+React Checkbox
 
 [![NPM version][npm-image]][npm-url]
-[![SPM version](http://spmjs.io/badge/rc-checkbox)](http://spmjs.io/package/rc-checkbox)
 [![build status][travis-image]][travis-url]
 [![Test coverage][coveralls-image]][coveralls-url]
 [![gemnasium deps][gemnasium-image]][gemnasium-url]
