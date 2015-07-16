@@ -15,8 +15,8 @@ webpackJsonp([0,1],[
 	var React = __webpack_require__(6);
 	var Checkbox = __webpack_require__(7);
 	
-	function onChange(value) {
-	  console.log('checkbox checked:' + value);
+	function onChange(e) {
+	  console.log('checkbox checked:' + e.target.checked);
 	}
 	
 	var Test = React.createClass({
@@ -37,21 +37,65 @@ webpackJsonp([0,1],[
 	      'div',
 	      { style: { margin: 20 } },
 	      React.createElement(
-	        'p',
+	        'div',
 	        null,
 	        React.createElement(
-	          'label',
+	          'p',
 	          null,
-	          React.createElement(Checkbox, { onChange: onChange,
-	            disabled: this.state.disabled }),
-	          '  rc-checkbox'
+	          React.createElement(
+	            'label',
+	            null,
+	            React.createElement(Checkbox, { onChange: onChange,
+	              disabled: this.state.disabled }),
+	            '  rc-checkbox'
+	          ),
+	          '  '
 	        ),
-	        '   ',
 	        React.createElement(
-	          'button',
-	          { onClick: this.toggle },
-	          'toggle disabled'
+	          'p',
+	          null,
+	          React.createElement(
+	            'label',
+	            null,
+	            React.createElement('input', { type: 'checkbox', onChange: onChange,
+	              disabled: this.state.disabled }),
+	            '  native'
+	          ),
+	          '  '
 	        )
+	      ),
+	      React.createElement(
+	        'div',
+	        null,
+	        React.createElement(
+	          'p',
+	          null,
+	          React.createElement(
+	            'label',
+	            null,
+	            React.createElement(Checkbox, { checked: true, onChange: onChange,
+	              disabled: this.state.disabled }),
+	            '  rc-checkbox'
+	          ),
+	          '  '
+	        ),
+	        React.createElement(
+	          'p',
+	          null,
+	          React.createElement(
+	            'label',
+	            null,
+	            React.createElement('input', { type: 'checkbox', checked: true, onChange: onChange,
+	              disabled: this.state.disabled }),
+	            '  native'
+	          ),
+	          '  '
+	        )
+	      ),
+	      React.createElement(
+	        'button',
+	        { onClick: this.toggle },
+	        'toggle disabled'
 	      )
 	    );
 	  }
@@ -87,7 +131,7 @@ webpackJsonp([0,1],[
 /***/ function(module, exports, __webpack_require__) {
 
 	exports = module.exports = __webpack_require__(4)();
-	exports.push([module.id, "/* 一般状态 */\n.rc-checkbox {\n  line-height: 0;\n  white-space: nowrap;\n  cursor: pointer;\n  outline: none;\n  display: inline-block;\n  position: relative;\n}\n.rc-checkbox:hover .rc-checkbox-inner {\n  border-color: #bcbcbc;\n}\n.rc-checkbox-inner {\n  position: relative;\n  top: 0;\n  left: 0;\n  display: inline-block;\n  width: 14px;\n  height: 14px;\n  border-width: 1px;\n  border-style: solid;\n  border-radius: 3px;\n  border-color: #d9d9d9;\n  background-color: #ffffff;\n  transition: border-color 0.3s cubic-bezier(0.68, -0.55, 0.27, 1.55), background-color 0.3s cubic-bezier(0.68, -0.55, 0.27, 1.55);\n}\n.rc-checkbox-inner:after {\n  -webkit-transform: rotate(45deg);\n  -ms-transform: rotate(45deg);\n      transform: rotate(45deg);\n  position: absolute;\n  left: 4px;\n  top: 1px;\n  display: table;\n  width: 5px;\n  height: 8px;\n  border: 2px solid #ffffff;\n  border-top: 0;\n  border-left: 0;\n  content: ' ';\n  -webkit-animation-timing-function: cubic-bezier(0.68, -0.55, 0.27, 1.55);\n          animation-timing-function: cubic-bezier(0.68, -0.55, 0.27, 1.55);\n  -webkit-animation-duration: 0.3s;\n          animation-duration: 0.3s;\n  -webkit-animation-name: amCheckboxOut;\n          animation-name: amCheckboxOut;\n}\n.rc-checkbox-input {\n  position: absolute;\n  left: 0;\n  z-index: 9999;\n  cursor: pointer;\n  opacity: 0;\n  top: 0;\n  bottom: 0;\n  right: 0;\n}\n/* 选中状态 */\n.rc-checkbox-checked:hover .rc-checkbox-inner {\n  border-color: #3dbcf6;\n}\n.rc-checkbox-checked .rc-checkbox-inner {\n  border-color: #3dbcf6;\n  background-color: #3dbcf6;\n}\n.rc-checkbox-checked .rc-checkbox-inner:after {\n  -webkit-transform: rotate(45deg);\n      -ms-transform: rotate(45deg);\n          transform: rotate(45deg);\n  position: absolute;\n  left: 4px;\n  top: 1px;\n  display: table;\n  width: 5px;\n  height: 8px;\n  border: 2px solid #ffffff;\n  border-top: 0;\n  border-left: 0;\n  content: ' ';\n  -webkit-animation-timing-function: cubic-bezier(0.68, -0.55, 0.27, 1.55);\n          animation-timing-function: cubic-bezier(0.68, -0.55, 0.27, 1.55);\n  -webkit-animation-duration: 0.3s;\n          animation-duration: 0.3s;\n  -webkit-animation-name: amCheckboxOut;\n          animation-name: amCheckboxOut;\n}\n.rc-checkbox-disabled.rc-checkbox-checked:hover .rc-checkbox-inner {\n  border-color: #d9d9d9;\n}\n.rc-checkbox-disabled.rc-checkbox-checked .rc-checkbox-inner {\n  background-color: #f3f3f3;\n  border-color: #d9d9d9;\n}\n.rc-checkbox-disabled.rc-checkbox-checked .rc-checkbox-inner:after {\n  -webkit-animation-name: none;\n          animation-name: none;\n  border-color: #cccccc;\n}\n.rc-checkbox-disabled:hover .rc-checkbox-inner {\n  border-color: #d9d9d9;\n}\n.rc-checkbox-disabled .rc-checkbox-inner {\n  border-color: #d9d9d9;\n  background-color: #f3f3f3;\n}\n.rc-checkbox-disabled .rc-checkbox-inner:after {\n  -webkit-animation-name: none;\n          animation-name: none;\n  border-color: #f3f3f3;\n}\n.rc-checkbox-disabled .rc-checkbox-inner-input {\n  cursor: default;\n}\n@-webkit-keyframes amCheckboxIn {\n  0% {\n    opacity: 0;\n    -webkit-transform-origin: 50% 50%;\n            transform-origin: 50% 50%;\n    -webkit-transform: scale(0, 0) rotate(45deg);\n            transform: scale(0, 0) rotate(45deg);\n  }\n  100% {\n    opacity: 1;\n    -webkit-transform-origin: 50% 50%;\n            transform-origin: 50% 50%;\n    -webkit-transform: scale(1, 1) rotate(45deg);\n            transform: scale(1, 1) rotate(45deg);\n  }\n}\n@keyframes amCheckboxIn {\n  0% {\n    opacity: 0;\n    -webkit-transform-origin: 50% 50%;\n            transform-origin: 50% 50%;\n    -webkit-transform: scale(0, 0) rotate(45deg);\n            transform: scale(0, 0) rotate(45deg);\n  }\n  100% {\n    opacity: 1;\n    -webkit-transform-origin: 50% 50%;\n            transform-origin: 50% 50%;\n    -webkit-transform: scale(1, 1) rotate(45deg);\n            transform: scale(1, 1) rotate(45deg);\n  }\n}\n@-webkit-keyframes amCheckboxOut {\n  0% {\n    opacity: 1;\n  }\n  100% {\n    opacity: 0;\n  }\n}\n@keyframes amCheckboxOut {\n  0% {\n    opacity: 1;\n  }\n  100% {\n    opacity: 0;\n  }\n}\n", ""]);
+	exports.push([module.id, "/* 一般状态 */\n.rc-checkbox {\n  white-space: nowrap;\n  cursor: pointer;\n  outline: none;\n  display: inline-block;\n  position: relative;\n}\n.rc-checkbox:hover .rc-checkbox-inner {\n  border-color: #bcbcbc;\n}\n.rc-checkbox-inner {\n  position: relative;\n  top: 0;\n  left: 0;\n  display: inline-block;\n  width: 14px;\n  height: 14px;\n  border-width: 1px;\n  border-style: solid;\n  border-radius: 3px;\n  border-color: #d9d9d9;\n  background-color: #ffffff;\n  transition: border-color 0.3s cubic-bezier(0.68, -0.55, 0.27, 1.55), background-color 0.3s cubic-bezier(0.68, -0.55, 0.27, 1.55);\n}\n.rc-checkbox-inner:after {\n  -webkit-transform: rotate(45deg);\n  -ms-transform: rotate(45deg);\n      transform: rotate(45deg);\n  position: absolute;\n  left: 4px;\n  top: 1px;\n  display: table;\n  width: 5px;\n  height: 8px;\n  border: 2px solid #ffffff;\n  border-top: 0;\n  border-left: 0;\n  content: ' ';\n  -webkit-animation-timing-function: cubic-bezier(0.68, -0.55, 0.27, 1.55);\n          animation-timing-function: cubic-bezier(0.68, -0.55, 0.27, 1.55);\n  -webkit-animation-duration: 0.3s;\n          animation-duration: 0.3s;\n  -webkit-animation-name: amCheckboxOut;\n          animation-name: amCheckboxOut;\n}\n.rc-checkbox-input {\n  position: absolute;\n  left: 0;\n  z-index: 9999;\n  cursor: pointer;\n  opacity: 0;\n  top: 0;\n  bottom: 0;\n  right: 0;\n}\n/* 选中状态 */\n.rc-checkbox-checked:hover .rc-checkbox-inner {\n  border-color: #3dbcf6;\n}\n.rc-checkbox-checked .rc-checkbox-inner {\n  border-color: #3dbcf6;\n  background-color: #3dbcf6;\n}\n.rc-checkbox-checked .rc-checkbox-inner:after {\n  -webkit-transform: rotate(45deg);\n      -ms-transform: rotate(45deg);\n          transform: rotate(45deg);\n  position: absolute;\n  left: 4px;\n  top: 1px;\n  display: table;\n  width: 5px;\n  height: 8px;\n  border: 2px solid #ffffff;\n  border-top: 0;\n  border-left: 0;\n  content: ' ';\n  -webkit-animation-timing-function: cubic-bezier(0.68, -0.55, 0.27, 1.55);\n          animation-timing-function: cubic-bezier(0.68, -0.55, 0.27, 1.55);\n  -webkit-animation-duration: 0.3s;\n          animation-duration: 0.3s;\n  -webkit-animation-name: amCheckboxOut;\n          animation-name: amCheckboxOut;\n}\n.rc-checkbox-disabled.rc-checkbox-checked:hover .rc-checkbox-inner {\n  border-color: #d9d9d9;\n}\n.rc-checkbox-disabled.rc-checkbox-checked .rc-checkbox-inner {\n  background-color: #f3f3f3;\n  border-color: #d9d9d9;\n}\n.rc-checkbox-disabled.rc-checkbox-checked .rc-checkbox-inner:after {\n  -webkit-animation-name: none;\n          animation-name: none;\n  border-color: #cccccc;\n}\n.rc-checkbox-disabled:hover .rc-checkbox-inner {\n  border-color: #d9d9d9;\n}\n.rc-checkbox-disabled .rc-checkbox-inner {\n  border-color: #d9d9d9;\n  background-color: #f3f3f3;\n}\n.rc-checkbox-disabled .rc-checkbox-inner:after {\n  -webkit-animation-name: none;\n          animation-name: none;\n  border-color: #f3f3f3;\n}\n.rc-checkbox-disabled .rc-checkbox-inner-input {\n  cursor: default;\n}\n@-webkit-keyframes amCheckboxIn {\n  0% {\n    opacity: 0;\n    -webkit-transform-origin: 50% 50%;\n            transform-origin: 50% 50%;\n    -webkit-transform: scale(0, 0) rotate(45deg);\n            transform: scale(0, 0) rotate(45deg);\n  }\n  100% {\n    opacity: 1;\n    -webkit-transform-origin: 50% 50%;\n            transform-origin: 50% 50%;\n    -webkit-transform: scale(1, 1) rotate(45deg);\n            transform: scale(1, 1) rotate(45deg);\n  }\n}\n@keyframes amCheckboxIn {\n  0% {\n    opacity: 0;\n    -webkit-transform-origin: 50% 50%;\n            transform-origin: 50% 50%;\n    -webkit-transform: scale(0, 0) rotate(45deg);\n            transform: scale(0, 0) rotate(45deg);\n  }\n  100% {\n    opacity: 1;\n    -webkit-transform-origin: 50% 50%;\n            transform-origin: 50% 50%;\n    -webkit-transform: scale(1, 1) rotate(45deg);\n            transform: scale(1, 1) rotate(45deg);\n  }\n}\n@-webkit-keyframes amCheckboxOut {\n  0% {\n    opacity: 1;\n  }\n  100% {\n    opacity: 0;\n  }\n}\n@keyframes amCheckboxOut {\n  0% {\n    opacity: 1;\n  }\n  100% {\n    opacity: 0;\n  }\n}\n", ""]);
 
 /***/ },
 /* 4 */
@@ -326,7 +370,13 @@ webpackJsonp([0,1],[
 
 	'use strict';
 	
-	function _defineProperty(obj, key, value) { if (key in obj) { Object.defineProperty(obj, key, { value: value, enumerable: true, configurable: true, writable: true }); } else { obj[key] = value; } return obj; }
+	function _defineProperty(obj, key, value) {
+	  if (key in obj) {
+	    Object.defineProperty(obj, key, { value: value, enumerable: true, configurable: true, writable: true });
+	  } else {
+	    obj[key] = value;
+	  }return obj;
+	}
 	
 	var React = __webpack_require__(6);
 	var classnames = __webpack_require__(9);
@@ -369,27 +419,24 @@ webpackJsonp([0,1],[
 	
 	    var props = this.props;
 	    var prefixCls = props.prefixCls;
-	    return React.createElement(
-	      'span',
-	      { className: classnames((_classnames = {}, _defineProperty(_classnames, props.className, !!props.className), _defineProperty(_classnames, prefixCls, 1), _defineProperty(_classnames, prefixCls + '-checked', this.state.checked), _defineProperty(_classnames, prefixCls + '-disabled', props.disabled), _classnames)),
-	        style: props.style
-	      },
-	      React.createElement('span', { className: prefixCls + '-inner' }),
-	      React.createElement('input', { type: 'checkbox',
-	        className: prefixCls + '-input',
-	        name: props.name,
-	        disabled: props.disabled,
-	        checked: this.state.checked,
-	        onChange: this.handleChange
-	      })
-	    );
+	    return React.createElement('span', { className: classnames((_classnames = {}, _defineProperty(_classnames, props.className, !!props.className), _defineProperty(_classnames, prefixCls, 1), _defineProperty(_classnames, prefixCls + '-checked', this.state.checked), _defineProperty(_classnames, prefixCls + '-disabled', props.disabled), _classnames)),
+	      style: props.style
+	    }, React.createElement('span', { className: prefixCls + '-inner' }), React.createElement('input', { type: 'checkbox',
+	      className: prefixCls + '-input',
+	      name: props.name,
+	      disabled: props.disabled,
+	      checked: this.state.checked,
+	      onChange: this.handleChange
+	    }));
 	  },
 	  handleChange: function handleChange(e) {
 	    var checked = e.target.checked;
-	    this.setState({
-	      checked: checked
-	    });
-	    this.props.onChange(checked);
+	    if (!('checked' in this.props)) {
+	      this.setState({
+	        checked: checked
+	      });
+	    }
+	    this.props.onChange(e);
 	  }
 	});
 	
