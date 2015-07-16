@@ -50,11 +50,8 @@ var Checkbox = React.createClass({
         >
           <span className={`${prefixCls}-inner`}></span>
 
-          <input type={props.type}
-            id={props.id}
+          <input {...props}
             className={`${prefixCls}-input`}
-            name={props.name}
-            disabled={props.disabled}
             checked={this.state.checked}
             onChange={this.handleChange}
           />
