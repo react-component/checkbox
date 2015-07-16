@@ -1,6 +1,6 @@
 {
   "name": "rc-checkbox",
-  "version": "0.0.1",
+  "version": "1.0.1",
   "description": "checkbox ui component for react",
   "keywords": [
     "react",
@@ -41,11 +41,10 @@
     "rc-tools": "3.x",
     "react": "^0.13.0"
   },
-  "licenses": "MIT",
   "precommit": [
     "precommit"
   ],
   "dependencies": {
-    "rc-util": "2.x"
+    "classnames": "~2.1.3"
   }
 }

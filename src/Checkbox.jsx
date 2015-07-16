@@ -1,7 +1,7 @@
 'use strict';
 
 var React = require('react');
-var rcUtil = require('rc-util');
+var classnames = require('classnames');
 
 function noop() {
 }
@@ -25,8 +25,7 @@ var Checkbox = React.createClass({
         style: {},
         className: '',
         defaultChecked: false,
-        onChange: noop,
-        label: ''
+        onChange: noop
       };
     },
     componentWillReceiveProps(nextProps) {
@@ -40,23 +39,28 @@ var Checkbox = React.createClass({
       var props = this.props;
       var prefixCls = props.prefixCls;
       return (
-        <span className={rcUtil.classSet({
+        <span className={classnames({
           [props.className]: !!props.className,
           [prefixCls]: 1,
           [`${prefixCls}-checked`]: this.state.checked,
           [`${prefixCls}-disabled`]: props.disabled
         })}
-          onClick = {props.disabled ? noop : this.toggle}
           style={props.style}
         >
-          <span className={`${prefixCls}-checkbox`}></span>
+          <span className={`${prefixCls}-inner`}></span>
 
-          {this.props.label ? <label className={`${prefixCls}-label`}>{this.props.label}</label> : null }
+          <input type="checkbox"
+            className={`${prefixCls}-input`}
+            name={props.name}
+            disabled={props.disabled}
+            checked={this.state.checked}
+            onChange={this.handleChange}
+          />
         </span>
       );
     },
-    toggle() {
-      var checked = !this.state.checked;
+    handleChange(e) {
+      var checked = e.target.checked;
       this.setState({
         checked: checked
       });

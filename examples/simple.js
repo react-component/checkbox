@@ -13,46 +13,22 @@ var Test = React.createClass({
       disabled: false
     }
   },
-  toggle(){
+  toggle() {
     this.setState({
-      disabled:!this.state.disabled
+      disabled: !this.state.disabled
     });
   },
   render() {
     return <div style={{margin: 20}}>
-
-      <ul>
-          <li style={{
-          padding: "7px 0",
-          "margin-bottom": "20px",
-          background: "url(https://t.alipayobjects.com/images/T15CNeXb0lXXXXXXXX.jpg) repeat 0 0",
-        }}>
+      <p>
+        <label>
           <Checkbox onChange={onChange}
-                    disabled={true}
-                    label={"不可用,不选中"}/>
-        </li>
-        <li>
-          <Checkbox onChange={onChange}
-                    disabled={true}
-                    checked={true}
-                    label={"不可用,选中"}/>
-        </li>
-        <li>
-          <Checkbox onChange={onChange}
-                    label={"可用"}/>
-        </li>
-        <li>
-          <Checkbox onChange={onChange}
-                    disabled={this.state.disabled}
-                    label={"可用,动态控制"}/>
-          <button onClick={this.toggle}>toggle disabled</button>
-        </li>
-        <li>
+            disabled={this.state.disabled}/>
 
-        </li>
-      </ul>
-
-
+        &nbsp; rc-checkbox
+        </label> &nbsp;&nbsp;
+        <button onClick={this.toggle}>toggle disabled</button>
+      </p>
     </div>;
   }
 });
