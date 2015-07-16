@@ -23,6 +23,7 @@ var Checkbox = React.createClass({
       return {
         prefixCls: 'rc-checkbox',
         style: {},
+        type:'checkbox',
         className: '',
         defaultChecked: false,
         onChange: noop
@@ -49,7 +50,7 @@ var Checkbox = React.createClass({
         >
           <span className={`${prefixCls}-inner`}></span>
 
-          <input type="checkbox"
+          <input type={props.type}
             id={props.id}
             className={`${prefixCls}-input`}
             name={props.name}
