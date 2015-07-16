@@ -2,8 +2,8 @@ require('rc-checkbox/assets/index.css');
 var React = require('react');
 var Checkbox = require('rc-checkbox');
 
-function onChange(value) {
-  console.log('checkbox checked:' + value);
+function onChange(e) {
+  console.log('checkbox checked:' + (e.target.checked));
 }
 
 
@@ -20,15 +20,54 @@ var Test = React.createClass({
   },
   render() {
     return <div style={{margin: 20}}>
-      <p>
-        <label>
-          <Checkbox onChange={onChange}
-            disabled={this.state.disabled}/>
+      <div>
+        <p>
+          <label>
+            <Checkbox onChange={onChange}
+              disabled={this.state.disabled}/>
 
-        &nbsp; rc-checkbox
-        </label> &nbsp;&nbsp;
-        <button onClick={this.toggle}>toggle disabled</button>
-      </p>
+          &nbsp; rc-checkbox
+          </label>
+        &nbsp;&nbsp;
+
+        </p>
+
+        <p>
+          <label>
+            <input type='checkbox' onChange={onChange}
+              disabled={this.state.disabled}/>
+
+          &nbsp; native
+          </label>
+        &nbsp;&nbsp;
+        </p>
+      </div>
+
+      <div>
+        <p>
+          <label>
+            <Checkbox checked={true} onChange={onChange}
+              disabled={this.state.disabled}/>
+
+          &nbsp; rc-checkbox
+          </label>
+        &nbsp;&nbsp;
+
+        </p>
+
+        <p>
+          <label>
+            <input type='checkbox' checked={true} onChange={onChange}
+              disabled={this.state.disabled}/>
+
+          &nbsp; native
+          </label>
+        &nbsp;&nbsp;
+        </p>
+      </div>
+
+      <button onClick={this.toggle}>toggle disabled</button>
+
     </div>;
   }
 });

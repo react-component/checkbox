@@ -69,22 +69,28 @@ React.render(<Checkbox />, container);
           <td>''</td>
           <td>additional class name of root node</td>
         </tr>
+         <tr>
+          <td>name</td>
+          <td></td>
+          <td></td>
+          <td>same with native input checkbox</td>
+        </tr>
         <tr>
           <td>checked</td>
-          <td>boolean</td>
-          <td>false</td>
-          <td>whether checkbox is checked</td>
+          <td></td>
+          <td></td>
+          <td>same with native input checkbox</td>
         </tr>
         <tr>
           <td>defaultChecked</td>
-          <td>boolean</td>
-          <td>false</td>
-          <td>whether checkbox is checked on init</td>
+          <td></td>
+          <td></td>
+          <td>same with native input checkbox</td>
         <tr>
           <td>onChange</td>
-          <td>Function</td>
           <td></td>
-          <td>called when checkbox is checked or unchecked</td>
+          <td></td>
+          <td>same with native input checkbox</td>
         </tr>
     </tbody>
 </table>

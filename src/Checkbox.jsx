@@ -61,10 +61,12 @@ var Checkbox = React.createClass({
     },
     handleChange(e) {
       var checked = e.target.checked;
-      this.setState({
-        checked: checked
-      });
-      this.props.onChange(checked);
+      if (!('checked' in this.props)) {
+        this.setState({
+          checked: checked
+        });
+      }
+      this.props.onChange(e);
     }
   }
 );
