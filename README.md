@@ -77,20 +77,20 @@ React.render(<Checkbox />, container);
         </tr>
         <tr>
           <td>checked</td>
+          <td>enum: 0,1,2</td>
           <td></td>
           <td></td>
-          <td>same with native input checkbox</td>
         </tr>
         <tr>
           <td>defaultChecked</td>
-          <td></td>
-          <td></td>
+          <td>enum: 0,1,2</td>
+          <td>0</td>
           <td>same with native input checkbox</td>
         <tr>
           <td>onChange</td>
+          <td>Function(e:Event, checked:Number)</td>
           <td></td>
-          <td></td>
-          <td>same with native input checkbox</td>
+          <td>called when checkbox is changed. e is native event, checked is original checked state.</td>
         </tr>
     </tbody>
 </table>

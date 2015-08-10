@@ -11,9 +11,9 @@ var Checkbox = React.createClass({
       var props = this.props;
       var checked = false;
       if ('checked' in props) {
-        checked = !!props.checked;
+        checked = props.checked;
       } else {
-        checked = !!props.defaultChecked;
+        checked = props.defaultChecked;
       }
       return {
         checked: checked
@@ -23,38 +23,43 @@ var Checkbox = React.createClass({
       return {
         prefixCls: 'rc-checkbox',
         style: {},
-        type:'checkbox',
+        type: 'checkbox',
         className: '',
-        defaultChecked: false,
+        defaultChecked: 0,
         onChange: noop
       };
     },
     componentWillReceiveProps(nextProps) {
       if ('checked' in nextProps) {
         this.setState({
-          checked: !!nextProps.checked
+          checked: nextProps.checked
         });
       }
     },
     render() {
       var props = this.props;
       var prefixCls = props.prefixCls;
+      var checked = this.state.checked;
+      if (typeof checked === 'boolean') {
+        checked = checked ? 1 : 0;
+      }
       return (
         <span className={classnames({
           [props.className]: !!props.className,
           [prefixCls]: 1,
-          [`${prefixCls}-checked`]: this.state.checked,
+          [`${prefixCls}-checked`]: checked,
+          [`${prefixCls}-checked-${checked}`]: !!checked,
           [`${prefixCls}-disabled`]: props.disabled
         })}
-          style={props.style}
-        >
+              style={props.style}
+          >
           <span className={`${prefixCls}-inner`}></span>
 
           <input {...props}
             className={`${prefixCls}-input`}
-            checked={this.state.checked}
+            checked={!!checked}
             onChange={this.handleChange}
-          />
+            />
         </span>
       );
     },
@@ -62,10 +67,10 @@ var Checkbox = React.createClass({
       var checked = e.target.checked;
       if (!('checked' in this.props)) {
         this.setState({
-          checked: checked
+          checked: checked ? 1 : 0
         });
       }
-      this.props.onChange(e);
+      this.props.onChange(e, this.state.checked);
     }
   }
 );
