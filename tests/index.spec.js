@@ -24,8 +24,8 @@ describe('rc-switch', function () {
   });
 
   it('works', function () {
-    expect(inst.state.checked).to.be(false);
+    expect(!!inst.state.checked).to.be(false);
     TestUtils.scryRenderedDOMComponentsWithTag(inst, 'input')[0].getDOMNode().click();
-    expect(inst.state.checked).to.be(true);
+    expect(!!inst.state.checked).to.be(true);
   });
 });
