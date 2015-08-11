@@ -1,11 +1,10 @@
-require('rc-checkbox/assets/index.css');
-var React = require('react');
-var Checkbox = require('rc-checkbox');
+import 'rc-checkbox/assets/index.css';
+import React from 'react';
+import Checkbox from 'rc-checkbox';
 
 function onChange(e) {
   console.log('checkbox checked:' + (e.target.checked));
 }
-
 
 var Test = React.createClass({
   getInitialState() {
