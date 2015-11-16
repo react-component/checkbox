@@ -40,7 +40,8 @@ React Checkbox
 ```js
 var Checkbox = require('rc-checkbox');
 var React = require('react');
-React.render(<Checkbox />, container);
+var ReactDOM = require('react-dom');
+ReactDOM.render(<Checkbox />, container);
 ```
 
 ## API
