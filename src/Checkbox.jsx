@@ -22,34 +22,6 @@ export default class Checkbox extends React.Component {
     }
   }
 
-  render() {
-    const props = this.props;
-    const prefixCls = props.prefixCls;
-    let checked = this.state.checked;
-    if (typeof checked === 'boolean') {
-      checked = checked ? 1 : 0;
-    }
-    return (
-      <span className={classnames({
-          [props.className]: !!props.className,
-          [prefixCls]: 1,
-          [`${prefixCls}-checked`]: checked,
-          [`${prefixCls}-checked-${checked}`]: !!checked,
-          [`${prefixCls}-disabled`]: props.disabled,
-        })}
-            style={props.style}
-        >
-          <span className={`${prefixCls}-inner`}></span>
-          <input {...props}
-            defaultChecked={!!props.defaultChecked}
-            className={`${prefixCls}-input`}
-            checked={!!checked}
-            onChange={this.handleChange}
-            />
-        </span>
-    );
-  }
-
   handleChange(e) {
     const checked = e.target.checked;
     if (!('checked' in this.props)) {
@@ -58,6 +30,34 @@ export default class Checkbox extends React.Component {
       });
     }
     this.props.onChange(e, this.state.checked);
+  }
+
+  render() {
+    const props = this.props;
+    const prefixCls = props.prefixCls;
+    let checked = this.state.checked;
+    if (typeof checked === 'boolean') {
+      checked = checked ? 1 : 0;
+    }
+    const className = classnames({
+      [props.className]: !!props.className,
+      [prefixCls]: 1,
+      [`${prefixCls}-checked`]: checked,
+      [`${prefixCls}-checked-${checked}`]: !!checked,
+      [`${prefixCls}-disabled`]: props.disabled,
+    });
+    return (
+      <span className={className}
+            style={props.style}>
+          <span className={`${prefixCls}-inner`}></span>
+          <input {...props}
+            defaultChecked={!!props.defaultChecked}
+            className={`${prefixCls}-input`}
+            checked={!!checked}
+            onChange={this.handleChange}
+          />
+        </span>
+    );
   }
 }
 
