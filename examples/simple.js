@@ -19,7 +19,11 @@ webpackJsonp([0,1],[
 	
 	var _react2 = _interopRequireDefault(_react);
 	
-	var _rcCheckbox = __webpack_require__(159);
+	var _reactDom = __webpack_require__(159);
+	
+	var _reactDom2 = _interopRequireDefault(_reactDom);
+	
+	var _rcCheckbox = __webpack_require__(160);
 	
 	var _rcCheckbox2 = _interopRequireDefault(_rcCheckbox);
 	
@@ -109,7 +113,7 @@ webpackJsonp([0,1],[
 	  }
 	});
 	
-	_react2['default'].render(_react2['default'].createElement(Test, null), document.getElementById("__react-content"));
+	_reactDom2['default'].render(_react2['default'].createElement(Test, null), document.getElementById("__react-content"));
 
 /***/ },
 /* 2 */
@@ -19692,7 +19696,8 @@ webpackJsonp([0,1],[
 
 	'use strict';
 	
-	module.exports = __webpack_require__(160);
+	module.exports = __webpack_require__(4);
+
 
 /***/ },
 /* 160 */
@@ -19704,6 +19709,14 @@ webpackJsonp([0,1],[
 
 /***/ },
 /* 161 */
+/***/ function(module, exports, __webpack_require__) {
+
+	'use strict';
+	
+	module.exports = __webpack_require__(162);
+
+/***/ },
+/* 162 */
 /***/ function(module, exports, __webpack_require__) {
 
 	'use strict';
@@ -19730,7 +19743,7 @@ webpackJsonp([0,1],[
 	
 	var _react2 = _interopRequireDefault(_react);
 	
-	var _classnames2 = __webpack_require__(162);
+	var _classnames2 = __webpack_require__(163);
 	
 	var _classnames3 = _interopRequireDefault(_classnames2);
 	
@@ -19824,7 +19837,7 @@ webpackJsonp([0,1],[
 	module.exports = exports['default'];
 
 /***/ },
-/* 162 */
+/* 163 */
 /***/ function(module, exports, __webpack_require__) {
 
 	var __WEBPACK_AMD_DEFINE_RESULT__;/*!
