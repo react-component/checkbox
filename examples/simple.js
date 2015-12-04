@@ -1,5 +1,6 @@
 import 'rc-checkbox/assets/index.css';
 import React from 'react';
+import ReactDOM from 'react-dom';
 import Checkbox from 'rc-checkbox';
 
 function onChange(e) {
@@ -71,4 +72,4 @@ var Test = React.createClass({
   }
 });
 
-React.render(<Test />, document.getElementById("__react-content"));
+ReactDOM.render(<Test />, document.getElementById("__react-content"));
