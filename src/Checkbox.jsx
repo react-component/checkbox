@@ -29,7 +29,12 @@ export default class Checkbox extends React.Component {
         checked: checked ? 1 : 0,
       });
     }
-    this.props.onChange(e, this.state.checked);
+    this.props.onChange({
+      target: {
+        ...this.props,
+        checked,
+      },
+    });
   }
 
   render() {
@@ -76,7 +81,7 @@ Checkbox.defaultProps = {
   style: {},
   type: 'checkbox',
   className: '',
-  defaultChecked: 0,
+  defaultChecked: false,
   onChange: () => {
   },
 };
