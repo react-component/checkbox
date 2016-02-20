@@ -4,22 +4,22 @@ import ReactDOM from 'react-dom';
 import Checkbox from 'rc-checkbox';
 
 function onChange(e) {
-  console.log('checkbox checked:' + (e.target.checked));
+  console.log('checkbox checked:', (e.target.checked));
 }
 
-var Test = React.createClass({
+const Test = React.createClass({
   getInitialState() {
     return {
-      disabled: false
-    }
+      disabled: false,
+    };
   },
   toggle() {
     this.setState({
-      disabled: !this.state.disabled
+      disabled: !this.state.disabled,
     });
   },
   render() {
-    return <div style={{margin: 20}}>
+    return (<div style={{margin: 20}}>
       <div>
         <p>
           <label>
@@ -34,7 +34,7 @@ var Test = React.createClass({
 
         <p>
           <label>
-            <input type='checkbox' onChange={onChange}
+            <input type="checkbox" onChange={onChange}
               disabled={this.state.disabled}/>
 
           &nbsp; native
@@ -46,7 +46,7 @@ var Test = React.createClass({
       <div>
         <p>
           <label>
-            <Checkbox checked={true} onChange={onChange}
+            <Checkbox checked onChange={onChange}
               disabled={this.state.disabled}/>
 
           &nbsp; rc-checkbox
@@ -57,7 +57,7 @@ var Test = React.createClass({
 
         <p>
           <label>
-            <input type='checkbox' checked={true} onChange={onChange}
+            <input type="checkbox" checked onChange={onChange}
               disabled={this.state.disabled}/>
 
           &nbsp; native
@@ -68,8 +68,8 @@ var Test = React.createClass({
 
       <button onClick={this.toggle}>toggle disabled</button>
 
-    </div>;
-  }
+    </div>);
+  },
 });
 
-ReactDOM.render(<Test />, document.getElementById("__react-content"));
+ReactDOM.render(<Test />, document.getElementById('__react-content'));

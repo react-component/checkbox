@@ -1,30 +1,29 @@
 /**
  * only require other specs here
  */
-var expect = require('expect.js');
-var Checkbox = require('../index');
-var React = require('react');
-var ReactDOM = require('react-dom');
-var TestUtils = require('react-addons-test-utils');
-var Simulate = TestUtils.Simulate;
+const expect = require('expect.js');
+const Checkbox = require('../index');
+const React = require('react');
+const ReactDOM = require('react-dom');
+const TestUtils = require('react-addons-test-utils');
 
-describe('rc-switch', function () {
-  var inst;
-  var container = document.createElement('div');
+describe('rc-switch', () => {
+  let inst;
+  const container = document.createElement('div');
   document.body.appendChild(container);
 
-  beforeEach(function (done) {
-    ReactDOM.render(<Checkbox/>, container, function () {
+  beforeEach((done) => {
+    ReactDOM.render(<Checkbox/>, container, () => {
       inst = this;
       done();
     });
   });
 
-  afterEach(function () {
+  afterEach(() => {
     ReactDOM.unmountComponentAtNode(container);
   });
 
-  it('works', function () {
+  it('works', () => {
     expect(!!inst.state.checked).to.be(false);
     TestUtils.scryRenderedDOMComponentsWithTag(inst, 'input')[0].click();
     expect(!!inst.state.checked).to.be(true);
