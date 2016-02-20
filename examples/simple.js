@@ -13,7 +13,7 @@ webpackJsonp([0,1],[
 	
 	function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { 'default': obj }; }
 	
-	__webpack_require__(2);
+	__webpack_require__(!(function webpackMissingModule() { var e = new Error("Cannot find module \"rc-checkbox/assets/index.css\""); e.code = 'MODULE_NOT_FOUND'; throw e; }()));
 	
 	var _react = __webpack_require__(3);
 	
@@ -116,12 +116,7 @@ webpackJsonp([0,1],[
 	_reactDom2['default'].render(_react2['default'].createElement(Test, null), document.getElementById("__react-content"));
 
 /***/ },
-/* 2 */
-/***/ function(module, exports) {
-
-	// removed by extract-text-webpack-plugin
-
-/***/ },
+/* 2 */,
 /* 3 */
 /***/ function(module, exports, __webpack_require__) {
 
@@ -19788,7 +19783,11 @@ webpackJsonp([0,1],[
 	          checked: checked ? 1 : 0
 	        });
 	      }
-	      this.props.onChange(e, this.state.checked);
+	      this.props.onChange({
+	        target: _extends({}, this.props, {
+	          checked: checked
+	        })
+	      });
 	    }
 	  }, {
 	    key: 'render',
@@ -19837,7 +19836,7 @@ webpackJsonp([0,1],[
 	  style: {},
 	  type: 'checkbox',
 	  className: '',
-	  defaultChecked: 0,
+	  defaultChecked: false,
 	  onChange: function onChange() {}
 	};
 	module.exports = exports['default'];
