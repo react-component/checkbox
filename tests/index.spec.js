@@ -13,7 +13,7 @@ describe('rc-switch', () => {
   document.body.appendChild(container);
 
   beforeEach((done) => {
-    ReactDOM.render(<Checkbox/>, container, () => {
+    ReactDOM.render(<Checkbox/>, container, function init() {
       inst = this;
       done();
     });
