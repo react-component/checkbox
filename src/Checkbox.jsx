@@ -34,6 +34,12 @@ export default class Checkbox extends React.Component {
         ...this.props,
         checked,
       },
+      stopPropagation() {
+        e.stopPropagation();
+      },
+      preventDefault() {
+        e.preventDefault();
+      },
     });
   }
 

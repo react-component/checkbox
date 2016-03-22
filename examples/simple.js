@@ -1,3 +1,5 @@
+/* eslint no-console:0 */
+
 import 'rc-checkbox/assets/index.css';
 import React from 'react';
 import ReactDOM from 'react-dom';
