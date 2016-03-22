@@ -11,7 +11,9 @@ export default class Checkbox extends React.Component {
     } else {
       checked = props.defaultChecked;
     }
-    this.state = {checked};
+    this.state = {
+      checked,
+    };
   }
 
   componentWillReceiveProps(nextProps) {
@@ -58,10 +60,13 @@ export default class Checkbox extends React.Component {
       [`${prefixCls}-disabled`]: props.disabled,
     });
     return (
-      <span className={className}
-            style={props.style}>
-          <span className={`${prefixCls}-inner`}></span>
-          <input {...props}
+      <span
+        className={className}
+        style={props.style}
+      >
+          <span className={`${prefixCls}-inner`} />
+          <input
+            {...props}
             defaultChecked={!!props.defaultChecked}
             className={`${prefixCls}-input`}
             checked={!!checked}

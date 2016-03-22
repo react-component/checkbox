@@ -21,50 +21,62 @@ const Test = React.createClass({
     });
   },
   render() {
-    return (<div style={{margin: 20}}>
+    return (<div style={{ margin: 20 }}>
       <div>
         <p>
           <label>
-            <Checkbox onChange={onChange}
-              disabled={this.state.disabled}/>
+            <Checkbox
+              onChange={onChange}
+              disabled={this.state.disabled}
+            />
 
-          &nbsp; rc-checkbox
+            &nbsp; rc-checkbox
           </label>
-        &nbsp;&nbsp;
+          &nbsp;&nbsp;
 
         </p>
 
         <p>
           <label>
-            <input type="checkbox" onChange={onChange}
-              disabled={this.state.disabled}/>
+            <input
+              type="checkbox"
+              onChange={onChange}
+              disabled={this.state.disabled}
+            />
 
-          &nbsp; native
+            &nbsp; native
           </label>
-        &nbsp;&nbsp;
+          &nbsp;&nbsp;
         </p>
       </div>
 
       <div>
         <p>
           <label>
-            <Checkbox checked onChange={onChange}
-              disabled={this.state.disabled}/>
+            <Checkbox
+              checked
+              onChange={onChange}
+              disabled={this.state.disabled}
+            />
 
-          &nbsp; rc-checkbox
+            &nbsp; rc-checkbox
           </label>
-        &nbsp;&nbsp;
+          &nbsp;&nbsp;
 
         </p>
 
         <p>
           <label>
-            <input type="checkbox" checked onChange={onChange}
-              disabled={this.state.disabled}/>
+            <input
+              type="checkbox"
+              checked
+              onChange={onChange}
+              disabled={this.state.disabled}
+            />
 
-          &nbsp; native
+            &nbsp; native
           </label>
-        &nbsp;&nbsp;
+          &nbsp;&nbsp;
         </p>
       </div>
 

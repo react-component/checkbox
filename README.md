@@ -7,7 +7,6 @@ React Checkbox
 [![build status][travis-image]][travis-url]
 [![Test coverage][coveralls-image]][coveralls-url]
 [![gemnasium deps][gemnasium-image]][gemnasium-url]
-[![node version][node-image]][node-url]
 [![npm download][download-image]][download-url]
 
 [npm-image]: http://img.shields.io/npm/v/rc-checkbox.svg?style=flat-square
@@ -22,14 +21,6 @@ React Checkbox
 [node-url]: http://nodejs.org/download/
 [download-image]: https://img.shields.io/npm/dm/rc-checkbox.svg?style=flat-square
 [download-url]: https://npmjs.org/package/rc-checkbox
-
-## Screenshots
-
-
-## Feature
-
-* support ie8,ie8+,chrome,firefox,safari
-
 
 ## install
 
@@ -111,11 +102,19 @@ online example: http://react-component.github.io/checkbox/examples/
 
 ## Test Case
 
-http://localhost:8001/tests/runner.html?coverage
+```
+npm test
+npm run chrome-test
+```
 
 ## Coverage
 
-http://localhost:8001/node_modules/rc-server/node_modules/node-jscover/lib/front-end/jscoverage.html?w=http://localhost:8001/tests/runner.html?coverage
+```
+npm run coverage
+```
+
+open coverage/ dir
+
 
 ## License
 
