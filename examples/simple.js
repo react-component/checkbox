@@ -9,6 +9,8 @@ webpackJsonp([0,1],[
 /* 1 */
 /***/ function(module, exports, __webpack_require__) {
 
+	/* eslint no-console:0 */
+	
 	'use strict';
 	
 	function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { 'default': obj }; }
@@ -28,7 +30,7 @@ webpackJsonp([0,1],[
 	var _rcCheckbox2 = _interopRequireDefault(_rcCheckbox);
 	
 	function onChange(e) {
-	  console.log('checkbox checked:' + e.target.checked);
+	  console.log('checkbox checked:', e.target.checked);
 	}
 	
 	var Test = _react2['default'].createClass({
@@ -113,7 +115,7 @@ webpackJsonp([0,1],[
 	  }
 	});
 	
-	_reactDom2['default'].render(_react2['default'].createElement(Test, null), document.getElementById("__react-content"));
+	_reactDom2['default'].render(_react2['default'].createElement(Test, null), document.getElementById('__react-content'));
 
 /***/ },
 /* 2 */,
@@ -19786,7 +19788,13 @@ webpackJsonp([0,1],[
 	      this.props.onChange({
 	        target: _extends({}, this.props, {
 	          checked: checked
-	        })
+	        }),
+	        stopPropagation: function stopPropagation() {
+	          e.stopPropagation();
+	        },
+	        preventDefault: function preventDefault() {
+	          e.preventDefault();
+	        }
 	      });
 	    }
 	  }, {
