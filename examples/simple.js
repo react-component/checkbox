@@ -9,11 +9,7 @@ webpackJsonp([0,1],[
 /* 1 */
 /***/ function(module, exports, __webpack_require__) {
 
-	/* eslint no-console:0 */
-	
 	'use strict';
-	
-	function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { 'default': obj }; }
 	
 	__webpack_require__(!(function webpackMissingModule() { var e = new Error("Cannot find module \"rc-checkbox/assets/index.css\""); e.code = 'MODULE_NOT_FOUND'; throw e; }()));
 	
@@ -29,13 +25,16 @@ webpackJsonp([0,1],[
 	
 	var _rcCheckbox2 = _interopRequireDefault(_rcCheckbox);
 	
+	function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { "default": obj }; }
+	
+	/* eslint no-console:0 */
+	
 	function onChange(e) {
 	  console.log('checkbox checked:', e.target.checked);
 	}
 	
-	var Test = _react2['default'].createClass({
+	var Test = _react2["default"].createClass({
 	  displayName: 'Test',
-	
 	  getInitialState: function getInitialState() {
 	    return {
 	      disabled: false
@@ -47,66 +46,78 @@ webpackJsonp([0,1],[
 	    });
 	  },
 	  render: function render() {
-	    return _react2['default'].createElement(
+	    return _react2["default"].createElement(
 	      'div',
 	      { style: { margin: 20 } },
-	      _react2['default'].createElement(
+	      _react2["default"].createElement(
 	        'div',
 	        null,
-	        _react2['default'].createElement(
+	        _react2["default"].createElement(
 	          'p',
 	          null,
-	          _react2['default'].createElement(
+	          _react2["default"].createElement(
 	            'label',
 	            null,
-	            _react2['default'].createElement(_rcCheckbox2['default'], { onChange: onChange,
-	              disabled: this.state.disabled }),
+	            _react2["default"].createElement(_rcCheckbox2["default"], {
+	              onChange: onChange,
+	              disabled: this.state.disabled
+	            }),
 	            '  rc-checkbox'
 	          ),
 	          '  '
 	        ),
-	        _react2['default'].createElement(
+	        _react2["default"].createElement(
 	          'p',
 	          null,
-	          _react2['default'].createElement(
+	          _react2["default"].createElement(
 	            'label',
 	            null,
-	            _react2['default'].createElement('input', { type: 'checkbox', onChange: onChange,
-	              disabled: this.state.disabled }),
+	            _react2["default"].createElement('input', {
+	              type: 'checkbox',
+	              onChange: onChange,
+	              disabled: this.state.disabled
+	            }),
 	            '  native'
 	          ),
 	          '  '
 	        )
 	      ),
-	      _react2['default'].createElement(
+	      _react2["default"].createElement(
 	        'div',
 	        null,
-	        _react2['default'].createElement(
+	        _react2["default"].createElement(
 	          'p',
 	          null,
-	          _react2['default'].createElement(
+	          _react2["default"].createElement(
 	            'label',
 	            null,
-	            _react2['default'].createElement(_rcCheckbox2['default'], { checked: true, onChange: onChange,
-	              disabled: this.state.disabled }),
+	            _react2["default"].createElement(_rcCheckbox2["default"], {
+	              checked: true,
+	              onChange: onChange,
+	              disabled: this.state.disabled
+	            }),
 	            '  rc-checkbox'
 	          ),
 	          '  '
 	        ),
-	        _react2['default'].createElement(
+	        _react2["default"].createElement(
 	          'p',
 	          null,
-	          _react2['default'].createElement(
+	          _react2["default"].createElement(
 	            'label',
 	            null,
-	            _react2['default'].createElement('input', { type: 'checkbox', checked: true, onChange: onChange,
-	              disabled: this.state.disabled }),
+	            _react2["default"].createElement('input', {
+	              type: 'checkbox',
+	              checked: true,
+	              onChange: onChange,
+	              disabled: this.state.disabled
+	            }),
 	            '  native'
 	          ),
 	          '  '
 	        )
 	      ),
-	      _react2['default'].createElement(
+	      _react2["default"].createElement(
 	        'button',
 	        { onClick: this.toggle },
 	        'toggle disabled'
@@ -115,7 +126,7 @@ webpackJsonp([0,1],[
 	  }
 	});
 	
-	_reactDom2['default'].render(_react2['default'].createElement(Test, null), document.getElementById('__react-content'));
+	_reactDom2["default"].render(_react2["default"].createElement(Test, null), document.getElementById('__react-content'));
 
 /***/ },
 /* 2 */,
@@ -168,6 +179,7 @@ webpackJsonp([0,1],[
 	});
 	
 	React.__SECRET_DOM_DO_NOT_USE_OR_YOU_WILL_BE_FIRED = ReactDOM;
+	React.__SECRET_DOM_SERVER_DO_NOT_USE_OR_YOU_WILL_BE_FIRED = ReactDOMServer;
 	
 	module.exports = React;
 
@@ -1132,7 +1144,7 @@ webpackJsonp([0,1],[
 	 * will remain to ensure logic does not differ in production.
 	 */
 	
-	var invariant = function (condition, format, a, b, c, d, e, f) {
+	function invariant(condition, format, a, b, c, d, e, f) {
 	  if (process.env.NODE_ENV !== 'production') {
 	    if (format === undefined) {
 	      throw new Error('invariant requires an error message argument');
@@ -1146,15 +1158,16 @@ webpackJsonp([0,1],[
 	    } else {
 	      var args = [a, b, c, d, e, f];
 	      var argIndex = 0;
-	      error = new Error('Invariant Violation: ' + format.replace(/%s/g, function () {
+	      error = new Error(format.replace(/%s/g, function () {
 	        return args[argIndex++];
 	      }));
+	      error.name = 'Invariant Violation';
 	    }
 	
 	    error.framesToPop = 1; // we don't care about invariant's own frame
 	    throw error;
 	  }
-	};
+	}
 	
 	module.exports = invariant;
 	/* WEBPACK VAR INJECTION */}.call(exports, __webpack_require__(6)))
@@ -9373,6 +9386,7 @@ webpackJsonp([0,1],[
 	 */
 	var EventInterface = {
 	  type: null,
+	  target: null,
 	  // currentTarget is set when dispatching; no use in copying it here
 	  currentTarget: emptyFunction.thatReturnsNull,
 	  eventPhase: null,
@@ -9406,8 +9420,6 @@ webpackJsonp([0,1],[
 	  this.dispatchConfig = dispatchConfig;
 	  this.dispatchMarker = dispatchMarker;
 	  this.nativeEvent = nativeEvent;
-	  this.target = nativeEventTarget;
-	  this.currentTarget = nativeEventTarget;
 	
 	  var Interface = this.constructor.Interface;
 	  for (var propName in Interface) {
@@ -9418,7 +9430,11 @@ webpackJsonp([0,1],[
 	    if (normalize) {
 	      this[propName] = normalize(nativeEvent);
 	    } else {
-	      this[propName] = nativeEvent[propName];
+	      if (propName === 'target') {
+	        this.target = nativeEventTarget;
+	      } else {
+	        this[propName] = nativeEvent[propName];
+	      }
 	    }
 	  }
 	
@@ -10518,6 +10534,7 @@ webpackJsonp([0,1],[
 	    multiple: MUST_USE_PROPERTY | HAS_BOOLEAN_VALUE,
 	    muted: MUST_USE_PROPERTY | HAS_BOOLEAN_VALUE,
 	    name: null,
+	    nonce: MUST_USE_ATTRIBUTE,
 	    noValidate: HAS_BOOLEAN_VALUE,
 	    open: HAS_BOOLEAN_VALUE,
 	    optimum: null,
@@ -10529,6 +10546,7 @@ webpackJsonp([0,1],[
 	    readOnly: MUST_USE_PROPERTY | HAS_BOOLEAN_VALUE,
 	    rel: null,
 	    required: HAS_BOOLEAN_VALUE,
+	    reversed: HAS_BOOLEAN_VALUE,
 	    role: MUST_USE_ATTRIBUTE,
 	    rows: MUST_USE_ATTRIBUTE | HAS_POSITIVE_NUMERIC_VALUE,
 	    rowSpan: null,
@@ -10579,8 +10597,8 @@ webpackJsonp([0,1],[
 	     */
 	    // autoCapitalize and autoCorrect are supported in Mobile Safari for
 	    // keyboard hints.
-	    autoCapitalize: null,
-	    autoCorrect: null,
+	    autoCapitalize: MUST_USE_ATTRIBUTE,
+	    autoCorrect: MUST_USE_ATTRIBUTE,
 	    // autoSave allows WebKit/Blink to persist values of input fields on page reloads
 	    autoSave: null,
 	    // color is for Safari mask-icon link
@@ -10611,9 +10629,7 @@ webpackJsonp([0,1],[
 	    httpEquiv: 'http-equiv'
 	  },
 	  DOMPropertyNames: {
-	    autoCapitalize: 'autocapitalize',
 	    autoComplete: 'autocomplete',
-	    autoCorrect: 'autocorrect',
 	    autoFocus: 'autofocus',
 	    autoPlay: 'autoplay',
 	    autoSave: 'autosave',
@@ -13267,7 +13283,10 @@ webpackJsonp([0,1],[
 	      }
 	    });
 	
-	    nativeProps.children = content;
+	    if (content) {
+	      nativeProps.children = content;
+	    }
+	
 	    return nativeProps;
 	  }
 	
@@ -13692,7 +13711,7 @@ webpackJsonp([0,1],[
 	    var value = LinkedValueUtils.getValue(props);
 	
 	    if (value != null) {
-	      updateOptions(this, props, value);
+	      updateOptions(this, Boolean(props.multiple), value);
 	    }
 	  }
 	}
@@ -16727,11 +16746,14 @@ webpackJsonp([0,1],[
 	 * @typechecks
 	 */
 	
+	/* eslint-disable fb-www/typeof-undefined */
+	
 	/**
 	 * Same as document.activeElement but wraps in a try-catch block. In IE it is
 	 * not safe to call document.activeElement if there is nothing focused.
 	 *
-	 * The activeElement will be null only if the document or document body is not yet defined.
+	 * The activeElement will be null only if the document or document body is not
+	 * yet defined.
 	 */
 	'use strict';
 	
@@ -16739,7 +16761,6 @@ webpackJsonp([0,1],[
 	  if (typeof document === 'undefined') {
 	    return null;
 	  }
-	
 	  try {
 	    return document.activeElement || document.body;
 	  } catch (e) {
@@ -18479,7 +18500,9 @@ webpackJsonp([0,1],[
 	  'setValueForProperty': 'update attribute',
 	  'setValueForAttribute': 'update attribute',
 	  'deleteValueForProperty': 'remove attribute',
-	  'dangerouslyReplaceNodeWithMarkupByID': 'replace'
+	  'setValueForStyles': 'update styles',
+	  'replaceNodeWithMarkup': 'replace',
+	  'updateTextContent': 'set textContent'
 	};
 	
 	function getTotalTime(measurements) {
@@ -18671,18 +18694,23 @@ webpackJsonp([0,1],[
 	'use strict';
 	
 	var performance = __webpack_require__(147);
-	var curPerformance = performance;
+	
+	var performanceNow;
 	
 	/**
 	 * Detect if we can use `window.performance.now()` and gracefully fallback to
 	 * `Date.now()` if it doesn't exist. We need to support Firefox < 15 for now
 	 * because of Facebook's testing infrastructure.
 	 */
-	if (!curPerformance || !curPerformance.now) {
-	  curPerformance = Date;
+	if (performance.now) {
+	  performanceNow = function () {
+	    return performance.now();
+	  };
+	} else {
+	  performanceNow = function () {
+	    return Date.now();
+	  };
 	}
-	
-	var performanceNow = curPerformance.now.bind(curPerformance);
 	
 	module.exports = performanceNow;
 
@@ -18731,7 +18759,7 @@ webpackJsonp([0,1],[
 	
 	'use strict';
 	
-	module.exports = '0.14.2';
+	module.exports = '0.14.7';
 
 /***/ },
 /* 149 */
@@ -19724,23 +19752,13 @@ webpackJsonp([0,1],[
 
 	'use strict';
 	
-	Object.defineProperty(exports, '__esModule', {
+	Object.defineProperty(exports, "__esModule", {
 	  value: true
 	});
 	
 	var _extends = Object.assign || function (target) { for (var i = 1; i < arguments.length; i++) { var source = arguments[i]; for (var key in source) { if (Object.prototype.hasOwnProperty.call(source, key)) { target[key] = source[key]; } } } return target; };
 	
-	var _createClass = (function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ('value' in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; })();
-	
-	var _get = function get(_x, _x2, _x3) { var _again = true; _function: while (_again) { var object = _x, property = _x2, receiver = _x3; _again = false; if (object === null) object = Function.prototype; var desc = Object.getOwnPropertyDescriptor(object, property); if (desc === undefined) { var parent = Object.getPrototypeOf(object); if (parent === null) { return undefined; } else { _x = parent; _x2 = property; _x3 = receiver; _again = true; desc = parent = undefined; continue _function; } } else if ('value' in desc) { return desc.value; } else { var getter = desc.get; if (getter === undefined) { return undefined; } return getter.call(receiver); } } };
-	
-	function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { 'default': obj }; }
-	
-	function _defineProperty(obj, key, value) { if (key in obj) { Object.defineProperty(obj, key, { value: value, enumerable: true, configurable: true, writable: true }); } else { obj[key] = value; } return obj; }
-	
-	function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError('Cannot call a class as a function'); } }
-	
-	function _inherits(subClass, superClass) { if (typeof superClass !== 'function' && superClass !== null) { throw new TypeError('Super expression must either be null or a function, not ' + typeof superClass); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, enumerable: false, writable: true, configurable: true } }); if (superClass) Object.setPrototypeOf ? Object.setPrototypeOf(subClass, superClass) : subClass.__proto__ = superClass; }
+	var _createClass = function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; }();
 	
 	var _react = __webpack_require__(3);
 	
@@ -19750,21 +19768,35 @@ webpackJsonp([0,1],[
 	
 	var _classnames3 = _interopRequireDefault(_classnames2);
 	
-	var Checkbox = (function (_React$Component) {
+	function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { "default": obj }; }
+	
+	function _defineProperty(obj, key, value) { if (key in obj) { Object.defineProperty(obj, key, { value: value, enumerable: true, configurable: true, writable: true }); } else { obj[key] = value; } return obj; }
+	
+	function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
+	
+	function _possibleConstructorReturn(self, call) { if (!self) { throw new ReferenceError("this hasn't been initialised - super() hasn't been called"); } return call && (typeof call === "object" || typeof call === "function") ? call : self; }
+	
+	function _inherits(subClass, superClass) { if (typeof superClass !== "function" && superClass !== null) { throw new TypeError("Super expression must either be null or a function, not " + typeof superClass); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, enumerable: false, writable: true, configurable: true } }); if (superClass) Object.setPrototypeOf ? Object.setPrototypeOf(subClass, superClass) : subClass.__proto__ = superClass; }
+	
+	var Checkbox = function (_React$Component) {
 	  _inherits(Checkbox, _React$Component);
 	
 	  function Checkbox(props) {
 	    _classCallCheck(this, Checkbox);
 	
-	    _get(Object.getPrototypeOf(Checkbox.prototype), 'constructor', this).call(this, props);
-	    this.handleChange = this.handleChange.bind(this);
+	    var _this = _possibleConstructorReturn(this, Object.getPrototypeOf(Checkbox).call(this, props));
+	
+	    _this.handleChange = _this.handleChange.bind(_this);
 	    var checked = false;
 	    if ('checked' in props) {
 	      checked = props.checked;
 	    } else {
 	      checked = props.defaultChecked;
 	    }
-	    this.state = { checked: checked };
+	    _this.state = {
+	      checked: checked
+	    };
+	    return _this;
 	  }
 	
 	  _createClass(Checkbox, [{
@@ -19808,13 +19840,15 @@ webpackJsonp([0,1],[
 	      if (typeof checked === 'boolean') {
 	        checked = checked ? 1 : 0;
 	      }
-	      var className = (0, _classnames3['default'])((_classnames = {}, _defineProperty(_classnames, props.className, !!props.className), _defineProperty(_classnames, prefixCls, 1), _defineProperty(_classnames, prefixCls + '-checked', checked), _defineProperty(_classnames, prefixCls + '-checked-' + checked, !!checked), _defineProperty(_classnames, prefixCls + '-disabled', props.disabled), _classnames));
-	      return _react2['default'].createElement(
+	      var className = (0, _classnames3["default"])((_classnames = {}, _defineProperty(_classnames, props.className, !!props.className), _defineProperty(_classnames, prefixCls, 1), _defineProperty(_classnames, prefixCls + '-checked', checked), _defineProperty(_classnames, prefixCls + '-checked-' + checked, !!checked), _defineProperty(_classnames, prefixCls + '-disabled', props.disabled), _classnames));
+	      return _react2["default"].createElement(
 	        'span',
-	        { className: className,
-	          style: props.style },
-	        _react2['default'].createElement('span', { className: prefixCls + '-inner' }),
-	        _react2['default'].createElement('input', _extends({}, props, {
+	        {
+	          className: className,
+	          style: props.style
+	        },
+	        _react2["default"].createElement('span', { className: prefixCls + '-inner' }),
+	        _react2["default"].createElement('input', _extends({}, props, {
 	          defaultChecked: !!props.defaultChecked,
 	          className: prefixCls + '-input',
 	          checked: !!checked,
@@ -19825,18 +19859,19 @@ webpackJsonp([0,1],[
 	  }]);
 	
 	  return Checkbox;
-	})(_react2['default'].Component);
+	}(_react2["default"].Component);
 	
-	exports['default'] = Checkbox;
+	exports["default"] = Checkbox;
+	
 	
 	Checkbox.propTypes = {
-	  prefixCls: _react2['default'].PropTypes.string,
-	  style: _react2['default'].PropTypes.object,
-	  type: _react2['default'].PropTypes.string,
-	  className: _react2['default'].PropTypes.string,
-	  defaultChecked: _react2['default'].PropTypes.oneOfType([_react2['default'].PropTypes.number, _react2['default'].PropTypes.bool]),
-	  checked: _react2['default'].PropTypes.oneOfType([_react2['default'].PropTypes.number, _react2['default'].PropTypes.bool]),
-	  onChange: _react2['default'].PropTypes.func
+	  prefixCls: _react2["default"].PropTypes.string,
+	  style: _react2["default"].PropTypes.object,
+	  type: _react2["default"].PropTypes.string,
+	  className: _react2["default"].PropTypes.string,
+	  defaultChecked: _react2["default"].PropTypes.oneOfType([_react2["default"].PropTypes.number, _react2["default"].PropTypes.bool]),
+	  checked: _react2["default"].PropTypes.oneOfType([_react2["default"].PropTypes.number, _react2["default"].PropTypes.bool]),
+	  onChange: _react2["default"].PropTypes.func
 	};
 	
 	Checkbox.defaultProps = {
@@ -19853,8 +19888,8 @@ webpackJsonp([0,1],[
 /* 164 */
 /***/ function(module, exports, __webpack_require__) {
 
-	var __WEBPACK_AMD_DEFINE_RESULT__;/*!
-	  Copyright (c) 2015 Jed Watson.
+	var __WEBPACK_AMD_DEFINE_ARRAY__, __WEBPACK_AMD_DEFINE_RESULT__;/*!
+	  Copyright (c) 2016 Jed Watson.
 	  Licensed under the MIT License (MIT), see
 	  http://jedwatson.github.io/classnames
 	*/
@@ -19866,7 +19901,7 @@ webpackJsonp([0,1],[
 		var hasOwn = {}.hasOwnProperty;
 	
 		function classNames () {
-			var classes = '';
+			var classes = [];
 	
 			for (var i = 0; i < arguments.length; i++) {
 				var arg = arguments[i];
@@ -19875,28 +19910,28 @@ webpackJsonp([0,1],[
 				var argType = typeof arg;
 	
 				if (argType === 'string' || argType === 'number') {
-					classes += ' ' + arg;
+					classes.push(arg);
 				} else if (Array.isArray(arg)) {
-					classes += ' ' + classNames.apply(null, arg);
+					classes.push(classNames.apply(null, arg));
 				} else if (argType === 'object') {
 					for (var key in arg) {
 						if (hasOwn.call(arg, key) && arg[key]) {
-							classes += ' ' + key;
+							classes.push(key);
 						}
 					}
 				}
 			}
 	
-			return classes.substr(1);
+			return classes.join(' ');
 		}
 	
 		if (typeof module !== 'undefined' && module.exports) {
 			module.exports = classNames;
 		} else if (true) {
 			// register as 'classnames', consistent with npm package name
-			!(__WEBPACK_AMD_DEFINE_RESULT__ = function () {
+			!(__WEBPACK_AMD_DEFINE_ARRAY__ = [], __WEBPACK_AMD_DEFINE_RESULT__ = function () {
 				return classNames;
-			}.call(exports, __webpack_require__, exports, module), __WEBPACK_AMD_DEFINE_RESULT__ !== undefined && (module.exports = __WEBPACK_AMD_DEFINE_RESULT__));
+			}.apply(exports, __WEBPACK_AMD_DEFINE_ARRAY__), __WEBPACK_AMD_DEFINE_RESULT__ !== undefined && (module.exports = __WEBPACK_AMD_DEFINE_RESULT__));
 		} else {
 			window.classNames = classNames;
 		}
