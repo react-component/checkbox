@@ -46,7 +46,11 @@ export default class Checkbox extends React.Component {
   }
 
   render() {
-    const props = this.props;
+    const props = {...this.props};
+    // Remove React warning.
+    // Warning: Input elements must be either controlled or uncontrolled (specify either the value prop, or the defaultValue prop, but not both).
+    delete props.defaultChecked;
+
     const prefixCls = props.prefixCls;
     let checked = this.state.checked;
     if (typeof checked === 'boolean') {
@@ -67,9 +71,8 @@ export default class Checkbox extends React.Component {
           <span className={`${prefixCls}-inner`} />
           <input
             {...props}
-            defaultChecked={!!props.defaultChecked}
             className={`${prefixCls}-input`}
-            checked={!!checked}
+            checked={checked}
             onChange={this.handleChange}
           />
         </span>
