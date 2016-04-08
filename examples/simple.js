@@ -11,7 +11,7 @@ webpackJsonp([0,1],[
 
 	'use strict';
 	
-	__webpack_require__(!(function webpackMissingModule() { var e = new Error("Cannot find module \"rc-checkbox/assets/index.css\""); e.code = 'MODULE_NOT_FOUND'; throw e; }()));
+	__webpack_require__(2);
 	
 	var _react = __webpack_require__(3);
 	
@@ -59,6 +59,7 @@ webpackJsonp([0,1],[
 	            'label',
 	            null,
 	            _react2["default"].createElement(_rcCheckbox2["default"], {
+	              checked: true,
 	              onChange: onChange,
 	              disabled: this.state.disabled
 	            }),
@@ -73,6 +74,7 @@ webpackJsonp([0,1],[
 	            'label',
 	            null,
 	            _react2["default"].createElement('input', {
+	              checked: true,
 	              type: 'checkbox',
 	              onChange: onChange,
 	              disabled: this.state.disabled
@@ -92,7 +94,7 @@ webpackJsonp([0,1],[
 	            'label',
 	            null,
 	            _react2["default"].createElement(_rcCheckbox2["default"], {
-	              checked: true,
+	              defaultChecked: true,
 	              onChange: onChange,
 	              disabled: this.state.disabled
 	            }),
@@ -108,7 +110,7 @@ webpackJsonp([0,1],[
 	            null,
 	            _react2["default"].createElement('input', {
 	              type: 'checkbox',
-	              checked: true,
+	              defaultChecked: true,
 	              onChange: onChange,
 	              disabled: this.state.disabled
 	            }),
@@ -129,7 +131,12 @@ webpackJsonp([0,1],[
 	_reactDom2["default"].render(_react2["default"].createElement(Test, null), document.getElementById('__react-content'));
 
 /***/ },
-/* 2 */,
+/* 2 */
+/***/ function(module, exports) {
+
+	// removed by extract-text-webpack-plugin
+
+/***/ },
 /* 3 */
 /***/ function(module, exports, __webpack_require__) {
 
@@ -19834,7 +19841,12 @@ webpackJsonp([0,1],[
 	    value: function render() {
 	      var _classnames;
 	
-	      var props = this.props;
+	      var props = _extends({}, this.props);
+	      // Remove React warning.
+	      // Warning: Input elements must be either controlled or uncontrolled
+	      // (specify either the value prop, or the defaultValue prop, but not both).
+	      delete props.defaultChecked;
+	
 	      var prefixCls = props.prefixCls;
 	      var checked = this.state.checked;
 	      if (typeof checked === 'boolean') {
@@ -19849,7 +19861,6 @@ webpackJsonp([0,1],[
 	        },
 	        _react2["default"].createElement('span', { className: prefixCls + '-inner' }),
 	        _react2["default"].createElement('input', _extends({}, props, {
-	          defaultChecked: !!props.defaultChecked,
 	          className: prefixCls + '-input',
 	          checked: !!checked,
 	          onChange: this.handleChange
