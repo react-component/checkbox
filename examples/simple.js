@@ -1,6 +1,6 @@
 /* eslint no-console:0 */
 
-import 'rc-checkbox/assets/index.css';
+import 'rc-checkbox/assets/index.less';
 import React from 'react';
 import ReactDOM from 'react-dom';
 import Checkbox from 'rc-checkbox';
@@ -26,6 +26,7 @@ const Test = React.createClass({
         <p>
           <label>
             <Checkbox
+              checked
               onChange={onChange}
               disabled={this.state.disabled}
             />
@@ -39,6 +40,7 @@ const Test = React.createClass({
         <p>
           <label>
             <input
+              checked
               type="checkbox"
               onChange={onChange}
               disabled={this.state.disabled}
@@ -54,7 +56,7 @@ const Test = React.createClass({
         <p>
           <label>
             <Checkbox
-              checked
+              defaultChecked
               onChange={onChange}
               disabled={this.state.disabled}
             />
@@ -69,7 +71,7 @@ const Test = React.createClass({
           <label>
             <input
               type="checkbox"
-              checked
+              defaultChecked
               onChange={onChange}
               disabled={this.state.disabled}
             />
