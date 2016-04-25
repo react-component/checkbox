@@ -19771,9 +19771,9 @@ webpackJsonp([0,1],[
 	
 	var _react2 = _interopRequireDefault(_react);
 	
-	var _classnames2 = __webpack_require__(164);
+	var _classnames = __webpack_require__(164);
 	
-	var _classnames3 = _interopRequireDefault(_classnames2);
+	var _classnames2 = _interopRequireDefault(_classnames);
 	
 	function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { "default": obj }; }
 	
@@ -19793,7 +19793,8 @@ webpackJsonp([0,1],[
 	
 	    var _this = _possibleConstructorReturn(this, Object.getPrototypeOf(Checkbox).call(this, props));
 	
-	    _this.handleChange = _this.handleChange.bind(_this);
+	    _initialiseProps.call(_this);
+	
 	    var checked = false;
 	    if ('checked' in props) {
 	      checked = props.checked;
@@ -19801,7 +19802,8 @@ webpackJsonp([0,1],[
 	      checked = props.defaultChecked;
 	    }
 	    _this.state = {
-	      checked: checked
+	      checked: checked,
+	      focus: false
 	    };
 	    return _this;
 	  }
@@ -19816,30 +19818,9 @@ webpackJsonp([0,1],[
 	      }
 	    }
 	  }, {
-	    key: 'handleChange',
-	    value: function handleChange(e) {
-	      var checked = e.target.checked;
-	      if (!('checked' in this.props)) {
-	        this.setState({
-	          checked: checked ? 1 : 0
-	        });
-	      }
-	      this.props.onChange({
-	        target: _extends({}, this.props, {
-	          checked: checked
-	        }),
-	        stopPropagation: function stopPropagation() {
-	          e.stopPropagation();
-	        },
-	        preventDefault: function preventDefault() {
-	          e.preventDefault();
-	        }
-	      });
-	    }
-	  }, {
 	    key: 'render',
 	    value: function render() {
-	      var _classnames;
+	      var _classNames;
 	
 	      var props = _extends({}, this.props);
 	      // Remove React warning.
@@ -19847,12 +19828,13 @@ webpackJsonp([0,1],[
 	      // (specify either the value prop, or the defaultValue prop, but not both).
 	      delete props.defaultChecked;
 	
+	      var state = this.state;
 	      var prefixCls = props.prefixCls;
-	      var checked = this.state.checked;
+	      var checked = state.checked;
 	      if (typeof checked === 'boolean') {
 	        checked = checked ? 1 : 0;
 	      }
-	      var className = (0, _classnames3["default"])((_classnames = {}, _defineProperty(_classnames, props.className, !!props.className), _defineProperty(_classnames, prefixCls, 1), _defineProperty(_classnames, prefixCls + '-checked', checked), _defineProperty(_classnames, prefixCls + '-checked-' + checked, !!checked), _defineProperty(_classnames, prefixCls + '-disabled', props.disabled), _classnames));
+	      var className = (0, _classnames2["default"])((_classNames = {}, _defineProperty(_classNames, props.className, !!props.className), _defineProperty(_classNames, prefixCls, 1), _defineProperty(_classNames, prefixCls + '-checked', checked), _defineProperty(_classNames, prefixCls + '-checked-' + checked, !!checked), _defineProperty(_classNames, prefixCls + '-focused', state.focus), _defineProperty(_classNames, prefixCls + '-disabled', props.disabled), _classNames));
 	      return _react2["default"].createElement(
 	        'span',
 	        {
@@ -19863,6 +19845,8 @@ webpackJsonp([0,1],[
 	        _react2["default"].createElement('input', _extends({}, props, {
 	          className: prefixCls + '-input',
 	          checked: !!checked,
+	          onFocus: this.handleFocus,
+	          onBlur: this.handleBlur,
 	          onChange: this.handleChange
 	        }))
 	      );
@@ -19871,6 +19855,40 @@ webpackJsonp([0,1],[
 	
 	  return Checkbox;
 	}(_react2["default"].Component);
+	
+	var _initialiseProps = function _initialiseProps() {
+	  var _this2 = this;
+	
+	  this.handleFocus = function (e) {
+	    _this2.setState({ focus: true });
+	    _this2.props.onFocus(e);
+	  };
+	
+	  this.handleBlur = function (e) {
+	    _this2.setState({ focus: false });
+	    _this2.props.onBlur(e);
+	  };
+	
+	  this.handleChange = function (e) {
+	    var checked = e.target.checked;
+	    if (!('checked' in _this2.props)) {
+	      _this2.setState({
+	        checked: checked ? 1 : 0
+	      });
+	    }
+	    _this2.props.onChange({
+	      target: _extends({}, _this2.props, {
+	        checked: checked
+	      }),
+	      stopPropagation: function stopPropagation() {
+	        e.stopPropagation();
+	      },
+	      preventDefault: function preventDefault() {
+	        e.preventDefault();
+	      }
+	    });
+	  };
+	};
 	
 	exports["default"] = Checkbox;
 	
@@ -19882,6 +19900,8 @@ webpackJsonp([0,1],[
 	  className: _react2["default"].PropTypes.string,
 	  defaultChecked: _react2["default"].PropTypes.oneOfType([_react2["default"].PropTypes.number, _react2["default"].PropTypes.bool]),
 	  checked: _react2["default"].PropTypes.oneOfType([_react2["default"].PropTypes.number, _react2["default"].PropTypes.bool]),
+	  onFocus: _react2["default"].PropTypes.func,
+	  onBlur: _react2["default"].PropTypes.func,
 	  onChange: _react2["default"].PropTypes.func
 	};
 	
@@ -19891,6 +19911,8 @@ webpackJsonp([0,1],[
 	  type: 'checkbox',
 	  className: '',
 	  defaultChecked: false,
+	  onFocus: function onFocus() {},
+	  onBlur: function onBlur() {},
 	  onChange: function onChange() {}
 	};
 	module.exports = exports['default'];

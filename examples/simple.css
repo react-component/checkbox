@@ -8,7 +8,8 @@
   line-height: 1;
   vertical-align: middle;
 }
-.rc-checkbox:hover .rc-checkbox-inner {
+.rc-checkbox:hover .rc-checkbox-inner,
+.rc-checkbox-focused .rc-checkbox-inner {
   border-color: #bcbcbc;
 }
 .rc-checkbox-inner {
