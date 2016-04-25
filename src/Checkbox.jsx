@@ -1,10 +1,10 @@
 import React from 'react';
-import classnames from 'classnames';
+import classNames from 'classnames';
 
 export default class Checkbox extends React.Component {
   constructor(props) {
     super(props);
-    this.handleChange = this.handleChange.bind(this);
+
     let checked = false;
     if ('checked' in props) {
       checked = props.checked;
@@ -13,6 +13,7 @@ export default class Checkbox extends React.Component {
     }
     this.state = {
       checked,
+      focus: false,
     };
   }
 
@@ -24,7 +25,17 @@ export default class Checkbox extends React.Component {
     }
   }
 
-  handleChange(e) {
+  handleFocus = (e) => {
+    this.setState({ focus: true });
+    this.props.onFocus(e);
+  }
+
+  handleBlur = (e) => {
+    this.setState({ focus: false });
+    this.props.onBlur(e);
+  }
+
+  handleChange = (e) => {
     const checked = e.target.checked;
     if (!('checked' in this.props)) {
       this.setState({
@@ -52,16 +63,18 @@ export default class Checkbox extends React.Component {
     // (specify either the value prop, or the defaultValue prop, but not both).
     delete props.defaultChecked;
 
+    const state = this.state;
     const prefixCls = props.prefixCls;
-    let checked = this.state.checked;
+    let checked = state.checked;
     if (typeof checked === 'boolean') {
       checked = checked ? 1 : 0;
     }
-    const className = classnames({
+    const className = classNames({
       [props.className]: !!props.className,
       [prefixCls]: 1,
       [`${prefixCls}-checked`]: checked,
       [`${prefixCls}-checked-${checked}`]: !!checked,
+      [`${prefixCls}-focused`]: state.focus,
       [`${prefixCls}-disabled`]: props.disabled,
     });
     return (
@@ -74,6 +87,8 @@ export default class Checkbox extends React.Component {
             {...props}
             className={`${prefixCls}-input`}
             checked={!!checked}
+            onFocus={this.handleFocus}
+            onBlur={this.handleBlur}
             onChange={this.handleChange}
           />
         </span>
@@ -88,6 +103,8 @@ Checkbox.propTypes = {
   className: React.PropTypes.string,
   defaultChecked: React.PropTypes.oneOfType([React.PropTypes.number, React.PropTypes.bool]),
   checked: React.PropTypes.oneOfType([React.PropTypes.number, React.PropTypes.bool]),
+  onFocus: React.PropTypes.func,
+  onBlur: React.PropTypes.func,
   onChange: React.PropTypes.func,
 };
 
@@ -97,6 +114,7 @@ Checkbox.defaultProps = {
   type: 'checkbox',
   className: '',
   defaultChecked: false,
-  onChange: () => {
-  },
+  onFocus() {},
+  onBlur() {},
+  onChange() {},
 };
