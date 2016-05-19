@@ -19842,13 +19842,16 @@ webpackJsonp([0,1],[
 	          style: props.style
 	        },
 	        _react2["default"].createElement('span', { className: prefixCls + '-inner' }),
-	        _react2["default"].createElement('input', _extends({}, props, {
+	        _react2["default"].createElement('input', {
+	          type: props.type,
+	          readOnly: props.readOnly,
+	          disabled: props.disabled,
 	          className: prefixCls + '-input',
 	          checked: !!checked,
 	          onFocus: this.handleFocus,
 	          onBlur: this.handleBlur,
 	          onChange: this.handleChange
-	        }))
+	        })
 	      );
 	    }
 	  }]);
