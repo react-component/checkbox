@@ -19873,15 +19873,16 @@ webpackJsonp([0,1],[
 	  };
 	
 	  this.handleChange = function (e) {
-	    var checked = e.target.checked;
+	    var checked = _this2.state.checked;
+	
 	    if (!('checked' in _this2.props)) {
 	      _this2.setState({
-	        checked: checked ? 1 : 0
+	        checked: !checked
 	      });
 	    }
 	    _this2.props.onChange({
 	      target: _extends({}, _this2.props, {
-	        checked: checked
+	        checked: !checked
 	      }),
 	      stopPropagation: function stopPropagation() {
 	        e.stopPropagation();
