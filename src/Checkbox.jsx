@@ -28,24 +28,24 @@ export default class Checkbox extends React.Component {
   handleFocus = (e) => {
     this.setState({ focus: true });
     this.props.onFocus(e);
-  }
+  };
 
   handleBlur = (e) => {
     this.setState({ focus: false });
     this.props.onBlur(e);
-  }
+  };
 
   handleChange = (e) => {
-    const checked = e.target.checked;
+    const { checked } = this.state;
     if (!('checked' in this.props)) {
       this.setState({
-        checked: checked ? 1 : 0,
+        checked: !checked,
       });
     }
     this.props.onChange({
       target: {
         ...this.props,
-        checked,
+        checked: !checked,
       },
       stopPropagation() {
         e.stopPropagation();
@@ -54,7 +54,7 @@ export default class Checkbox extends React.Component {
         e.preventDefault();
       },
     });
-  }
+  };
 
   render() {
     const props = { ...this.props };
