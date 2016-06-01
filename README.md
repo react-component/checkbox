@@ -63,7 +63,7 @@ ReactDOM.render(<Checkbox />, container);
         </tr>
          <tr>
           <td>name</td>
-          <td></td>
+          <td>String</td>
           <td></td>
           <td>same with native input checkbox</td>
         </tr>

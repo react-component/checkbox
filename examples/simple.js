@@ -82,6 +82,39 @@ const Test = React.createClass({
         </p>
       </div>
 
+      <div>
+        <p>
+          <label>
+            <Checkbox
+              name="my-checkbox"
+              defaultChecked
+              onChange={onChange}
+              disabled={this.state.disabled}
+            />
+
+            &nbsp; rc-checkbox with name
+          </label>
+          &nbsp;&nbsp;
+
+        </p>
+
+        <p>
+          <label>
+            <input
+              name="my-checkbox"
+              type="checkbox"
+              defaultChecked
+              onChange={onChange}
+              disabled={this.state.disabled}
+            />
+
+            &nbsp; native with name
+          </label>
+          &nbsp;&nbsp;
+        </p>
+      </div>
+
+
       <button onClick={this.toggle}>toggle disabled</button>
 
     </div>);
