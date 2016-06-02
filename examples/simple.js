@@ -120,6 +120,43 @@ webpackJsonp([0,1],[
 	        )
 	      ),
 	      _react2["default"].createElement(
+	        'div',
+	        null,
+	        _react2["default"].createElement(
+	          'p',
+	          null,
+	          _react2["default"].createElement(
+	            'label',
+	            null,
+	            _react2["default"].createElement(_rcCheckbox2["default"], {
+	              name: 'my-checkbox',
+	              defaultChecked: true,
+	              onChange: onChange,
+	              disabled: this.state.disabled
+	            }),
+	            '  rc-checkbox with name'
+	          ),
+	          '  '
+	        ),
+	        _react2["default"].createElement(
+	          'p',
+	          null,
+	          _react2["default"].createElement(
+	            'label',
+	            null,
+	            _react2["default"].createElement('input', {
+	              name: 'my-checkbox',
+	              type: 'checkbox',
+	              defaultChecked: true,
+	              onChange: onChange,
+	              disabled: this.state.disabled
+	            }),
+	            '  native with name'
+	          ),
+	          '  '
+	        )
+	      ),
+	      _react2["default"].createElement(
 	        'button',
 	        { onClick: this.toggle },
 	        'toggle disabled'
@@ -19843,6 +19880,7 @@ webpackJsonp([0,1],[
 	        },
 	        _react2["default"].createElement('span', { className: prefixCls + '-inner' }),
 	        _react2["default"].createElement('input', {
+	          name: props.name,
 	          type: props.type,
 	          readOnly: props.readOnly,
 	          disabled: props.disabled,
@@ -19898,6 +19936,7 @@ webpackJsonp([0,1],[
 	
 	
 	Checkbox.propTypes = {
+	  name: _react2["default"].PropTypes.string,
 	  prefixCls: _react2["default"].PropTypes.string,
 	  style: _react2["default"].PropTypes.object,
 	  type: _react2["default"].PropTypes.string,
