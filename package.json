@@ -49,6 +49,7 @@
     "lint"
   ],
   "dependencies": {
+    "react-addons-pure-render-mixin": "~15.1.0",
     "classnames": "2.x"
   }
 }

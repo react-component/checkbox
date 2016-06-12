@@ -1,4 +1,5 @@
 import React from 'react';
+import PureRenderMixin from 'react-addons-pure-render-mixin';
 import classNames from 'classnames';
 
 export default class Checkbox extends React.Component {
@@ -23,6 +24,10 @@ export default class Checkbox extends React.Component {
         checked: nextProps.checked,
       });
     }
+  }
+
+  shouldComponentUpdate(...args) {
+    return PureRenderMixin.shouldComponentUpdate.apply(this, args);
   }
 
   handleFocus = (e) => {
