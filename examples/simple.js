@@ -31,7 +31,7 @@ const Test = React.createClass({
               disabled={this.state.disabled}
             />
 
-            &nbsp; rc-checkbox
+            &nbsp; controlled checked rc-checkbox
           </label>
           &nbsp;&nbsp;
 
@@ -46,7 +46,7 @@ const Test = React.createClass({
               disabled={this.state.disabled}
             />
 
-            &nbsp; native
+            &nbsp; controlled checked native
           </label>
           &nbsp;&nbsp;
         </p>
@@ -61,7 +61,7 @@ const Test = React.createClass({
               disabled={this.state.disabled}
             />
 
-            &nbsp; rc-checkbox
+            &nbsp; defaultChecked rc-checkbox
           </label>
           &nbsp;&nbsp;
 
@@ -76,7 +76,7 @@ const Test = React.createClass({
               disabled={this.state.disabled}
             />
 
-            &nbsp; native
+            &nbsp; defaultChecked native
           </label>
           &nbsp;&nbsp;
         </p>
@@ -92,7 +92,7 @@ const Test = React.createClass({
               disabled={this.state.disabled}
             />
 
-            &nbsp; rc-checkbox with name
+            &nbsp; defaultChecked rc-checkbox with name
           </label>
           &nbsp;&nbsp;
 
@@ -108,7 +108,7 @@ const Test = React.createClass({
               disabled={this.state.disabled}
             />
 
-            &nbsp; native with name
+            &nbsp; defaultChecked native with name
           </label>
           &nbsp;&nbsp;
         </p>
