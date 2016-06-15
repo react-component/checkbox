@@ -1,6 +1,6 @@
 import React from 'react';
-import PureRenderMixin from 'react-addons-pure-render-mixin';
 import classNames from 'classnames';
+import { PureRenderMixin } from 'rc-util';
 
 export default class Checkbox extends React.Component {
   constructor(props) {
