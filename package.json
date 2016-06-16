@@ -49,7 +49,7 @@
     "lint"
   ],
   "dependencies": {
-    "rc-util": "3.x",
+    "react-addons-pure-render-mixin": "15.x",
     "classnames": "2.x"
   }
 }
