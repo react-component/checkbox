@@ -3,9 +3,30 @@ import PureRenderMixin from 'react-addons-pure-render-mixin';
 import classNames from 'classnames';
 
 export default class Checkbox extends React.Component {
+  static propTypes = {
+    name: React.PropTypes.string,
+    prefixCls: React.PropTypes.string,
+    style: React.PropTypes.object,
+    type: React.PropTypes.string,
+    className: React.PropTypes.string,
+    defaultChecked: React.PropTypes.oneOfType([React.PropTypes.number, React.PropTypes.bool]),
+    checked: React.PropTypes.oneOfType([React.PropTypes.number, React.PropTypes.bool]),
+    onFocus: React.PropTypes.func,
+    onBlur: React.PropTypes.func,
+    onChange: React.PropTypes.func,
+  };
+  static defaultProps = {
+    prefixCls: 'rc-checkbox',
+    style: {},
+    type: 'checkbox',
+    className: '',
+    defaultChecked: false,
+    onFocus() {},
+    onBlur() {},
+    onChange() {},
+  };
   constructor(props) {
     super(props);
-
     let checked = false;
     if ('checked' in props) {
       checked = props.checked;
@@ -103,27 +124,3 @@ export default class Checkbox extends React.Component {
     );
   }
 }
-
-Checkbox.propTypes = {
-  name: React.PropTypes.string,
-  prefixCls: React.PropTypes.string,
-  style: React.PropTypes.object,
-  type: React.PropTypes.string,
-  className: React.PropTypes.string,
-  defaultChecked: React.PropTypes.oneOfType([React.PropTypes.number, React.PropTypes.bool]),
-  checked: React.PropTypes.oneOfType([React.PropTypes.number, React.PropTypes.bool]),
-  onFocus: React.PropTypes.func,
-  onBlur: React.PropTypes.func,
-  onChange: React.PropTypes.func,
-};
-
-Checkbox.defaultProps = {
-  prefixCls: 'rc-checkbox',
-  style: {},
-  type: 'checkbox',
-  className: '',
-  defaultChecked: false,
-  onFocus() {},
-  onBlur() {},
-  onChange() {},
-};
