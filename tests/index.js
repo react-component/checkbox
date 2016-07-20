@@ -13,7 +13,7 @@ describe('rc-switch', () => {
   document.body.appendChild(container);
 
   beforeEach((done) => {
-    ReactDOM.render(<Checkbox/>, container, function init() {
+    ReactDOM.render(<Checkbox />, container, function init() {
       inst = this;
       done();
     });
@@ -25,6 +25,19 @@ describe('rc-switch', () => {
 
   it('works', () => {
     expect(!!inst.state.checked).to.be(false);
+    TestUtils.scryRenderedDOMComponentsWithTag(inst, 'input')[0].click();
+    expect(!!inst.state.checked).to.be(true);
+    TestUtils.scryRenderedDOMComponentsWithTag(inst, 'input')[0].click();
+    expect(!!inst.state.checked).to.be(false);
+  });
+
+  it('click radio', () => {
+    ReactDOM.render(<Checkbox type="radio" />, container, function init() {
+      inst = this;
+    });
+    expect(!!inst.state.checked).to.be(false);
+    TestUtils.scryRenderedDOMComponentsWithTag(inst, 'input')[0].click();
+    expect(!!inst.state.checked).to.be(true);
     TestUtils.scryRenderedDOMComponentsWithTag(inst, 'input')[0].click();
     expect(!!inst.state.checked).to.be(true);
   });
