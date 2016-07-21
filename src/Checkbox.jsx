@@ -62,16 +62,15 @@ export default class Checkbox extends React.Component {
   };
 
   handleChange = (e) => {
-    const { checked } = this.state;
     if (!('checked' in this.props)) {
       this.setState({
-        checked: !checked,
+        checked: e.target.checked,
       });
     }
     this.props.onChange({
       target: {
         ...this.props,
-        checked: !checked,
+        checked: e.target.checked,
       },
       stopPropagation() {
         e.stopPropagation();
