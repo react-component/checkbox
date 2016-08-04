@@ -14,6 +14,7 @@ export default class Checkbox extends React.Component {
     onFocus: React.PropTypes.func,
     onBlur: React.PropTypes.func,
     onChange: React.PropTypes.func,
+    onClick: React.PropTypes.func,
   };
   static defaultProps = {
     prefixCls: 'rc-checkbox',
@@ -115,6 +116,7 @@ export default class Checkbox extends React.Component {
             disabled={props.disabled}
             className={`${prefixCls}-input`}
             checked={!!checked}
+            onClick={this.props.onClick}
             onFocus={this.handleFocus}
             onBlur={this.handleBlur}
             onChange={this.handleChange}
