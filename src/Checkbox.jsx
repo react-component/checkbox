@@ -114,6 +114,7 @@ export default class Checkbox extends React.Component {
             type={props.type}
             readOnly={props.readOnly}
             disabled={props.disabled}
+            tabIndex={props.tabIndex}
             className={`${prefixCls}-input`}
             checked={!!checked}
             onClick={this.props.onClick}
