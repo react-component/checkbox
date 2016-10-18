@@ -29,7 +29,7 @@ export default class Checkbox extends React.Component {
   constructor(props) {
     super(props);
     let checked = false;
-    if ('checked' in props) {
+    if (props.checked !== null && props.checked !== undefined) {
       checked = props.checked;
     } else {
       checked = props.defaultChecked;
