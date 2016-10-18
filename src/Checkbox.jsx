@@ -41,7 +41,7 @@ export default class Checkbox extends React.Component {
   }
 
   componentWillReceiveProps(nextProps) {
-    if ('checked' in nextProps) {
+    if (nextProps.checked !== null && nextProps.checked !== undefined) {
       this.setState({
         checked: nextProps.checked,
       });
