@@ -29,7 +29,7 @@ export default class Checkbox extends React.Component {
   constructor(props) {
     super(props);
     let checked = false;
-    if ('checked' in props) {
+    if (props.checked !== null && props.checked !== undefined) {
       checked = props.checked;
     } else {
       checked = props.defaultChecked;
@@ -41,7 +41,7 @@ export default class Checkbox extends React.Component {
   }
 
   componentWillReceiveProps(nextProps) {
-    if ('checked' in nextProps) {
+    if (nextProps.checked !== null && nextProps.checked !== undefined) {
       this.setState({
         checked: nextProps.checked,
       });
@@ -63,7 +63,7 @@ export default class Checkbox extends React.Component {
   };
 
   handleChange = (e) => {
-    if (!('checked' in this.props)) {
+    if (this.props.checked === null || this.props.checked === undefined) {
       this.setState({
         checked: e.target.checked,
       });
