@@ -10,6 +10,7 @@ export default class Checkbox extends React.Component {
     type: React.PropTypes.string,
     className: React.PropTypes.string,
     defaultChecked: React.PropTypes.oneOfType([React.PropTypes.number, React.PropTypes.bool]),
+    disabled: React.PropTypes.bool,
     checked: React.PropTypes.oneOfType([React.PropTypes.number, React.PropTypes.bool]),
     onFocus: React.PropTypes.func,
     onBlur: React.PropTypes.func,
@@ -63,6 +64,9 @@ export default class Checkbox extends React.Component {
   };
 
   handleChange = (e) => {
+    if ('disabled' in this.props && this.props.disabled) {
+      return;
+    }
     if (!('checked' in this.props)) {
       this.setState({
         checked: e.target.checked,
