@@ -7,7 +7,7 @@ const React = require('react');
 const ReactDOM = require('react-dom');
 const TestUtils = require('react-addons-test-utils');
 
-describe('rc-switch', () => {
+describe('rc-checkbox', () => {
   let inst;
   const container = document.createElement('div');
   document.body.appendChild(container);
