@@ -29,12 +29,9 @@ export default class Checkbox extends React.Component {
   };
   constructor(props) {
     super(props);
-    let checked = false;
-    if ('checked' in props) {
-      checked = props.checked;
-    } else {
-      checked = props.defaultChecked;
-    }
+
+    const checked = 'checked' in props ? props.checked : props.defaultChecked;
+
     this.state = {
       checked,
       focus: false,
@@ -95,24 +92,18 @@ export default class Checkbox extends React.Component {
 
     const state = this.state;
     const prefixCls = props.prefixCls;
-    let checked = state.checked;
-    if (typeof checked === 'boolean') {
-      checked = checked ? 1 : 0;
-    }
-    const className = classNames({
-      [props.className]: !!props.className,
-      [prefixCls]: 1,
+    const checked = state.checked;
+
+    const className = classNames([prefixCls], {
+      [props.className]: props.className,
       [`${prefixCls}-checked`]: checked,
-      [`${prefixCls}-checked-${checked}`]: !!checked,
       [`${prefixCls}-focused`]: state.focus,
       [`${prefixCls}-disabled`]: props.disabled,
     });
     return (
-      <span
-        className={className}
-        style={props.style}
-      >
+      <span className={className} style={props.style}>
           <span className={`${prefixCls}-inner`} />
+
           <input
             name={props.name}
             type={props.type}
@@ -126,7 +117,7 @@ export default class Checkbox extends React.Component {
             onBlur={this.handleBlur}
             onChange={this.handleChange}
           />
-        </span>
+      </span>
     );
   }
 }
