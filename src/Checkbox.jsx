@@ -34,7 +34,7 @@ export default class Checkbox extends React.Component {
 
     this.state = {
       checked,
-      focus: false
+      focus: false,
     };
   }
 
@@ -92,7 +92,7 @@ export default class Checkbox extends React.Component {
 
     const state = this.state;
     const prefixCls = props.prefixCls;
-    let checked = state.checked;
+    const checked = state.checked;
 
     const className = classNames([prefixCls], {
       [props.className]: props.className,
