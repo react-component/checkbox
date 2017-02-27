@@ -94,29 +94,27 @@ export default class Checkbox extends React.Component {
     const prefixCls = props.prefixCls;
     const checked = state.checked;
 
-    const className = classNames([prefixCls], {
-      [props.className]: props.className,
+    const className = classNames(prefixCls, props.className, {
       [`${prefixCls}-checked`]: checked,
       [`${prefixCls}-focused`]: state.focus,
       [`${prefixCls}-disabled`]: props.disabled,
     });
     return (
       <span className={className} style={props.style}>
-          <span className={`${prefixCls}-inner`} />
-
-          <input
-            name={props.name}
-            type={props.type}
-            readOnly={props.readOnly}
-            disabled={props.disabled}
-            tabIndex={props.tabIndex}
-            className={`${prefixCls}-input`}
-            checked={!!checked}
-            onClick={this.props.onClick}
-            onFocus={this.handleFocus}
-            onBlur={this.handleBlur}
-            onChange={this.handleChange}
-          />
+        <span className={`${prefixCls}-inner`} />
+        <input
+          name={props.name}
+          type={props.type}
+          readOnly={props.readOnly}
+          disabled={props.disabled}
+          tabIndex={props.tabIndex}
+          className={`${prefixCls}-input`}
+          checked={!!checked}
+          onClick={this.props.onClick}
+          onFocus={this.handleFocus}
+          onBlur={this.handleBlur}
+          onChange={this.handleChange}
+        />
       </span>
     );
   }
