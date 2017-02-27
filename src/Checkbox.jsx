@@ -16,6 +16,8 @@ export default class Checkbox extends React.Component {
     onBlur: React.PropTypes.func,
     onChange: React.PropTypes.func,
     onClick: React.PropTypes.func,
+    tabIndex: React.PropTypes.string,
+    readOnly: React.PropTypes.bool,
   };
   static defaultProps = {
     prefixCls: 'rc-checkbox',
@@ -84,33 +86,28 @@ export default class Checkbox extends React.Component {
   };
 
   render() {
-    const props = { ...this.props };
-    // Remove React warning.
-    // Warning: Input elements must be either controlled or uncontrolled
-    // (specify either the value prop, or the defaultValue prop, but not both).
-    delete props.defaultChecked;
-
-    const state = this.state;
-    const prefixCls = props.prefixCls;
-    const checked = state.checked;
-
-    const className = classNames(prefixCls, props.className, {
+    const {
+      prefixCls, className, disabled, style, name, type, readOnly, tabIndex, onClick,
+    } = this.props;
+    const { checked, focus } = this.state;
+    const classString = classNames(prefixCls, className, {
       [`${prefixCls}-checked`]: checked,
-      [`${prefixCls}-focused`]: state.focus,
-      [`${prefixCls}-disabled`]: props.disabled,
+      [`${prefixCls}-focused`]: focus,
+      [`${prefixCls}-disabled`]: disabled,
     });
+
     return (
-      <span className={className} style={props.style}>
+      <span className={classString} style={style}>
         <span className={`${prefixCls}-inner`} />
         <input
-          name={props.name}
-          type={props.type}
-          readOnly={props.readOnly}
-          disabled={props.disabled}
-          tabIndex={props.tabIndex}
+          name={name}
+          type={type}
+          readOnly={readOnly}
+          disabled={disabled}
+          tabIndex={tabIndex}
           className={`${prefixCls}-input`}
           checked={!!checked}
-          onClick={this.props.onClick}
+          onClick={onClick}
           onFocus={this.handleFocus}
           onBlur={this.handleBlur}
           onChange={this.handleChange}
