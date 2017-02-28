@@ -9,8 +9,8 @@
   vertical-align: middle;
 }
 .rc-checkbox:hover .rc-checkbox-inner,
-.rc-checkbox-focused .rc-checkbox-inner {
-  border-color: #bcbcbc;
+.rc-checkbox-input:focus + .rc-checkbox-inner {
+  border-color: #3dbcf6;
 }
 .rc-checkbox-inner {
   position: relative;
