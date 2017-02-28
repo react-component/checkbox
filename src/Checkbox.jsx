@@ -1,29 +1,29 @@
-import React from 'react';
+import React, { PropTypes } from 'react';
 import PureRenderMixin from 'rc-util/lib/PureRenderMixin';
 import classNames from 'classnames';
 
 export default class Checkbox extends React.Component {
   static propTypes = {
-    name: React.PropTypes.string,
-    prefixCls: React.PropTypes.string,
-    style: React.PropTypes.object,
-    type: React.PropTypes.string,
-    className: React.PropTypes.string,
-    defaultChecked: React.PropTypes.oneOfType([React.PropTypes.number, React.PropTypes.bool]),
-    disabled: React.PropTypes.bool,
-    checked: React.PropTypes.oneOfType([React.PropTypes.number, React.PropTypes.bool]),
-    onFocus: React.PropTypes.func,
-    onBlur: React.PropTypes.func,
-    onChange: React.PropTypes.func,
-    onClick: React.PropTypes.func,
-    tabIndex: React.PropTypes.string,
-    readOnly: React.PropTypes.bool,
+    prefixCls: PropTypes.string,
+    className: PropTypes.string,
+    style: PropTypes.object,
+    name: PropTypes.string,
+    type: PropTypes.string,
+    defaultChecked: PropTypes.oneOfType([PropTypes.number, PropTypes.bool]),
+    checked: PropTypes.oneOfType([PropTypes.number, PropTypes.bool]),
+    disabled: PropTypes.bool,
+    onFocus: PropTypes.func,
+    onBlur: PropTypes.func,
+    onChange: PropTypes.func,
+    onClick: PropTypes.func,
+    tabIndex: PropTypes.string,
+    readOnly: PropTypes.bool,
   };
   static defaultProps = {
     prefixCls: 'rc-checkbox',
+    className: '',
     style: {},
     type: 'checkbox',
-    className: '',
     defaultChecked: false,
     onFocus() {},
     onBlur() {},
@@ -36,7 +36,6 @@ export default class Checkbox extends React.Component {
 
     this.state = {
       checked,
-      focus: false,
     };
   }
 
@@ -52,28 +51,19 @@ export default class Checkbox extends React.Component {
     return PureRenderMixin.shouldComponentUpdate.apply(this, args);
   }
 
-  handleFocus = (e) => {
-    this.setState({ focus: true });
-    this.props.onFocus(e);
-  };
-
-  handleBlur = (e) => {
-    this.setState({ focus: false });
-    this.props.onBlur(e);
-  };
-
   handleChange = (e) => {
-    if (this.props.disabled) {
+    const { props } = this;
+    if (props.disabled) {
       return;
     }
-    if (!('checked' in this.props)) {
+    if (!('checked' in props)) {
       this.setState({
         checked: e.target.checked,
       });
     }
-    this.props.onChange({
+    props.onChange({
       target: {
-        ...this.props,
+        ...props,
         checked: e.target.checked,
       },
       stopPropagation() {
@@ -87,18 +77,26 @@ export default class Checkbox extends React.Component {
 
   render() {
     const {
-      prefixCls, className, disabled, style, name, type, readOnly, tabIndex, onClick,
+      prefixCls,
+      className,
+      style,
+      name,
+      type,
+      disabled,
+      readOnly,
+      tabIndex,
+      onClick,
+      onFocus,
+      onBlur,
     } = this.props;
-    const { checked, focus } = this.state;
+    const { checked } = this.state;
     const classString = classNames(prefixCls, className, {
       [`${prefixCls}-checked`]: checked,
-      [`${prefixCls}-focused`]: focus,
       [`${prefixCls}-disabled`]: disabled,
     });
 
     return (
       <span className={classString} style={style}>
-        <span className={`${prefixCls}-inner`} />
         <input
           name={name}
           type={type}
@@ -108,10 +106,11 @@ export default class Checkbox extends React.Component {
           className={`${prefixCls}-input`}
           checked={!!checked}
           onClick={onClick}
-          onFocus={this.handleFocus}
-          onBlur={this.handleBlur}
+          onFocus={onFocus}
+          onBlur={onBlur}
           onChange={this.handleChange}
         />
+        <span className={`${prefixCls}-inner`} />
       </span>
     );
   }
