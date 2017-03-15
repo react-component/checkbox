@@ -88,7 +88,16 @@ export default class Checkbox extends React.Component {
       onClick,
       onFocus,
       onBlur,
+      ...others,
     } = this.props;
+
+    const globalProps = Object.keys(others).reduce((prev, key) => {
+      if (key.substr(0, 5) === 'aria-' || key.substr(0, 5) === 'data-' || key === 'role') {
+        prev[key] = others[key];
+      }
+      return prev;
+    }, {});
+
     const { checked } = this.state;
     const classString = classNames(prefixCls, className, {
       [`${prefixCls}-checked`]: checked,
@@ -109,6 +118,7 @@ export default class Checkbox extends React.Component {
           onFocus={onFocus}
           onBlur={onBlur}
           onChange={this.handleChange}
+          {...globalProps}
         />
         <span className={`${prefixCls}-inner`} />
       </span>

@@ -41,4 +41,28 @@ describe('rc-checkbox', () => {
     TestUtils.scryRenderedDOMComponentsWithTag(inst, 'input')[0].click();
     expect(!!inst.state.checked).to.be(true);
   });
+
+  it('passes data-* props to input', () => {
+    ReactDOM.render(<Checkbox data-type="my-data-type" />, container, function init() {
+      inst = this;
+    });
+    const renderedInput = TestUtils.scryRenderedDOMComponentsWithTag(inst, 'input')[0];
+    expect(renderedInput.attributes['data-type'].value).to.equal('my-data-type');
+  });
+
+  it('passes aria-* props to input', () => {
+    ReactDOM.render(<Checkbox aria-label="my-aria-label" />, container, function init() {
+      inst = this;
+    });
+    const renderedInput = TestUtils.scryRenderedDOMComponentsWithTag(inst, 'input')[0];
+    expect(renderedInput.attributes['aria-label'].value).to.equal('my-aria-label');
+  });
+
+  it('passes role prop to input', () => {
+    ReactDOM.render(<Checkbox role="my-role" />, container, function init() {
+      inst = this;
+    });
+    const renderedInput = TestUtils.scryRenderedDOMComponentsWithTag(inst, 'input')[0];
+    expect(renderedInput.attributes.role.value).to.equal('my-role');
+  });
 });
