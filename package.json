@@ -50,6 +50,7 @@
   ],
   "dependencies": {
     "classnames": "2.x",
+    "prop-types": "15.x",
     "rc-util": "^4.0.1"
   }
 }
