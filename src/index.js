@@ -1,1 +1,1 @@
-module.exports = require('./Checkbox');
+export { default } from './Checkbox';
