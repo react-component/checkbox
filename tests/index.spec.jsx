@@ -1,0 +1,43 @@
+import 'core-js/es6/map';
+import 'core-js/es6/set';
+import React from 'react';
+import { mount } from 'enzyme';
+import Checkbox from '../';
+
+describe('rc-checkbox', () => {
+  it('works', () => {
+    const wrapper = mount(<Checkbox />);
+    expect(wrapper.state('checked')).toBe(false);
+    wrapper.find('input').simulate('change', { target: { checked: true } });
+    expect(wrapper.state('checked')).toBe(true);
+    wrapper.find('input').simulate('change', { target: { checked: false } });
+    expect(wrapper.state('checked')).toBe(false);
+  });
+
+  it('click radio', () => {
+    const wrapper = mount(<Checkbox type="radio" />);
+    expect(wrapper.state('checked')).toBe(false);
+    wrapper.find('input').simulate('change', { target: { checked: true } });
+    expect(wrapper.state('checked')).toBe(true);
+    wrapper.find('input').simulate('change', { target: { checked: true } });
+    expect(wrapper.state('checked')).toBe(true);
+  });
+
+  it('passes data-* props to input', () => {
+    const wrapper = mount(<Checkbox data-type="my-data-type" />);
+    const renderedInput = wrapper.find('input').instance();
+    expect(renderedInput.attributes['data-type'].value).toEqual('my-data-type');
+  });
+
+  it('passes aria-* props to input', () => {
+    const wrapper = mount(<Checkbox aria-label="my-aria-label" />);
+    const renderedInput = wrapper.find('input').instance();
+    expect(renderedInput.attributes['aria-label'].value).toEqual('my-aria-label');
+  });
+
+  it('passes role prop to input', () => {
+    const wrapper = mount(<Checkbox role="my-role" />);
+    const renderedInput = wrapper.find('input').instance();
+    expect(renderedInput.attributes.role.value).toEqual('my-role');
+  });
+});
