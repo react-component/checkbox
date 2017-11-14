@@ -19,6 +19,7 @@ export default class Checkbox extends React.Component {
     onClick: PropTypes.func,
     tabIndex: PropTypes.string,
     readOnly: PropTypes.bool,
+    autoFocus: PropTypes.bool,
   };
   static defaultProps = {
     prefixCls: 'rc-checkbox',
@@ -52,6 +53,14 @@ export default class Checkbox extends React.Component {
     return PureRenderMixin.shouldComponentUpdate.apply(this, args);
   }
 
+  focus() {
+    this.input.focus();
+  }
+
+  blur() {
+    this.input.blur();
+  }
+
   handleChange = (e) => {
     const { props } = this;
     if (props.disabled) {
@@ -76,6 +85,10 @@ export default class Checkbox extends React.Component {
     });
   };
 
+  saveInput = (node) => {
+    this.input = node;
+  }
+
   render() {
     const {
       prefixCls,
@@ -89,6 +102,7 @@ export default class Checkbox extends React.Component {
       onClick,
       onFocus,
       onBlur,
+      autoFocus,
       ...others,
     } = this.props;
 
@@ -119,6 +133,8 @@ export default class Checkbox extends React.Component {
           onFocus={onFocus}
           onBlur={onBlur}
           onChange={this.handleChange}
+          autoFocus={autoFocus}
+          ref={this.saveInput}
           {...globalProps}
         />
         <span className={`${prefixCls}-inner`} />
