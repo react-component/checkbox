@@ -20,6 +20,7 @@ export default class Checkbox extends React.Component {
     tabIndex: PropTypes.string,
     readOnly: PropTypes.bool,
     autoFocus: PropTypes.bool,
+    value: PropTypes.string,
   };
   static defaultProps = {
     prefixCls: 'rc-checkbox',
@@ -103,6 +104,7 @@ export default class Checkbox extends React.Component {
       onFocus,
       onBlur,
       autoFocus,
+      value,
       ...others,
     } = this.props;
 
@@ -135,6 +137,7 @@ export default class Checkbox extends React.Component {
           onChange={this.handleChange}
           autoFocus={autoFocus}
           ref={this.saveInput}
+          value={value}
           {...globalProps}
         />
         <span className={`${prefixCls}-inner`} />
