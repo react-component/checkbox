@@ -41,6 +41,12 @@ describe('rc-checkbox', () => {
     expect(renderedInput.attributes.role.value).toEqual('my-role');
   });
 
+  it('passes value prop to input', () => {
+    const wrapper = mount(<Checkbox value="my-custom-value" />);
+    const renderedInput = wrapper.find('input').instance();
+    expect(renderedInput.attributes.value.value).toEqual('my-custom-value');
+  });
+
   it('focus()', () => {
     const container = document.createElement('div');
     document.body.appendChild(container);
