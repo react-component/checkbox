@@ -9,6 +9,7 @@ export default class Checkbox extends React.Component {
     className: PropTypes.string,
     style: PropTypes.object,
     name: PropTypes.string,
+    id: PropTypes.string,
     type: PropTypes.string,
     defaultChecked: PropTypes.oneOfType([PropTypes.number, PropTypes.bool]),
     checked: PropTypes.oneOfType([PropTypes.number, PropTypes.bool]),
@@ -96,6 +97,7 @@ export default class Checkbox extends React.Component {
       className,
       style,
       name,
+      id,
       type,
       disabled,
       readOnly,
@@ -125,6 +127,7 @@ export default class Checkbox extends React.Component {
       <span className={classString} style={style}>
         <input
           name={name}
+          id={id}
           type={type}
           readOnly={readOnly}
           disabled={disabled}
