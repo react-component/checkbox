@@ -20032,7 +20032,7 @@ Checkbox.propTypes = {
   tabIndex: __WEBPACK_IMPORTED_MODULE_6_prop_types___default.a.string,
   readOnly: __WEBPACK_IMPORTED_MODULE_6_prop_types___default.a.bool,
   autoFocus: __WEBPACK_IMPORTED_MODULE_6_prop_types___default.a.bool,
-  value: __WEBPACK_IMPORTED_MODULE_6_prop_types___default.a.oneOfType([__WEBPACK_IMPORTED_MODULE_6_prop_types___default.a.string, __WEBPACK_IMPORTED_MODULE_6_prop_types___default.a.number])
+  value: __WEBPACK_IMPORTED_MODULE_6_prop_types___default.a.any
 };
 Checkbox.defaultProps = {
   prefixCls: 'rc-checkbox',
