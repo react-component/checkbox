@@ -83,6 +83,7 @@ export default class Checkbox extends React.Component {
       preventDefault() {
         e.preventDefault();
       },
+      nativeEvent: e.nativeEvent,
     });
   };
 
