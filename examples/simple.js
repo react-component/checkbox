@@ -19968,6 +19968,7 @@ var Checkbox = function (_React$Component) {
         className = _props.className,
         style = _props.style,
         name = _props.name,
+        id = _props.id,
         type = _props.type,
         disabled = _props.disabled,
         readOnly = _props.readOnly,
@@ -19977,7 +19978,7 @@ var Checkbox = function (_React$Component) {
         onBlur = _props.onBlur,
         autoFocus = _props.autoFocus,
         value = _props.value,
-        others = __WEBPACK_IMPORTED_MODULE_1_babel_runtime_helpers_objectWithoutProperties___default()(_props, ['prefixCls', 'className', 'style', 'name', 'type', 'disabled', 'readOnly', 'tabIndex', 'onClick', 'onFocus', 'onBlur', 'autoFocus', 'value']);
+        others = __WEBPACK_IMPORTED_MODULE_1_babel_runtime_helpers_objectWithoutProperties___default()(_props, ['prefixCls', 'className', 'style', 'name', 'id', 'type', 'disabled', 'readOnly', 'tabIndex', 'onClick', 'onFocus', 'onBlur', 'autoFocus', 'value']);
 
     var globalProps = Object.keys(others).reduce(function (prev, key) {
       if (key.substr(0, 5) === 'aria-' || key.substr(0, 5) === 'data-' || key === 'role') {
@@ -19995,6 +19996,7 @@ var Checkbox = function (_React$Component) {
       { className: classString, style: style },
       __WEBPACK_IMPORTED_MODULE_5_react___default.a.createElement('input', __WEBPACK_IMPORTED_MODULE_0_babel_runtime_helpers_extends___default()({
         name: name,
+        id: id,
         type: type,
         readOnly: readOnly,
         disabled: disabled,
@@ -20021,6 +20023,7 @@ Checkbox.propTypes = {
   className: __WEBPACK_IMPORTED_MODULE_6_prop_types___default.a.string,
   style: __WEBPACK_IMPORTED_MODULE_6_prop_types___default.a.object,
   name: __WEBPACK_IMPORTED_MODULE_6_prop_types___default.a.string,
+  id: __WEBPACK_IMPORTED_MODULE_6_prop_types___default.a.string,
   type: __WEBPACK_IMPORTED_MODULE_6_prop_types___default.a.string,
   defaultChecked: __WEBPACK_IMPORTED_MODULE_6_prop_types___default.a.oneOfType([__WEBPACK_IMPORTED_MODULE_6_prop_types___default.a.number, __WEBPACK_IMPORTED_MODULE_6_prop_types___default.a.bool]),
   checked: __WEBPACK_IMPORTED_MODULE_6_prop_types___default.a.oneOfType([__WEBPACK_IMPORTED_MODULE_6_prop_types___default.a.number, __WEBPACK_IMPORTED_MODULE_6_prop_types___default.a.bool]),
@@ -20068,7 +20071,9 @@ var _initialiseProps = function _initialiseProps() {
       },
       preventDefault: function preventDefault() {
         e.preventDefault();
-      }
+      },
+
+      nativeEvent: e.nativeEvent
     });
   };
 

@@ -39,12 +39,9 @@
   border-top: 0;
   border-left: 0;
   content: ' ';
-  -webkit-animation-timing-function: cubic-bezier(0.68, -0.55, 0.27, 1.55);
-          animation-timing-function: cubic-bezier(0.68, -0.55, 0.27, 1.55);
-  -webkit-animation-duration: 0.3s;
-          animation-duration: 0.3s;
-  -webkit-animation-name: amCheckboxOut;
-          animation-name: amCheckboxOut;
+  animation-timing-function: cubic-bezier(0.68, -0.55, 0.27, 1.55);
+  animation-duration: 0.3s;
+  animation-name: amCheckboxOut;
 }
 .rc-checkbox-input {
   position: absolute;
@@ -65,8 +62,7 @@
   background-color: #3dbcf6;
 }
 .rc-checkbox-checked .rc-checkbox-inner:after {
-  -webkit-transform: rotate(45deg);
-          transform: rotate(45deg);
+  transform: rotate(45deg);
   position: absolute;
   left: 4px;
   top: 1px;
@@ -77,12 +73,9 @@
   border-top: 0;
   border-left: 0;
   content: ' ';
-  -webkit-animation-timing-function: cubic-bezier(0.68, -0.55, 0.27, 1.55);
-          animation-timing-function: cubic-bezier(0.68, -0.55, 0.27, 1.55);
-  -webkit-animation-duration: 0.3s;
-          animation-duration: 0.3s;
-  -webkit-animation-name: amCheckboxOut;
-          animation-name: amCheckboxOut;
+  animation-timing-function: cubic-bezier(0.68, -0.55, 0.27, 1.55);
+  animation-duration: 0.3s;
+  animation-name: amCheckboxOut;
 }
 .rc-checkbox-disabled.rc-checkbox-checked:hover .rc-checkbox-inner {
   border-color: #d9d9d9;
@@ -92,8 +85,7 @@
   border-color: #d9d9d9;
 }
 .rc-checkbox-disabled.rc-checkbox-checked .rc-checkbox-inner:after {
-  -webkit-animation-name: none;
-          animation-name: none;
+  animation-name: none;
   border-color: #cccccc;
 }
 .rc-checkbox-disabled:hover .rc-checkbox-inner {
@@ -104,51 +96,22 @@
   background-color: #f3f3f3;
 }
 .rc-checkbox-disabled .rc-checkbox-inner:after {
-  -webkit-animation-name: none;
-          animation-name: none;
+  animation-name: none;
   border-color: #f3f3f3;
 }
 .rc-checkbox-disabled .rc-checkbox-inner-input {
   cursor: default;
 }
-@-webkit-keyframes amCheckboxIn {
-  0% {
-    opacity: 0;
-    -webkit-transform-origin: 50% 50%;
-            transform-origin: 50% 50%;
-    -webkit-transform: scale(0, 0) rotate(45deg);
-            transform: scale(0, 0) rotate(45deg);
-  }
-  100% {
-    opacity: 1;
-    -webkit-transform-origin: 50% 50%;
-            transform-origin: 50% 50%;
-    -webkit-transform: scale(1, 1) rotate(45deg);
-            transform: scale(1, 1) rotate(45deg);
-  }
-}
 @keyframes amCheckboxIn {
   0% {
     opacity: 0;
-    -webkit-transform-origin: 50% 50%;
-            transform-origin: 50% 50%;
-    -webkit-transform: scale(0, 0) rotate(45deg);
-            transform: scale(0, 0) rotate(45deg);
+    transform-origin: 50% 50%;
+    transform: scale(0, 0) rotate(45deg);
   }
   100% {
     opacity: 1;
-    -webkit-transform-origin: 50% 50%;
-            transform-origin: 50% 50%;
-    -webkit-transform: scale(1, 1) rotate(45deg);
-            transform: scale(1, 1) rotate(45deg);
-  }
-}
-@-webkit-keyframes amCheckboxOut {
-  0% {
-    opacity: 1;
-  }
-  100% {
-    opacity: 0;
+    transform-origin: 50% 50%;
+    transform: scale(1, 1) rotate(45deg);
   }
 }
 @keyframes amCheckboxOut {
