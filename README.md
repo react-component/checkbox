@@ -56,6 +56,12 @@ ReactDOM.render(<Checkbox />, container);
           <td></td>
         </tr>
         <tr>
+          <td>label</td>
+          <td>String</td>
+          <td>''</td>
+          <td>label sibling contents to input checkbox node</td>
+        </tr>
+        <tr>
           <td>className</td>
           <td>String</td>
           <td>''</td>

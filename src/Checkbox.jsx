@@ -22,6 +22,7 @@ export default class Checkbox extends React.Component {
     readOnly: PropTypes.bool,
     autoFocus: PropTypes.bool,
     value: PropTypes.any,
+    label: PropTypes.string,
   };
   static defaultProps = {
     prefixCls: 'rc-checkbox',
@@ -108,6 +109,7 @@ export default class Checkbox extends React.Component {
       onBlur,
       autoFocus,
       value,
+      label,
       ...others,
     } = this.props;
 
@@ -144,6 +146,7 @@ export default class Checkbox extends React.Component {
           value={value}
           {...globalProps}
         />
+        <label className={`${prefixCls}-label`} htmlFor={id}>{label}</label>
         <span className={`${prefixCls}-inner`} />
       </span>
     );
