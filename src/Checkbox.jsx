@@ -1,9 +1,8 @@
 import React from 'react';
 import PropTypes from 'prop-types';
-import PureRenderMixin from 'rc-util/lib/PureRenderMixin';
 import classNames from 'classnames';
 
-export default class Checkbox extends React.Component {
+export default class Checkbox extends React.PureComponent {
   static propTypes = {
     prefixCls: PropTypes.string,
     className: PropTypes.string,
@@ -49,10 +48,6 @@ export default class Checkbox extends React.Component {
         checked: nextProps.checked,
       });
     }
-  }
-
-  shouldComponentUpdate(...args) {
-    return PureRenderMixin.shouldComponentUpdate.apply(this, args);
   }
 
   focus() {
