@@ -13,8 +13,10 @@
   "files": [
     "lib",
     "es",
-    "assets/*.css"
+    "assets/*.css",
+    "index.d.ts"
   ],
+  "types": "index.d.ts",
   "homepage": "http://github.com/react-component/checkbox",
   "repository": {
     "type": "git",
