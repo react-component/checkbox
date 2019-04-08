@@ -57,7 +57,7 @@
     "rc-util": "^4.0.4"
   },
   "devDependencies": {
-    "core-js": "^2.5.1",
+    "core-js": "^3.0.1",
     "coveralls": "^3.0.0",
     "enzyme": "^3.1.0",
     "enzyme-adapter-react-16": "^1.0.1",
