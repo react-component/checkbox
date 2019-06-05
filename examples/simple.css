@@ -1,4 +1,4 @@
-/* 一般状态 */
+/* Default state */
 .rc-checkbox {
   white-space: nowrap;
   cursor: pointer;
@@ -53,7 +53,7 @@
   bottom: 0;
   right: 0;
 }
-/* 选中状态 */
+/* Checked state */
 .rc-checkbox-checked:hover .rc-checkbox-inner {
   border-color: #3dbcf6;
 }
@@ -77,6 +77,11 @@
   animation-duration: 0.3s;
   animation-name: amCheckboxOut;
 }
+@media print {
+  .rc-checkbox-checked .rc-checkbox-inner {
+    box-shadow: inset 0 0 0 16px #3dbcf6;
+  }
+}
 .rc-checkbox-disabled.rc-checkbox-checked:hover .rc-checkbox-inner {
   border-color: #d9d9d9;
 }
@@ -87,6 +92,11 @@
 .rc-checkbox-disabled.rc-checkbox-checked .rc-checkbox-inner:after {
   animation-name: none;
   border-color: #cccccc;
+}
+@media print {
+  .rc-checkbox-disabled.rc-checkbox-checked .rc-checkbox-inner {
+    box-shadow: inset 0 0 0 16px #f3f3f3;
+  }
 }
 .rc-checkbox-disabled:hover .rc-checkbox-inner {
   border-color: #d9d9d9;
