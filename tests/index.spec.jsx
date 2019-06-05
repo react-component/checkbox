@@ -79,4 +79,22 @@ describe('rc-checkbox', () => {
     mount(<Checkbox autoFocus onFocus={handleFocus} />, { attachTo: container });
     expect(handleFocus).toBeCalled();
   });
+
+  it('onChange', () => {
+    const container = document.createElement('div');
+    document.body.appendChild(container);
+    const onChange = jest.fn();
+    const wrapper = mount(<Checkbox onChange={onChange} />, { attachTo: container });
+    wrapper.find('input').simulate('change');
+    expect(onChange).toBeCalled();
+  });
+
+  it('onChange disabled', () => {
+    const container = document.createElement('div');
+    document.body.appendChild(container);
+    const onChange = jest.fn();
+    const wrapper = mount(<Checkbox onChange={onChange} disabled />, { attachTo: container });
+    wrapper.find('input').simulate('change');
+    expect(onChange).not.toBeCalled();
+  });
 });
