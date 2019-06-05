@@ -1,9 +1,8 @@
-import React from 'react';
+import React, { Component } from 'react';
 import PropTypes from 'prop-types';
-import PureRenderMixin from 'rc-util/lib/PureRenderMixin';
 import classNames from 'classnames';
 
-export default class Checkbox extends React.Component {
+export default class Checkbox extends Component {
   static propTypes = {
     prefixCls: PropTypes.string,
     className: PropTypes.string,
@@ -23,6 +22,7 @@ export default class Checkbox extends React.Component {
     autoFocus: PropTypes.bool,
     value: PropTypes.any,
   };
+
   static defaultProps = {
     prefixCls: 'rc-checkbox',
     className: '',
@@ -33,6 +33,7 @@ export default class Checkbox extends React.Component {
     onBlur() {},
     onChange() {},
   };
+
   constructor(props) {
     super(props);
 
@@ -43,16 +44,14 @@ export default class Checkbox extends React.Component {
     };
   }
 
-  componentWillReceiveProps(nextProps) {
-    if ('checked' in nextProps) {
-      this.setState({
-        checked: nextProps.checked,
-      });
+  static getDerivedStateFromProps(props, state) {
+    if ('checked' in props) {
+      return {
+        ...state,
+        checked: props.checked,
+      };
     }
-  }
-
-  shouldComponentUpdate(...args) {
-    return PureRenderMixin.shouldComponentUpdate.apply(this, args);
+    return null;
   }
 
   focus() {
@@ -64,28 +63,30 @@ export default class Checkbox extends React.Component {
   }
 
   handleChange = (e) => {
-    const { props } = this;
-    if (props.disabled) {
+    const { disabled, onChange } = this.props;
+    if (disabled) {
       return;
     }
-    if (!('checked' in props)) {
+    if (!('checked' in this.props)) {
       this.setState({
         checked: e.target.checked,
       });
     }
-    props.onChange({
-      target: {
-        ...props,
-        checked: e.target.checked,
-      },
-      stopPropagation() {
-        e.stopPropagation();
-      },
-      preventDefault() {
-        e.preventDefault();
-      },
-      nativeEvent: e.nativeEvent,
-    });
+    if (onChange) {
+      onChange({
+        target: {
+          ...this.props,
+          checked: e.target.checked,
+        },
+        stopPropagation() {
+          e.stopPropagation();
+        },
+        preventDefault() {
+          e.preventDefault();
+        },
+        nativeEvent: e.nativeEvent,
+      });
+    }
   };
 
   saveInput = (node) => {
