@@ -1,8 +1,9 @@
 import React, { Component } from 'react';
 import PropTypes from 'prop-types';
 import classNames from 'classnames';
+import { polyfill } from 'react-lifecycles-compat';
 
-export default class Checkbox extends Component {
+class Checkbox extends Component {
   static propTypes = {
     prefixCls: PropTypes.string,
     className: PropTypes.string,
@@ -150,3 +151,7 @@ export default class Checkbox extends Component {
     );
   }
 }
+
+polyfill(Checkbox);
+
+export default Checkbox;
