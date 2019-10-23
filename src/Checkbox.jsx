@@ -11,6 +11,7 @@ class Checkbox extends Component {
     name: PropTypes.string,
     id: PropTypes.string,
     type: PropTypes.string,
+    title: PropTypes.string,
     defaultChecked: PropTypes.oneOfType([PropTypes.number, PropTypes.bool]),
     checked: PropTypes.oneOfType([PropTypes.number, PropTypes.bool]),
     disabled: PropTypes.bool,
@@ -92,7 +93,7 @@ class Checkbox extends Component {
 
   saveInput = (node) => {
     this.input = node;
-  }
+  };
 
   render() {
     const {
@@ -102,6 +103,7 @@ class Checkbox extends Component {
       name,
       id,
       type,
+      title,
       disabled,
       readOnly,
       tabIndex,
@@ -132,6 +134,7 @@ class Checkbox extends Component {
           name={name}
           id={id}
           type={type}
+          title={title}
           readOnly={readOnly}
           disabled={disabled}
           tabIndex={tabIndex}
