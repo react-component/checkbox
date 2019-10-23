@@ -8,6 +8,7 @@ class Checkbox extends Component {
     className: '',
     style: {},
     type: 'checkbox',
+    title: '',
     defaultChecked: false,
     onFocus() {},
     onBlur() {},
@@ -84,6 +85,7 @@ class Checkbox extends Component {
       name,
       id,
       type,
+      title,
       disabled,
       readOnly,
       tabIndex,
@@ -119,6 +121,7 @@ class Checkbox extends Component {
           name={name}
           id={id}
           type={type}
+          title={title}
           required={required}
           readOnly={readOnly}
           disabled={disabled}
