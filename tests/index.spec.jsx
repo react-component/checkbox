@@ -53,6 +53,12 @@ describe('rc-checkbox', () => {
     expect(renderedInput.attributes.value.value).toEqual('6');
   });
 
+  it('passes title prop to input', () => {
+    const wrapper = mount(<Checkbox title="my-custom-title" />);
+    const renderedInput = wrapper.find('input').instance();
+    expect(renderedInput.attributes.title.value).toEqual('my-custom-title');
+  });
+  
   it('focus()', () => {
     const container = document.createElement('div');
     document.body.appendChild(container);
