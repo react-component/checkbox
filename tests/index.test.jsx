@@ -82,7 +82,7 @@ describe('rc-checkbox', () => {
     const renderedInput = wrapper.find('input').instance();
     expect(renderedInput.attributes.title.value).toEqual('my-custom-title');
   });
-  
+
   it('focus()', () => {
     const container = document.createElement('div');
     document.body.appendChild(container);
