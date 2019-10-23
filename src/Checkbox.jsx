@@ -18,7 +18,7 @@ class Checkbox extends Component {
     onBlur: PropTypes.func,
     onChange: PropTypes.func,
     onClick: PropTypes.func,
-    tabIndex: PropTypes.oneOfType([PropTypes.string, PropTypes.number]),
+    tabIndex: PropTypes.number,
     readOnly: PropTypes.bool,
     autoFocus: PropTypes.bool,
     value: PropTypes.any,
