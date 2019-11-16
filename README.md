@@ -26,9 +26,10 @@ React Checkbox
 ## Usage
 
 ```js
-var Checkbox = require('rc-checkbox');
-var React = require('react');
-var ReactDOM = require('react-dom');
+require('rc-checkbox/assets/index.css');
+const Checkbox = require('rc-checkbox');
+const React = require('react');
+const ReactDOM = require('react-dom');
 ReactDOM.render(<Checkbox />, container);
 ```
 
@@ -95,7 +96,7 @@ npm start
 
 http://localhost:8001/examples/
 
-online example: http://react-component.github.io/checkbox/examples/
+online example: http://react-component.github.io/checkbox/examples/simple.html
 
 ## Test Case
 
