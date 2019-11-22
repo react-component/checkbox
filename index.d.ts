@@ -7,6 +7,7 @@ export interface Props {
   name?: string,
   id?: string,
   type?: string,
+  title?: string,     
   defaultChecked?: number | boolean,
   checked?: number | boolean,
   disabled?: boolean,
