@@ -22,6 +22,7 @@ class Checkbox extends Component {
     readOnly: PropTypes.bool,
     autoFocus: PropTypes.bool,
     value: PropTypes.any,
+    label: PropTypes.string,
   };
 
   static defaultProps = {
@@ -110,6 +111,7 @@ class Checkbox extends Component {
       onBlur,
       autoFocus,
       value,
+      label,
       ...others,
     } = this.props;
 
@@ -146,6 +148,7 @@ class Checkbox extends Component {
           value={value}
           {...globalProps}
         />
+        <label className={`${prefixCls}-label`} htmlFor={id}>{label}</label>
         <span className={`${prefixCls}-inner`} />
       </span>
     );
