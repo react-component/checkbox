@@ -14,7 +14,7 @@ export interface Props {
   onBlur?: (e: React.FocusEvent<HTMLInputElement>) => void,
   onChange?: (e: Event) => void,
   onClick?: (e: React.MouseEvent<HTMLInputElement>) => void,
-  tabIndex?: string | number,
+  tabIndex?: number,
   readOnly?: boolean,
   autoFocus?: boolean,
   value?: any,
