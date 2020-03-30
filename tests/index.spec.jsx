@@ -97,4 +97,10 @@ describe('rc-checkbox', () => {
     wrapper.find('input').simulate('change');
     expect(onChange).not.toBeCalled();
   });
+
+  it('passes required prop to input', () => {
+    const wrapper = mount(<Checkbox required />);
+    const renderedInput = wrapper.find('input').getDOMNode();
+    expect(renderedInput.hasAttribute('required')).toBe(true);
+  });
 });

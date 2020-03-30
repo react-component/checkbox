@@ -88,6 +88,7 @@ class Checkbox extends Component {
       onBlur,
       autoFocus,
       value,
+      required,
       ...others,
     } = this.props;
 
@@ -110,6 +111,7 @@ class Checkbox extends Component {
           name={name}
           id={id}
           type={type}
+          required={required}
           readOnly={readOnly}
           disabled={disabled}
           tabIndex={tabIndex}
