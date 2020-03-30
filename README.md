@@ -5,7 +5,7 @@ React Checkbox.
 
 [![NPM version][npm-image]][npm-url]
 [![build status][travis-image]][travis-url]
-[![Test coverage][coveralls-image]][coveralls-url]
+[![Test coverage][codecov-image]][codecov-url]
 [![Dependencies](https://img.shields.io/david/react-component/checkbox.svg?style=flat-square)](https://david-dm.org/react-component/checkbox)
 [![DevDependencies](https://img.shields.io/david/dev/react-component/checkbox.svg?style=flat-square)](https://david-dm.org/react-component/checkbox?type=dev)
 [![npm download][download-image]][download-url]
@@ -14,8 +14,8 @@ React Checkbox.
 [npm-url]: http://npmjs.org/package/rc-checkbox
 [travis-image]: https://img.shields.io/travis/react-component/checkbox.svg?style=flat-square
 [travis-url]: https://travis-ci.org/react-component/checkbox
-[coveralls-image]: https://img.shields.io/coveralls/react-component/checkbox.svg?style=flat-square
-[coveralls-url]: https://coveralls.io/r/react-component/checkbox?branch=master
+[codecov-image]: https://img.shields.io/codecov/react-component/checkbox.svg?style=flat-square
+[codecov-url]: https://codecov.io/gh/react-component/checkbox
 [download-image]: https://img.shields.io/npm/dm/rc-checkbox.svg?style=flat-square
 [download-url]: https://npmjs.org/package/rc-checkbox
 
