@@ -1,7 +1,7 @@
 # rc-checkbox
 ---
 
-React Checkbox
+React Checkbox.
 
 [![NPM version][npm-image]][npm-url]
 [![build status][travis-image]][travis-url]
@@ -19,17 +19,16 @@ React Checkbox
 [download-image]: https://img.shields.io/npm/dm/rc-checkbox.svg?style=flat-square
 [download-url]: https://npmjs.org/package/rc-checkbox
 
-## install
+## Install
 
 [![rc-checkbox](https://nodei.co/npm/rc-checkbox.png)](https://npmjs.org/package/rc-checkbox)
 
 ## Usage
 
 ```js
-require('rc-checkbox/assets/index.css');
-const Checkbox = require('rc-checkbox');
-const React = require('react');
-const ReactDOM = require('react-dom');
+import 'rc-checkbox/assets/index.css';
+import Checkbox from 'rc-checkbox';
+
 ReactDOM.render(<Checkbox />, container);
 ```
 
