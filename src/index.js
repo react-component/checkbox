@@ -59,9 +59,11 @@ class Checkbox extends Component {
           checked: e.target.checked,
         },
         stopPropagation() {
+          console.log('stopPropagation');
           e.stopPropagation();
         },
         preventDefault() {
+          console.log('preventDefault');
           e.preventDefault();
         },
         nativeEvent: e.nativeEvent,

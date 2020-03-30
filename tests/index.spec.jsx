@@ -21,6 +21,26 @@ describe('rc-checkbox', () => {
     expect(wrapper.state('checked')).toBe(true);
   });
 
+  it('control mode', () => {
+    const wrapper = mount(<Checkbox checked={true} />);
+    expect(wrapper.state('checked')).toBe(true);
+    wrapper.find('input').simulate('change', { target: { checked: true } });
+    expect(wrapper.state('checked')).toBe(true);
+    wrapper.find('input').simulate('change', { target: { checked: false } });
+    expect(wrapper.state('checked')).toBe(true);
+  });
+
+  fit('stopPropagation and preventDefault', () => {
+    const onChange = jest.fn();
+    const wrapper = mount(
+      <div onChange={onChange}>
+        <Checkbox onChange={e => { e.stopPropagation(); e.preventDefault(); }} />
+      </div>
+    );
+    wrapper.find('input').simulate('change', { target: { checked: true } });
+    expect(onChange).not.toHaveBeenCalled();
+  });
+
   it('passes data-* props to input', () => {
     const wrapper = mount(<Checkbox data-type="my-data-type" />);
     const renderedInput = wrapper.find('input').instance();
