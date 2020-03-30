@@ -22,7 +22,7 @@ describe('rc-checkbox', () => {
   });
 
   it('control mode', () => {
-    const wrapper = mount(<Checkbox checked={true} />);
+    const wrapper = mount(<Checkbox checked />);
     expect(wrapper.state('checked')).toBe(true);
     wrapper.find('input').simulate('change', { target: { checked: true } });
     expect(wrapper.state('checked')).toBe(true);
