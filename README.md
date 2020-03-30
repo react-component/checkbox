@@ -1,14 +1,14 @@
 # rc-checkbox
 ---
 
-React Checkbox.
+React Checkbox component.
 
 [![NPM version][npm-image]][npm-url]
+[![npm download][download-image]][download-url]
 [![build status][travis-image]][travis-url]
 [![Test coverage][codecov-image]][codecov-url]
 [![Dependencies](https://img.shields.io/david/react-component/checkbox.svg?style=flat-square)](https://david-dm.org/react-component/checkbox)
 [![DevDependencies](https://img.shields.io/david/dev/react-component/checkbox.svg?style=flat-square)](https://david-dm.org/react-component/checkbox?type=dev)
-[![npm download][download-image]][download-url]
 
 [npm-image]: http://img.shields.io/npm/v/rc-checkbox.svg?style=flat-square
 [npm-url]: http://npmjs.org/package/rc-checkbox
@@ -91,7 +91,7 @@ npm install
 npm start
 ```
 
-## Example
+## Examples
 
 http://localhost:8001/examples/
 
@@ -101,17 +101,14 @@ online example: http://react-component.github.io/checkbox/examples/simple.html
 
 ```
 npm test
-npm run chrome-test
 ```
 
 ## Coverage
 
 ```
 npm run coverage
+open coverage
 ```
-
-open coverage/ dir
-
 
 ## License
 
