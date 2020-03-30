@@ -30,7 +30,7 @@ describe('rc-checkbox', () => {
     expect(wrapper.state('checked')).toBe(true);
   });
 
-  fit('stopPropagation and preventDefault', () => {
+  it('stopPropagation and preventDefault', () => {
     const onChange = jest.fn();
     const wrapper = mount(
       <div onChange={onChange}>
