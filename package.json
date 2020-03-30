@@ -37,7 +37,7 @@
     "pub": "rc-tools run pub --babel-runtime",
     "lint": "rc-tools run lint",
     "test": "jest",
-    "coverage": "jest --coverage && bash <(curl -s https://codecov.io/bash)",
+    "coverage": "jest --coverage && bash <(curl -s https://codecov.io/bash)>",
     "prepublish": "rc-tools run guard"
   },
   "jest": {
