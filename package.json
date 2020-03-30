@@ -60,7 +60,7 @@
     "core-js": "^2.5.1",
     "enzyme": "^3.1.0",
     "enzyme-adapter-react-16": "^1.0.1",
-    "jest": "^24.0.0",
+    "jest": "^23.0.0",
     "pre-commit": "1.x",
     "rc-tools": "^7.0.3",
     "react": "^16.0.0",
