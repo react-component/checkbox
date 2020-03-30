@@ -37,7 +37,7 @@
     "pub": "rc-tools run pub --babel-runtime",
     "lint": "rc-tools run lint",
     "test": "jest",
-    "coverage": "jest --coverage && cat ./coverage/lcov.info | coveralls",
+    "coverage": "jest --coverage && curl -s https://codecov.io/bash",
     "prepublish": "rc-tools run guard"
   },
   "jest": {
@@ -58,10 +58,9 @@
   },
   "devDependencies": {
     "core-js": "^2.5.1",
-    "coveralls": "^3.0.0",
     "enzyme": "^3.1.0",
     "enzyme-adapter-react-16": "^1.0.1",
-    "jest": "^21.2.1",
+    "jest": "^23.0.0",
     "pre-commit": "1.x",
     "rc-tools": "^7.0.3",
     "react": "^16.0.0",
