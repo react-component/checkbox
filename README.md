@@ -12,9 +12,9 @@ React Checkbox component.
 
 [npm-image]: http://img.shields.io/npm/v/rc-checkbox.svg?style=flat-square
 [npm-url]: http://npmjs.org/package/rc-checkbox
-[travis-image]: https://img.shields.io/travis/react-component/checkbox.svg?style=flat-square
+[travis-image]: https://img.shields.io/travis/react-component/checkbox/master.svg?style=flat-square
 [travis-url]: https://travis-ci.org/react-component/checkbox
-[codecov-image]: https://img.shields.io/codecov/react-component/checkbox.svg?style=flat-square
+[codecov-image]: https://img.shields.io/codecov/c/github/react-component/checkbox.svg?style=flat-square
 [codecov-url]: https://codecov.io/gh/react-component/checkbox
 [download-image]: https://img.shields.io/npm/dm/rc-checkbox.svg?style=flat-square
 [download-url]: https://npmjs.org/package/rc-checkbox
