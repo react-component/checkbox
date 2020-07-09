@@ -1,4 +1,3 @@
-/* eslint-disable react/prop-types */
 import React, { Component } from 'react';
 import classNames from 'classnames';
 
@@ -90,7 +89,7 @@ class Checkbox extends Component {
       autoFocus,
       value,
       required,
-      ...others,
+      ...others
     } = this.props;
 
     const globalProps = Object.keys(others).reduce((prev, key) => {

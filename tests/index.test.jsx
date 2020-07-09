@@ -1,6 +1,6 @@
 import React from 'react';
 import { mount } from 'enzyme';
-import Checkbox from '../';
+import Checkbox from '../src';
 
 describe('rc-checkbox', () => {
   it('works', () => {
