@@ -10,5 +10,6 @@ module.exports = {
     'react/sort-comp': 0,
     'import/no-named-as-default': 0,
     'import/no-named-as-default-member': 0,
+    'jsx-a11y/no-autofocus': 0,
   },
 };
