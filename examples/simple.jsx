@@ -1,21 +1,19 @@
-/* eslint no-console:0 */
-
+/* eslint no-console:0, jsx-a11y/label-has-for: 0, jsx-a11y/label-has-associated-control: 0 */
 import React from 'react';
-import ReactDOM from 'react-dom';
-import Checkbox from 'rc-checkbox';
-import 'rc-checkbox/assets/index.less';
+import Checkbox from '../src';
+import '../assets/index.less';
 
 function onChange(e) {
   console.log('Checkbox checked:', (e.target.checked));
 }
 
-class SimpleDemo extends React.Component {
+export default class SimpleDemo extends React.Component {
   state = {
     disabled: false,
   };
 
   toggle = () => {
-    this.setState((state) => ({
+    this.setState(state => ({
       disabled: !state.disabled,
     }));
   }
@@ -103,10 +101,8 @@ class SimpleDemo extends React.Component {
           </p>
         </div>
 
-        <button onClick={this.toggle}>toggle disabled</button>
+        <button type="button" onClick={this.toggle}>toggle disabled</button>
       </div>
     );
   }
 }
-
-ReactDOM.render(<SimpleDemo />, document.getElementById('__react-content'));

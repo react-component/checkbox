@@ -1,6 +1,6 @@
 import React from 'react';
 import { mount } from 'enzyme';
-import Checkbox from '../';
+import Checkbox from '../src';
 
 describe('rc-checkbox', () => {
   it('works', () => {
@@ -54,6 +54,7 @@ describe('rc-checkbox', () => {
   });
 
   it('passes role prop to input', () => {
+    // eslint-disable-next-line jsx-a11y/aria-role
     const wrapper = mount(<Checkbox role="my-role" />);
     const renderedInput = wrapper.find('input').instance();
     expect(renderedInput.attributes.role.value).toEqual('my-role');

@@ -1,4 +1,4 @@
-/* eslint-disable react/prop-types */
+// eslint-disable-next-line import/no-extraneous-dependencies
 import React, { Component } from 'react';
 import classNames from 'classnames';
 
@@ -90,11 +90,12 @@ class Checkbox extends Component {
       autoFocus,
       value,
       required,
-      ...others,
+      ...others
     } = this.props;
 
     const globalProps = Object.keys(others).reduce((prev, key) => {
       if (key.substr(0, 5) === 'aria-' || key.substr(0, 5) === 'data-' || key === 'role') {
+        // eslint-disable-next-line no-param-reassign
         prev[key] = others[key];
       }
       return prev;

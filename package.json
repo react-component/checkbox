@@ -8,15 +8,13 @@
     "react-checkbox",
     "checkbox"
   ],
-  "main": "lib/index",
-  "module": "es/index",
+  "main": "./lib/index",
+  "module": "./es/index",
   "files": [
-    "lib",
-    "es",
     "assets/*.css",
-    "index.d.ts"
+    "es",
+    "lib"
   ],
-  "types": "index.d.ts",
   "homepage": "http://github.com/react-component/checkbox",
   "repository": {
     "type": "git",
@@ -25,49 +23,35 @@
   "bugs": {
     "url": "http://github.com/react-component/checkbox/issues"
   },
-  "licenses": "MIT",
-  "config": {
-    "port": 8001
-  },
+  "license": "MIT",
   "scripts": {
-    "build": "rc-tools run build",
-    "gh-pages": "rc-tools run gh-pages",
-    "start": "rc-tools run server",
-    "compile": "rc-tools run compile --babel-runtime",
-    "pub": "rc-tools run pub --babel-runtime",
-    "lint": "rc-tools run lint",
-    "test": "jest",
-    "coverage": "jest --coverage",
-    "prepublish": "rc-tools run guard"
-  },
-  "jest": {
-    "setupFiles": [
-      "./tests/setup.js"
-    ],
-    "collectCoverageFrom": [
-      "src/*"
-    ],
-    "transform": {
-      "\\.tsx?$": "./node_modules/rc-tools/scripts/jestPreprocessor.js",
-      "\\.jsx?$": "./node_modules/rc-tools/scripts/jestPreprocessor.js"
-    }
+    "start": "father doc dev --storybook",
+    "build": "father doc build  --storybook",
+    "compile": "father build && lessc assets/index.less assets/index.css",
+    "gh-pages": "father doc deploy",
+    "prepublishOnly": "npm run compile && np --yolo --no-publish",
+    "lint": "eslint . --ext='jsx'",
+    "test": "father test",
+    "coverage": "father test --coverage"
   },
   "dependencies": {
-    "babel-runtime": "^6.23.0",
-    "classnames": "2.x"
+    "@babel/runtime": "^7.10.1",
+    "classnames": "^2.2.1"
   },
   "devDependencies": {
-    "core-js": "^2.5.1",
-    "enzyme": "^3.1.0",
+    "@types/classnames": "^2.2.10",
+    "@types/jest": "^25.2.2",
+    "@umijs/fabric": "^2.2.2",
+    "coveralls": "^3.0.6",
+    "enzyme": "^3.0.0",
     "enzyme-adapter-react-16": "^1.0.1",
-    "jest": "^23.0.0",
-    "pre-commit": "1.x",
-    "rc-tools": "^7.0.3",
+    "enzyme-to-json": "^3.0.0",
+    "eslint": "^7.0.0",
+    "father": "^2.13.4",
+    "less": "^3.11.1",
+    "np": "^6.2.3",
     "react": "^16.0.0",
     "react-dom": "^16.0.0",
     "react-test-renderer": "^16.0.0"
-  },
-  "pre-commit": [
-    "lint"
-  ]
+  }
 }
