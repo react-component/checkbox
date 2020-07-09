@@ -43,6 +43,7 @@ class Checkbox extends Component {
   }
 
   handleChange = (e) => {
+    e.stopPropagation();
     const { disabled, onChange } = this.props;
     if (disabled) {
       return;
