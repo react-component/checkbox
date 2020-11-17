@@ -4,7 +4,19 @@ import Checkbox from '../src';
 import '../assets/index.less';
 
 function onChange(e) {
-  console.log('Checkbox checked:', (e.target.checked));
+  console.log('Checkbox checked:', e.target.checked);
+}
+
+function onKeyDown(e) {
+  console.log('Checkbox key down:', e.key);
+}
+
+function onKeyPress(e) {
+  console.log('Checkbox key press:', e.key);
+}
+
+function onKeyUp(e) {
+  console.log('Checkbox key up:', e.key);
 }
 
 export default class SimpleDemo extends React.Component {
@@ -16,7 +28,7 @@ export default class SimpleDemo extends React.Component {
     this.setState(state => ({
       disabled: !state.disabled,
     }));
-  }
+  };
 
   render() {
     return (
@@ -24,23 +36,14 @@ export default class SimpleDemo extends React.Component {
         <div>
           <p>
             <label>
-              <Checkbox
-                checked
-                onChange={onChange}
-                disabled={this.state.disabled}
-              />
+              <Checkbox checked onChange={onChange} disabled={this.state.disabled} />
               &nbsp; controlled checked rc-checkbox
             </label>
             &nbsp;&nbsp;
           </p>
           <p>
             <label>
-              <input
-                checked
-                type="checkbox"
-                onChange={onChange}
-                disabled={this.state.disabled}
-              />
+              <input checked type="checkbox" onChange={onChange} disabled={this.state.disabled} />
               &nbsp; controlled checked native
             </label>
             &nbsp;&nbsp;
@@ -50,11 +53,7 @@ export default class SimpleDemo extends React.Component {
         <div>
           <p>
             <label>
-              <Checkbox
-                defaultChecked
-                onChange={onChange}
-                disabled={this.state.disabled}
-              />
+              <Checkbox defaultChecked onChange={onChange} disabled={this.state.disabled} />
               &nbsp; defaultChecked rc-checkbox
             </label>
             &nbsp;&nbsp;
@@ -93,6 +92,9 @@ export default class SimpleDemo extends React.Component {
                 type="checkbox"
                 defaultChecked
                 onChange={onChange}
+                onKeyDown={onKeyDown}
+                onKeyPress={onKeyPress}
+                onKeyUp={onKeyUp}
                 disabled={this.state.disabled}
               />
               &nbsp; defaultChecked native with name
@@ -101,7 +103,9 @@ export default class SimpleDemo extends React.Component {
           </p>
         </div>
 
-        <button type="button" onClick={this.toggle}>toggle disabled</button>
+        <button type="button" onClick={this.toggle}>
+          toggle disabled
+        </button>
       </div>
     );
   }
