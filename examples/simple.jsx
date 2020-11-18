@@ -92,12 +92,39 @@ export default class SimpleDemo extends React.Component {
                 type="checkbox"
                 defaultChecked
                 onChange={onChange}
+                disabled={this.state.disabled}
+              />
+              &nbsp; defaultChecked native with name
+            </label>
+            &nbsp;&nbsp;
+          </p>
+        </div>
+
+        <div>
+          <p>
+            <label>
+              <Checkbox
+                onChange={onChange}
                 onKeyDown={onKeyDown}
                 onKeyPress={onKeyPress}
                 onKeyUp={onKeyUp}
                 disabled={this.state.disabled}
               />
-              &nbsp; defaultChecked native with name
+              &nbsp; rc-checkbox with key events
+            </label>
+            &nbsp;&nbsp;
+          </p>
+          <p>
+            <label>
+              <input
+                type="checkbox"
+                onChange={onChange}
+                onKeyDown={onKeyDown}
+                onKeyPress={onKeyPress}
+                onKeyUp={onKeyUp}
+                disabled={this.state.disabled}
+              />
+              &nbsp; native checkbox with key events
             </label>
             &nbsp;&nbsp;
           </p>
