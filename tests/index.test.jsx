@@ -154,4 +154,22 @@ describe('rc-checkbox', () => {
     wrapper.find('input').simulate('keyup');
     expect(onKeyUp).toBeCalled();
   });
+
+  it('has default keyboard events handler', () => {
+    const onKeyDown = jest.fn();
+    const onKeyPress = jest.fn();
+    const onKeyUp = jest.fn();
+
+    const wrapper = mount(
+      <div onKeyDown={onKeyDown} onKeyPress={onKeyPress} onKeyUp={onKeyUp}>
+        <Checkbox />
+      </div>,
+    );
+    wrapper.find('input').simulate('keydown');
+    expect(onKeyDown).toBeCalled();
+    wrapper.find('input').simulate('keypress');
+    expect(onKeyPress).toBeCalled();
+    wrapper.find('input').simulate('keyup');
+    expect(onKeyUp).toBeCalled();
+  });
 });
