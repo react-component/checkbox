@@ -12,6 +12,9 @@ class Checkbox extends Component {
     onFocus() {},
     onBlur() {},
     onChange() {},
+    onKeyDown() {},
+    onKeyPress() {},
+    onKeyUp() {},
   };
 
   constructor(props) {
@@ -42,7 +45,7 @@ class Checkbox extends Component {
     this.input.blur();
   }
 
-  handleChange = (e) => {
+  handleChange = e => {
     const { disabled, onChange } = this.props;
     if (disabled) {
       return;
@@ -69,9 +72,9 @@ class Checkbox extends Component {
     }
   };
 
-  saveInput = (node) => {
+  saveInput = node => {
     this.input = node;
-  }
+  };
 
   render() {
     const {
@@ -87,6 +90,9 @@ class Checkbox extends Component {
       onClick,
       onFocus,
       onBlur,
+      onKeyDown,
+      onKeyPress,
+      onKeyUp,
       autoFocus,
       value,
       required,
@@ -122,6 +128,9 @@ class Checkbox extends Component {
           onClick={onClick}
           onFocus={onFocus}
           onBlur={onBlur}
+          onKeyUp={onKeyUp}
+          onKeyDown={onKeyDown}
+          onKeyPress={onKeyPress}
           onChange={this.handleChange}
           autoFocus={autoFocus}
           ref={this.saveInput}

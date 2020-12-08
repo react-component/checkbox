@@ -34,8 +34,13 @@ describe('rc-checkbox', () => {
     const onChange = jest.fn();
     const wrapper = mount(
       <div onChange={onChange}>
-        <Checkbox onChange={e => { e.stopPropagation(); e.preventDefault(); }} />
-      </div>
+        <Checkbox
+          onChange={e => {
+            e.stopPropagation();
+            e.preventDefault();
+          }}
+        />
+      </div>,
     );
     wrapper.find('input').simulate('change', { target: { checked: true } });
     expect(onChange).not.toHaveBeenCalled();
@@ -121,5 +126,50 @@ describe('rc-checkbox', () => {
     const wrapper = mount(<Checkbox required />);
     const renderedInput = wrapper.find('input').getDOMNode();
     expect(renderedInput.hasAttribute('required')).toBe(true);
+  });
+
+  it('onKeyDown', () => {
+    const container = document.createElement('div');
+    document.body.appendChild(container);
+    const onKeyDown = jest.fn();
+    const wrapper = mount(<Checkbox onKeyDown={onKeyDown} />, { attachTo: container });
+    wrapper.find('input').simulate('keydown');
+    expect(onKeyDown).toBeCalled();
+  });
+
+  it('onKeyPress', () => {
+    const container = document.createElement('div');
+    document.body.appendChild(container);
+    const onKeyPress = jest.fn();
+    const wrapper = mount(<Checkbox onKeyPress={onKeyPress} />, { attachTo: container });
+    wrapper.find('input').simulate('keypress');
+    expect(onKeyPress).toBeCalled();
+  });
+
+  it('onKeyUp', () => {
+    const container = document.createElement('div');
+    document.body.appendChild(container);
+    const onKeyUp = jest.fn();
+    const wrapper = mount(<Checkbox onKeyUp={onKeyUp} />, { attachTo: container });
+    wrapper.find('input').simulate('keyup');
+    expect(onKeyUp).toBeCalled();
+  });
+
+  it('has default keyboard events handler', () => {
+    const onKeyDown = jest.fn();
+    const onKeyPress = jest.fn();
+    const onKeyUp = jest.fn();
+
+    const wrapper = mount(
+      <div onKeyDown={onKeyDown} onKeyPress={onKeyPress} onKeyUp={onKeyUp}>
+        <Checkbox />
+      </div>,
+    );
+    wrapper.find('input').simulate('keydown');
+    expect(onKeyDown).toBeCalled();
+    wrapper.find('input').simulate('keypress');
+    expect(onKeyPress).toBeCalled();
+    wrapper.find('input').simulate('keyup');
+    expect(onKeyUp).toBeCalled();
   });
 });
