@@ -1,7 +1,7 @@
 /* eslint no-console:0, jsx-a11y/label-has-for: 0, jsx-a11y/label-has-associated-control: 0 */
 import React from 'react';
-import Checkbox from '../src';
-import '../assets/index.less';
+import Checkbox from 'rc-checkbox';
+import '../../assets/index.less';
 
 function onChange(e) {
   console.log('Checkbox checked:', e.target.checked);

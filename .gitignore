@@ -29,3 +29,9 @@ lib
 es
 coverage
 yarn.lock
+
+# dumi
+.umi
+.umi-production
+.umi-test
+.docs
