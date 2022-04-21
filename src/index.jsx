@@ -21,7 +21,7 @@ class Checkbox extends Component {
   constructor(props) {
     super(props);
 
-    const checked = 'checked' in props ? props.checked : props.defaultChecked;
+    const checked = 'defaultChecked' in props ? props.defaultChecked : 'checked' in props ? props.checked : false;
 
     this.state = {
       checked,
@@ -32,7 +32,7 @@ class Checkbox extends Component {
     if ('checked' in props) {
       return {
         ...state,
-        checked: props.checked,
+        checked: 'defaultChecked' in props ? props.defaultChecked : props.checked,
       };
     }
     return null;
