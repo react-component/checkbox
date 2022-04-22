@@ -130,6 +130,33 @@ export default class SimpleDemo extends React.Component {
           </p>
         </div>
 
+        <div>
+          <p>
+            <label>
+              <Checkbox
+                defaultChecked
+                checked={undefined}
+                onChange={onChange}
+                disabled={this.state.disabled}
+              />
+              &nbsp; defaultChecked rc-checkbox when checked value is undefined or null
+            </label>
+            &nbsp;&nbsp;
+          </p>
+          <p>
+            <label>
+              <input
+                type="checkbox"
+                defaultChecked
+                checked={undefined}
+                disabled={this.state.disabled}
+              />
+              &nbsp; defaultChecked native checkbox when checked value is undefined or null 
+            </label>
+            &nbsp;&nbsp;
+          </p>
+        </div>
+
         <button type="button" onClick={this.toggle}>
           toggle disabled
         </button>
