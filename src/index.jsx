@@ -1,4 +1,3 @@
-// eslint-disable-next-line import/no-extraneous-dependencies
 import React, { Component } from 'react';
 import classNames from 'classnames';
 
@@ -21,7 +20,10 @@ class Checkbox extends Component {
   constructor(props) {
     super(props);
 
-    const checked = 'checked' in props ? props.checked : props.defaultChecked;
+    const checked =
+      'checked' in props && !(props.checked === undefined || props.checked === null)
+        ? props.checked
+        : props.defaultChecked;
 
     this.state = {
       checked,
@@ -29,7 +31,7 @@ class Checkbox extends Component {
   }
 
   static getDerivedStateFromProps(props, state) {
-    if ('checked' in props) {
+    if ('checked' in props && !(props.checked === undefined || props.checked === null)) {
       return {
         ...state,
         checked: props.checked,
@@ -46,12 +48,15 @@ class Checkbox extends Component {
     this.input.blur();
   }
 
-  handleChange = e => {
-    const { disabled, onChange } = this.props;
+  handleChange = (e) => {
+    const { disabled, onChange, checked } = this.props;
     if (disabled) {
       return;
     }
-    if (!('checked' in this.props)) {
+    if (
+      !('checked' in this.props) ||
+      ('checked' in this.props && (checked === undefined || checked === null))
+    ) {
       this.setState({
         checked: e.target.checked,
       });
@@ -73,7 +78,7 @@ class Checkbox extends Component {
     }
   };
 
-  saveInput = node => {
+  saveInput = (node) => {
     this.input = node;
   };
 
