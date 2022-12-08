@@ -12,10 +12,10 @@ describe('rc-checkbox', () => {
 
     expect(inputEl.checked).toBe(false);
 
-    fireEvent.change(inputEl, { target: { checked: true } });
+    fireEvent.click(inputEl);
     expect(inputEl.checked).toBe(true);
 
-    fireEvent.change(inputEl, { target: { checked: false } });
+    fireEvent.click(inputEl);
     expect(inputEl.checked).toBe(false);
   });
 
@@ -45,18 +45,17 @@ describe('rc-checkbox', () => {
     expect(inputEl.checked).toBe(false);
   });
 
-  // TODO: 解决
   it('control mode', () => {
     const { container } = render(<Checkbox checked />);
     const inputEl = container.querySelector('input')!;
 
     expect(inputEl.checked).toBe(true);
 
-    fireEvent.change(inputEl, { target: { checked: true } });
+    fireEvent.click(inputEl);
     expect(inputEl.checked).toBe(true);
 
-    fireEvent.change(inputEl, { target: { checked: false } });
-    expect(inputEl.checked).toBe(false);
+    fireEvent.click(inputEl);
+    expect(inputEl.checked).toBe(true);
   });
 
   it('stopPropagation and preventDefault', () => {
@@ -75,7 +74,7 @@ describe('rc-checkbox', () => {
 
     const inputEl = container.querySelector('input')!;
 
-    fireEvent.change(inputEl, { target: { checked: true } });
+    fireEvent.click(inputEl);
     expect(onChange).not.toHaveBeenCalled();
   });
 
@@ -126,17 +125,6 @@ describe('rc-checkbox', () => {
     expect(inputEl.attributes.title.value).toEqual('my-custom-title');
   });
 
-  it('focus()', () => {
-    const checkboxRef = React.createRef<CheckboxRef>();
-    const onFocus = jest.fn();
-
-    render(<Checkbox ref={checkboxRef} onFocus={onFocus} />);
-
-    checkboxRef.current!.focus();
-
-    expect(onFocus).toHaveBeenCalledTimes(1);
-  });
-
   it('onFocus', () => {
     const onFocus = jest.fn();
 
@@ -168,18 +156,17 @@ describe('rc-checkbox', () => {
     expect(handleFocus).toHaveBeenCalledTimes(1);
   });
 
-  // TODO: 解决
-  // it('onChange', () => {
-  //   const onChange = jest.fn();
+  it('onChange', () => {
+    const onChange = jest.fn();
 
-  //   const { container } = render(<Checkbox onChange={onChange} />);
-  //   const inputEl =container.querySelector('input')!;
+    const { container } = render(<Checkbox onChange={onChange} />);
+    const inputEl = container.querySelector('input')!;
 
-  //   fireEvent.change(input, { target: { checked: true } });
+    fireEvent.click(inputEl);
 
-  //   expect(onChange).toHaveBeenCalled();
-  //   expect(input.checked).toBe(true);
-  // });
+    expect(onChange).toHaveBeenCalledTimes(1);
+    expect(inputEl.checked).toBe(true);
+  });
 
   it('onChange disabled', () => {
     const onChange = jest.fn();
@@ -187,7 +174,7 @@ describe('rc-checkbox', () => {
     const { container } = render(<Checkbox onChange={onChange} disabled />);
     const input = container.querySelector('input')!;
 
-    fireEvent.change(input, { target: { checked: true } });
+    fireEvent.click(input);
 
     expect(onChange).not.toHaveBeenCalled();
   });
