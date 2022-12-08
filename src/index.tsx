@@ -64,16 +64,14 @@ export const Checkbox = forwardRef<CheckboxRef, CheckboxProps>((props, ref) => {
       return;
     }
 
-    const checked = e.target.checked;
-
     if (!('checked' in props)) {
-      setRawValue(checked);
+      setRawValue(e.target.checked);
     }
 
     onChange?.({
       target: {
         ...props,
-        checked,
+        checked: e.target.checked,
       },
       stopPropagation() {
         e.stopPropagation();
