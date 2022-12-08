@@ -8,8 +8,9 @@
     "react-checkbox",
     "checkbox"
   ],
-  "main": "./lib/index",
-  "module": "./es/index",
+  "main": "lib/index.js",
+  "module": "es/index.js",
+  "typings": "es/index.d.ts",
   "files": [
     "assets/*.css",
     "es",
@@ -32,28 +33,43 @@
     "prepublishOnly": "npm run compile && np --yolo --no-publish",
     "lint": "eslint . --ext='jsx'",
     "test": "father test",
-    "coverage": "father test --coverage"
+    "coverage": "father test --coverage",
+    "prepare": "husky install"
   },
   "dependencies": {
     "@babel/runtime": "^7.10.1",
-    "classnames": "^2.2.1"
+    "classnames": "^2.3.2",
+    "rc-util": "^5.25.2"
   },
   "devDependencies": {
-    "@types/classnames": "^2.2.10",
     "@types/jest": "^26.0.5",
-    "@umijs/fabric": "^2.2.2",
+    "@types/classnames": "^2.3.1",
+    "@types/react": "^18.0.26",
+    "@types/react-dom": "^18.0.9",
+    "@umijs/fabric": "^3.0.0",
     "coveralls": "^3.0.6",
-    "dumi": "^1.1.37",
     "enzyme": "^3.0.0",
     "enzyme-adapter-react-16": "^1.0.1",
     "enzyme-to-json": "^3.0.0",
+    "dumi": "^2.0.12",
+    "lint-staged": "^13.1.0",
     "eslint": "^7.0.0",
-    "father": "^2.13.4",
+    "father": "^4.1.1",
+    "husky": "8.0.2",
     "less": "^3.11.1",
     "np": "^6.2.3",
-    "react": "^16.0.0",
-    "react-dom": "^16.0.0",
-    "react-test-renderer": "^16.0.0"
+    "react": "^18.2.0",
+    "react-dom": "^18.2.0",
+    "ts-node": "^10.9.1",
+    "typescript": "^4.9.4"
+  },
+  "lint-staged": {
+    "*.{js,jsx,less,md,json}": [
+      "prettier --write"
+    ],
+    "*.ts?(x)": [
+      "prettier --parser=typescript --write"
+    ]
   },
   "peerDependencies": {
     "react": ">=16.9.0",

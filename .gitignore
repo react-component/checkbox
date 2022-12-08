@@ -30,8 +30,10 @@ es
 coverage
 yarn.lock
 
+
 # dumi
 .umi
+.dumi/tmp
 .umi-production
 .umi-test
 .docs
