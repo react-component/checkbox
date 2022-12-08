@@ -38,3 +38,5 @@ yarn.lock
 .umi-production
 .umi-test
 .docs
+
+pnpm-lock.yaml
