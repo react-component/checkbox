@@ -34,7 +34,7 @@
     "lint": "eslint . --ext='jsx'",
     "test": "jest",
     "coverage": "jest --coverage",
-    "prepare": "husky install"
+    "prepare": "husky install && dumi setup"
   },
   "dependencies": {
     "@babel/runtime": "^7.10.1",
