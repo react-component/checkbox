@@ -1,6 +1,6 @@
 {
   "name": "rc-checkbox",
-  "version": "2.3.2",
+  "version": "3.0.0",
   "description": "checkbox ui component for react",
   "keywords": [
     "react",
@@ -8,6 +8,15 @@
     "react-checkbox",
     "checkbox"
   ],
+  "homepage": "http://github.com/react-component/checkbox",
+  "bugs": {
+    "url": "http://github.com/react-component/checkbox/issues"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git@github.com:react-component/checkbox.git"
+  },
+  "license": "MIT",
   "main": "lib/index.js",
   "module": "es/index.js",
   "typings": "es/index.d.ts",
@@ -16,25 +25,24 @@
     "es",
     "lib"
   ],
-  "homepage": "http://github.com/react-component/checkbox",
-  "repository": {
-    "type": "git",
-    "url": "git@github.com:react-component/checkbox.git"
-  },
-  "bugs": {
-    "url": "http://github.com/react-component/checkbox/issues"
-  },
-  "license": "MIT",
   "scripts": {
-    "start": "dumi dev",
     "build": "dumi build",
     "compile": "father build && lessc assets/index.less assets/index.css",
-    "gh-pages": "npm run build && father doc deploy -d .docs",
-    "prepublishOnly": "npm run compile && np --yolo --no-publish",
-    "lint": "eslint . --ext='jsx'",
-    "test": "jest",
     "coverage": "jest --coverage",
-    "prepare": "husky install && dumi setup"
+    "gh-pages": "npm run build && father doc deploy -d .docs",
+    "lint": "eslint . --ext='jsx'",
+    "prepare": "husky install && dumi setup",
+    "prepublishOnly": "npm run compile && np --yolo --no-publish",
+    "start": "dumi dev",
+    "test": "jest"
+  },
+  "lint-staged": {
+    "*.{js,jsx,less,md,json}": [
+      "prettier --write"
+    ],
+    "*.ts?(x)": [
+      "prettier --parser=typescript --write"
+    ]
   },
   "dependencies": {
     "@babel/runtime": "^7.10.1",
@@ -66,14 +74,6 @@
     "react-dom": "^18.2.0",
     "ts-node": "^10.9.1",
     "typescript": "^4.9.4"
-  },
-  "lint-staged": {
-    "*.{js,jsx,less,md,json}": [
-      "prettier --write"
-    ],
-    "*.ts?(x)": [
-      "prettier --parser=typescript --write"
-    ]
   },
   "peerDependencies": {
     "react": ">=16.9.0",
