@@ -1,7 +1,7 @@
+import classNames from 'classnames';
+import useMergedState from 'rc-util/lib/hooks/useMergedState';
 import * as React from 'react';
 import { forwardRef, useImperativeHandle, useRef } from 'react';
-import useMergedState from 'rc-util/lib/hooks/useMergedState';
-import classNames from 'classnames';
 
 export interface CheckboxChangeEvent {
   target: CheckboxChangeEventTarget;
@@ -35,6 +35,7 @@ export const Checkbox = forwardRef<CheckboxRef, CheckboxProps>((props, ref) => {
     disabled,
     defaultChecked = false,
     type = 'checkbox',
+    value,
     onChange,
     ...inputProps
   } = props;
@@ -93,6 +94,7 @@ export const Checkbox = forwardRef<CheckboxRef, CheckboxProps>((props, ref) => {
         disabled={disabled}
         checked={!!rawValue}
         type={type}
+        value={value}
       />
       <span className={`${prefixCls}-inner`} />
     </span>
