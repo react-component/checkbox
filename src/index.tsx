@@ -35,7 +35,6 @@ export const Checkbox = forwardRef<CheckboxRef, CheckboxProps>((props, ref) => {
     disabled,
     defaultChecked = false,
     type = 'checkbox',
-    value,
     onChange,
     ...inputProps
   } = props;
@@ -94,7 +93,6 @@ export const Checkbox = forwardRef<CheckboxRef, CheckboxProps>((props, ref) => {
         disabled={disabled}
         checked={!!rawValue}
         type={type}
-        value={value}
       />
       <span className={`${prefixCls}-inner`} />
     </span>

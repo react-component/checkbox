@@ -1,6 +1,6 @@
-import * as React from 'react';
-import KeyCode from 'rc-util/lib/KeyCode';
 import { fireEvent, render } from '@testing-library/react';
+import KeyCode from 'rc-util/lib/KeyCode';
+import * as React from 'react';
 import Checkbox from '../src';
 
 import type { CheckboxRef } from '../src';
@@ -17,6 +17,7 @@ describe('rc-checkbox', () => {
 
     fireEvent.click(inputEl);
     expect(inputEl.checked).toBe(false);
+    expect(container.firstChild).toMatchSnapshot();
   });
 
   it('click radio', () => {
@@ -30,6 +31,7 @@ describe('rc-checkbox', () => {
 
     fireEvent.click(inputEl);
     expect(inputEl.checked).toBe(true);
+    expect(container.firstChild).toMatchSnapshot();
   });
 
   it('click checkbox', () => {
@@ -43,6 +45,7 @@ describe('rc-checkbox', () => {
 
     fireEvent.click(inputEl);
     expect(inputEl.checked).toBe(false);
+    expect(container.firstChild).toMatchSnapshot();
   });
 
   it('control mode', () => {
@@ -56,6 +59,7 @@ describe('rc-checkbox', () => {
 
     fireEvent.click(inputEl);
     expect(inputEl.checked).toBe(true);
+    expect(container.firstChild).toMatchSnapshot();
   });
 
   it('stopPropagation and preventDefault', () => {
@@ -93,7 +97,6 @@ describe('rc-checkbox', () => {
   });
 
   it('passes role prop to input', () => {
-    // eslint-disable-next-line jsx-a11y/aria-role
     const { container } = render(<Checkbox role="my-role" />);
     const inputEl = container.querySelector('input')!;
 

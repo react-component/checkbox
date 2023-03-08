@@ -1,0 +1,58 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`rc-checkbox click checkbox 1`] = `
+<span
+  class="rc-checkbox"
+>
+  <input
+    class="rc-checkbox-input"
+    type="checkbox"
+  />
+  <span
+    class="rc-checkbox-inner"
+  />
+</span>
+`;
+
+exports[`rc-checkbox click radio 1`] = `
+<span
+  class="rc-checkbox rc-checkbox-checked"
+>
+  <input
+    class="rc-checkbox-input"
+    type="radio"
+  />
+  <span
+    class="rc-checkbox-inner"
+  />
+</span>
+`;
+
+exports[`rc-checkbox control mode 1`] = `
+<span
+  class="rc-checkbox rc-checkbox-checked"
+>
+  <input
+    checked=""
+    class="rc-checkbox-input"
+    type="checkbox"
+  />
+  <span
+    class="rc-checkbox-inner"
+  />
+</span>
+`;
+
+exports[`rc-checkbox works 1`] = `
+<span
+  class="rc-checkbox"
+>
+  <input
+    class="rc-checkbox-input"
+    type="checkbox"
+  />
+  <span
+    class="rc-checkbox-inner"
+  />
+</span>
+`;
