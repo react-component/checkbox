@@ -1,7 +1,7 @@
+import classNames from 'classnames';
+import useMergedState from 'rc-util/lib/hooks/useMergedState';
 import * as React from 'react';
 import { forwardRef, useImperativeHandle, useRef } from 'react';
-import useMergedState from 'rc-util/lib/hooks/useMergedState';
-import classNames from 'classnames';
 
 export interface CheckboxChangeEvent {
   target: CheckboxChangeEventTarget;
