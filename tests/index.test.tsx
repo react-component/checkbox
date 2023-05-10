@@ -168,6 +168,11 @@ describe('rc-checkbox', () => {
     fireEvent.click(inputEl);
 
     expect(onChange).toHaveBeenCalledTimes(1);
+    expect(onChange).toHaveBeenCalledWith(
+      expect.objectContaining({
+        target: expect.objectContaining({ type: 'checkbox', checked: true }),
+      }),
+    );
     expect(inputEl.checked).toBe(true);
   });
 
