@@ -71,6 +71,7 @@ export const Checkbox = forwardRef<CheckboxRef, CheckboxProps>((props, ref) => {
     onChange?.({
       target: {
         ...props,
+        type,
         checked: e.target.checked,
       },
       stopPropagation() {
