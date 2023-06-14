@@ -35,6 +35,7 @@ export const Checkbox = forwardRef<CheckboxRef, CheckboxProps>((props, ref) => {
     disabled,
     defaultChecked = false,
     type = 'checkbox',
+    title,
     onChange,
     ...inputProps
   } = props;
@@ -85,7 +86,7 @@ export const Checkbox = forwardRef<CheckboxRef, CheckboxProps>((props, ref) => {
   };
 
   return (
-    <span className={classString} style={style}>
+    <span className={classString} title={title} style={style}>
       <input
         {...inputProps}
         className={`${prefixCls}-input`}
