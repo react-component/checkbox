@@ -120,12 +120,12 @@ describe('rc-checkbox', () => {
     expect(inputEl.attributes.value.value).toEqual('6');
   });
 
-  it('passes title prop to input', () => {
+  it('passes title prop to wrapper', () => {
     const { container } = render(<Checkbox title="my-custom-title" />);
-    const inputEl = container.querySelector('input')!;
+    const wrapper = container.querySelector('.rc-checkbox')!;
 
     // @ts-ignore
-    expect(inputEl.attributes.title.value).toEqual('my-custom-title');
+    expect(wrapper.attributes.title.value).toEqual('my-custom-title');
   });
 
   it('onFocus', () => {
