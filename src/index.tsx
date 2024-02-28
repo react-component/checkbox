@@ -15,7 +15,7 @@ export interface CheckboxChangeEventTarget extends CheckboxProps {
 }
 
 export interface CheckboxRef {
-  focus: () => void;
+  focus: (options?: FocusOptions) => void;
   blur: () => void;
   input: HTMLInputElement | null;
 }
@@ -46,8 +46,8 @@ export const Checkbox = forwardRef<CheckboxRef, CheckboxProps>((props, ref) => {
   });
 
   useImperativeHandle(ref, () => ({
-    focus: () => {
-      inputRef.current?.focus();
+    focus: (options) => {
+      inputRef.current?.focus(options);
     },
     blur: () => {
       inputRef.current?.blur();
