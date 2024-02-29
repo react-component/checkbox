@@ -6,3 +6,5 @@ nav:
 ---
 
 <code src="./demo/simple.tsx"></code>
+
+<code src="./demo/focus.tsx"></code>
