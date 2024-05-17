@@ -18,6 +18,7 @@ export interface CheckboxRef {
   focus: (options?: FocusOptions) => void;
   blur: () => void;
   input: HTMLInputElement | null;
+  nativeElement: HTMLElement | null;
 }
 
 export interface CheckboxProps
@@ -41,6 +42,8 @@ export const Checkbox = forwardRef<CheckboxRef, CheckboxProps>((props, ref) => {
   } = props;
 
   const inputRef = useRef<HTMLInputElement>(null);
+  const holderRef = useRef<HTMLElement>(null);
+
   const [rawValue, setRawValue] = useMergedState(defaultChecked, {
     value: checked,
   });
@@ -53,6 +56,7 @@ export const Checkbox = forwardRef<CheckboxRef, CheckboxProps>((props, ref) => {
       inputRef.current?.blur();
     },
     input: inputRef.current,
+    nativeElement: holderRef.current,
   }));
 
   const classString = classNames(prefixCls, className, {
@@ -86,7 +90,7 @@ export const Checkbox = forwardRef<CheckboxRef, CheckboxProps>((props, ref) => {
   };
 
   return (
-    <span className={classString} title={title} style={style}>
+    <span className={classString} title={title} style={style} ref={holderRef}>
       <input
         {...inputProps}
         className={`${prefixCls}-input`}
