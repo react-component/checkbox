@@ -273,4 +273,13 @@ describe('Checkbox ref', () => {
 
     expect(ref.current?.input).toBe(inputEl);
   });
+
+  it('nativeElement should work', () => {
+    const ref = React.createRef<CheckboxRef>();
+
+    const { container } = render(<Checkbox ref={ref} />);
+    const holderEl = container.querySelector('.rc-checkbox')!;
+
+    expect(ref.current?.nativeElement).toBe(holderEl);
+  });
 });
