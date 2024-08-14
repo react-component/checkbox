@@ -1,8 +1,8 @@
-@checkboxWarpPrefixCls: rc-checkbox;
-@checkboxInnerPrefixCls: ~"@{checkboxWarpPrefixCls}-inner";
+@checkboxPrefixCls: rc-checkbox;
+@checkboxInnerPrefixCls: ~"@{checkboxPrefixCls}-inner";
 
 /* Default state */
-.@{checkboxWarpPrefixCls} {
+.@{checkboxPrefixCls} {
   white-space: nowrap;
   cursor: pointer;
   outline: none;
@@ -62,7 +62,7 @@
 }
 
 /* Checked state */
-.@{checkboxWarpPrefixCls}-checked {
+.@{checkboxPrefixCls}-checked {
 
   &:hover {
     .@{checkboxInnerPrefixCls} {
@@ -97,9 +97,9 @@
   }
 }
 
-.@{checkboxWarpPrefixCls}-disabled {
+.@{checkboxPrefixCls}-disabled {
 
-  &.@{checkboxWarpPrefixCls}-checked {
+  &.@{checkboxPrefixCls}-checked {
 
     &:hover {
       .@{checkboxInnerPrefixCls} {
@@ -137,7 +137,7 @@
     }
   }
 
-  .@{checkboxWarpPrefixCls}-input {
+  .@{checkboxPrefixCls}-input {
     cursor: default;
   }
 }
