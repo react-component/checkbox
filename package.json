@@ -63,7 +63,7 @@
     "coveralls": "^3.0.6",
     "dumi": "^2.0.12",
     "eslint": "^8.55.0",
-    "eslint-plugin-jest": "^27.6.0",
+    "eslint-plugin-jest": "^28.2.0",
     "eslint-plugin-unicorn": "^50.0.1",
     "father": "^4.1.1",
     "husky": "9.0.5",
