@@ -41,3 +41,5 @@ package-lock.json
 .docs
 
 pnpm-lock.yaml
+
+bun.lockb
