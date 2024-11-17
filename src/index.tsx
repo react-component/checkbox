@@ -1,7 +1,5 @@
 import classNames from 'classnames';
 import useMergedState from 'rc-util/lib/hooks/useMergedState';
-import omit from 'rc-util/lib/omit';
-import pickAttrs from 'rc-util/lib/pickAttrs';
 import * as React from 'react';
 import { forwardRef, useImperativeHandle, useRef } from 'react';
 
@@ -29,8 +27,6 @@ export interface CheckboxProps
   onChange?: (e: CheckboxChangeEvent) => void;
 }
 
-const DEFAULT_ARIA_LABEL = 'checkbox';
-
 export const Checkbox = forwardRef<CheckboxRef, CheckboxProps>((props, ref) => {
   const {
     prefixCls = 'rc-checkbox',
@@ -45,18 +41,8 @@ export const Checkbox = forwardRef<CheckboxRef, CheckboxProps>((props, ref) => {
     ...inputProps
   } = props;
 
-  const a11yProps = {
-    ...pickAttrs(inputProps, true),
-    'aria-label': inputProps['aria-label'] || DEFAULT_ARIA_LABEL,
-  } as React.AriaAttributes;
-
-  const restProps = omit<React.HTMLAttributes<HTMLDivElement>, keyof React.AriaAttributes>(
-    inputProps,
-    Object.keys(a11yProps) as Array<keyof React.AriaAttributes>,
-  );
-
   const inputRef = useRef<HTMLInputElement>(null);
-  const holderRef = useRef<HTMLElement>(null);
+  const holderRef = useRef<HTMLLabelElement>(null);
 
   const [rawValue, setRawValue] = useMergedState(defaultChecked, {
     value: checked,
@@ -104,10 +90,9 @@ export const Checkbox = forwardRef<CheckboxRef, CheckboxProps>((props, ref) => {
   };
 
   return (
-    <span className={classString} title={title} style={style} ref={holderRef}>
+    <label className={classString} title={title} style={style} ref={holderRef}>
       <input
-        {...restProps}
-        {...a11yProps}
+        {...inputProps}
         className={`${prefixCls}-input`}
         ref={inputRef}
         onChange={handleChange}
@@ -116,7 +101,7 @@ export const Checkbox = forwardRef<CheckboxRef, CheckboxProps>((props, ref) => {
         type={type}
       />
       <span className={`${prefixCls}-inner`} />
-    </span>
+    </label>
   );
 });
 
