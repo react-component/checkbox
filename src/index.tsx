@@ -91,21 +91,19 @@ export const Checkbox = forwardRef<CheckboxRef, CheckboxProps>((props, ref) => {
   };
 
   return (
-    <>
-      <label className={classString} title={title} style={style} ref={holderRef}>
-        <input
-          {...inputProps}
-          className={`${prefixCls}-input`}
-          ref={inputRef}
-          onChange={handleChange}
-          disabled={disabled}
-          checked={!!rawValue}
-          type={type}
-        />
-        <span className={`${prefixCls}-inner`} />
-      </label>
+    <label className={classString} title={title} style={style} ref={holderRef}>
+      <input
+        {...inputProps}
+        className={`${prefixCls}-input`}
+        ref={inputRef}
+        onChange={handleChange}
+        disabled={disabled}
+        checked={!!rawValue}
+        type={type}
+      />
+      <span className={`${prefixCls}-inner`} />
       {children !== undefined && <span>{children}</span>}
-    </>
+    </label>
   );
 });
 
