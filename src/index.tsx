@@ -38,12 +38,11 @@ export const Checkbox = forwardRef<CheckboxRef, CheckboxProps>((props, ref) => {
     type = 'checkbox',
     title,
     onChange,
-    children,
     ...inputProps
   } = props;
 
   const inputRef = useRef<HTMLInputElement>(null);
-  const holderRef = useRef<HTMLLabelElement>(null);
+  const holderRef = useRef<HTMLElement>(null);
 
   const [rawValue, setRawValue] = useMergedState(defaultChecked, {
     value: checked,
@@ -91,7 +90,7 @@ export const Checkbox = forwardRef<CheckboxRef, CheckboxProps>((props, ref) => {
   };
 
   return (
-    <label className={classString} title={title} style={style} ref={holderRef}>
+    <span className={classString} title={title} style={style} ref={holderRef}>
       <input
         {...inputProps}
         className={`${prefixCls}-input`}
@@ -102,8 +101,7 @@ export const Checkbox = forwardRef<CheckboxRef, CheckboxProps>((props, ref) => {
         type={type}
       />
       <span className={`${prefixCls}-inner`} />
-      {children !== undefined && <span>{children}</span>}
-    </label>
+    </span>
   );
 });
 
