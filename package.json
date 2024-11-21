@@ -71,7 +71,7 @@
     "jest-environment-jsdom": "^29.3.1",
     "less": "^4.2.0",
     "lint-staged": "^15.1.0",
-    "np": "^9.0.0",
+    "np": "^10.0.5",
     "react": "^18.2.0",
     "react-dom": "^18.2.0",
     "ts-node": "^10.9.1",
