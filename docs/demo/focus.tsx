@@ -1,5 +1,5 @@
-import type { CheckboxRef } from 'rc-checkbox';
-import Checkbox from 'rc-checkbox';
+import type { CheckboxRef } from '@rc-component/checkbox';
+import Checkbox from '@rc-component/checkbox';
 import { useLayoutEffect, useRef, useState } from 'react';
 import '../../assets/index.less';
 

@@ -37,7 +37,7 @@ Checkbox ui component for react.
 ## Usage
 
 ```js
-import checkbox from 'rc-checkbox';
+import checkbox from '@rc-component/checkbox';
 
 export default () => <checkbox />;
 ```

@@ -1,5 +1,5 @@
+import KeyCode from '@rc-component/util/lib/KeyCode';
 import { fireEvent, render } from '@testing-library/react';
-import KeyCode from 'rc-util/lib/KeyCode';
 import * as React from 'react';
 import Checkbox from '../src';
 

@@ -1,6 +1,6 @@
 ---
 hero:
-  title: rc-checkbox
+  title: @rc-component/checkbox
   description: checkbox ui component for react
 ---
 
@@ -8,19 +8,19 @@ hero:
 
 ```bash
 # npm install
-npm install rc-checkbox --save
+npm install @rc-component/checkbox --save
 
 # yarn install
-yarn add rc-checkbox
+yarn add @rc-component/checkbox
 
 # pnpm install
-pnpm i rc-checkbox
+pnpm i @rc-component/checkbox
 ```
 
 ## 🔨 Usage
 
 ```ts
-import Checkbox from 'rc-checkbox';
+import Checkbox from '@rc-component/checkbox';
 
 export default () => {
   return <Checkbox />;
