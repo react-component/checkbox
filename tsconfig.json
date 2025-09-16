@@ -11,7 +11,7 @@
     "paths": {
       "@/*": ["src/*"],
       "@@/*": [".dumi/tmp/*"],
-      "rc-checkbox": ["src/index.tsx"]
+      "@rc-component/checkbox": ["src/index.tsx"]
     }
   },
   "include": [".dumirc.ts", "**/*.ts", "**/*.tsx"]

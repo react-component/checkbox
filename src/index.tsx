@@ -1,5 +1,5 @@
+import useControlledState from '@rc-component/util/lib/hooks/useControlledState';
 import classNames from 'classnames';
-import useMergedState from 'rc-util/lib/hooks/useMergedState';
 import * as React from 'react';
 import { forwardRef, useImperativeHandle, useRef } from 'react';
 
@@ -44,9 +44,7 @@ export const Checkbox = forwardRef<CheckboxRef, CheckboxProps>((props, ref) => {
   const inputRef = useRef<HTMLInputElement>(null);
   const holderRef = useRef<HTMLElement>(null);
 
-  const [rawValue, setRawValue] = useMergedState(defaultChecked, {
-    value: checked,
-  });
+  const [rawValue, setRawValue] = useControlledState(defaultChecked, checked);
 
   useImperativeHandle(ref, () => ({
     focus: (options) => {
