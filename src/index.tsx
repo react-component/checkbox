@@ -1,5 +1,5 @@
 import useControlledState from '@rc-component/util/lib/hooks/useControlledState';
-import classNames from 'classnames';
+import { clsx } from 'clsx';
 import * as React from 'react';
 import { forwardRef, useImperativeHandle, useRef } from 'react';
 
@@ -57,7 +57,7 @@ export const Checkbox = forwardRef<CheckboxRef, CheckboxProps>((props, ref) => {
     nativeElement: holderRef.current,
   }));
 
-  const classString = classNames(prefixCls, className, {
+  const classString = clsx(prefixCls, className, {
     [`${prefixCls}-checked`]: rawValue,
     [`${prefixCls}-disabled`]: disabled,
   });
