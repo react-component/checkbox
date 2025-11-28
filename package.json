@@ -61,7 +61,7 @@
     "@umijs/fabric": "^4.0.1",
     "@umijs/test": "^4.0.34",
     "dumi": "^2.0.12",
-    "eslint": "^8.55.0",
+    "eslint": "^9.1.1",
     "eslint-plugin-jest": "^27.6.0",
     "eslint-plugin-unicorn": "^50.0.1",
     "father": "^4.1.1",
