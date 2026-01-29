@@ -8,9 +8,6 @@ exports[`rc-checkbox click checkbox 1`] = `
     class="rc-checkbox-input"
     type="checkbox"
   />
-  <span
-    class="rc-checkbox-inner"
-  />
 </span>
 `;
 
@@ -21,9 +18,6 @@ exports[`rc-checkbox click radio 1`] = `
   <input
     class="rc-checkbox-input"
     type="radio"
-  />
-  <span
-    class="rc-checkbox-inner"
   />
 </span>
 `;
@@ -37,9 +31,6 @@ exports[`rc-checkbox control mode 1`] = `
     class="rc-checkbox-input"
     type="checkbox"
   />
-  <span
-    class="rc-checkbox-inner"
-  />
 </span>
 `;
 
@@ -50,9 +41,6 @@ exports[`rc-checkbox works 1`] = `
   <input
     class="rc-checkbox-input"
     type="checkbox"
-  />
-  <span
-    class="rc-checkbox-inner"
   />
 </span>
 `;

@@ -98,7 +98,6 @@ export const Checkbox = forwardRef<CheckboxRef, CheckboxProps>((props, ref) => {
         checked={!!rawValue}
         type={type}
       />
-      <span className={`${prefixCls}-inner`} />
     </span>
   );
 });
