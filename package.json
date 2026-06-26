@@ -43,7 +43,7 @@
       "prettier --write --ignore-unknown"
     ],
     "*.ts?(x)": [
-      "prettier --parser=typescript --write --ignore-unknown"
+      "prettier --write --ignore-unknown"
     ]
   },
   "dependencies": {
