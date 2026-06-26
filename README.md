@@ -7,6 +7,9 @@
   </a>
 
   <p>Part of the Ant Design ecosystem.</p>
+</div>
+
+<div align="center">
 
 [![NPM version][npm-image]][npm-url]
 [![npm download][download-image]][download-url]
@@ -121,8 +124,8 @@ npm run build
 npm run prepublishOnly
 ```
 
-The release script compiles the package and runs `rc-np`.
+The release flow is handled by `@rc-component/np` through the `rc-np` command after the package build.
 
 ## License
 
-`@rc-component/checkbox` is released under the MIT license.
+@rc-component/checkbox is released under the [MIT](./LICENSE.md) license.
