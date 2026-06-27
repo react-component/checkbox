@@ -1,7 +1,6 @@
 <div align="center">
   <h1>@rc-component/checkbox</h1>
-  <p><sub>Ant Design 生态的一部分。</sub></p>
-  <img alt="Ant Design" height="32" src="https://gw.alipayobjects.com/zos/rmsportal/KDpgvguMpGfqaHPjicRK.svg" />
+  <p><sub><img alt="Ant Design" height="14" src="https://gw.alipayobjects.com/zos/rmsportal/KDpgvguMpGfqaHPjicRK.svg" style="vertical-align: -0.125em;" /> Ant Design 生态的一部分。</sub></p>
   <p>☑️ 轻量、可访问的 React 复选框基础组件。</p>
 </div>
 
@@ -34,9 +33,9 @@
 
 ## 特性
 
-- 可 as a controlled or uncontrolled checkbox.
-- 暴露 an imperative ref for focus, blur, and DOM access.
-- 保留 native input attributes available while normalizing the change event.
+- 可作为受控或非受控复选框。
+- 引入用于焦点、模糊和 DOM 访问的命令式引用。
+- 在规范化更改事件时保留可用的本机输入属性。
 - 提供编译后的 JavaScript、TypeScript 类型定义和独立 CSS 资源。
 
 ## 安装
@@ -80,27 +79,27 @@ npm start
 
 | 参数 | 说明 | 类型 | 默认值 |
 | -------------- | ------------------------------------------ | -------------------------------------- | ------------- |
-| checked        | Whether the checkbox is checked            | boolean                                | -             |
-| className      | Additional class name                      | string                                 | -             |
-| defaultChecked | Whether the checkbox is checked by default | boolean                                | false         |
-| disabled       | Whether the checkbox is disabled           | boolean                                | false         |
-| name           | Same as native checkbox input `name`       | string                                 | -             |
-| prefixCls      | Component class name prefix                | string                                 | `rc-checkbox` |
-| style          | Inline style for the wrapper               | `React.CSSProperties`                  | -             |
-| type           | Native input type                          | string                                 | `checkbox`    |
-| value          | Same as native checkbox input `value`      | string \| number \| readonly string[]  | -             |
-| onChange       | Callback when checked state changes        | `(event: CheckboxChangeEvent) => void` | -             |
+| checked        | 复选框是否被选中            | boolean                                | -             |
+| className      | 附加className                      | string                                 | -             |
+| defaultChecked | 复选框是否默认选中 | boolean                                | false         |
+| disabled       | 复选框是否禁用           | boolean                                | false         |
+| name           | 与原生 checkbox input 一致 `name`       | string                                 | -             |
+| prefixCls      | 组件className前缀                | string                                 | `rc-checkbox` |
+| 风格          | 包装器的内联样式               | `React.CSSProperties`                  | -             |
+| type           | 原生输入类型                          | string                                 | `checkbox`    |
+| 价值          | 与原生 checkbox input 一致 `value`      | 字符串\|数字\|只读字符串[]  | -             |
+| onChange       | 勾选状态改变时回调        | `(event: CheckboxChangeEvent) => void` | -             |
 
-Other native input attributes are also supported.
+还支持其他本机输入属性。
 
 ### Ref
 
 | 参数      | 说明                    | 类型                               |
 | ------------- | ------------------------------ | ---------------------------------- |
-| blur          | Remove focus from the checkbox | `() => void`                       |
-| focus         | Focus the checkbox             | `(options?: FocusOptions) => void` |
-| input         | Native input element           | `HTMLInputElement \| null`         |
-| nativeElement | Wrapper element                | `HTMLElement \| null`              |
+| 模糊          | 从复选框中移除焦点 | `() => void`                       |
+| 重点         | 聚焦复选框             | `(options?: FocusOptions) => void` |
+| input         | 原生输入元素           | `HTMLInputElement \| null`         |
+| nativeElement | 包装元素                | `HTMLElement \| null`              |
 
 ## 本地开发
 
@@ -123,8 +122,8 @@ npm run build
 npm run prepublishOnly
 ```
 
-The release flow is handled by `@rc-component/np` through the `rc-np` command after the package build.
+包构建完成后，发布流程由 `@rc-component/np` 通过 `rc-np` 命令处理。
 
 ## 许可证
 
-@rc-component/checkbox is released under the [MIT](./LICENSE.md) license.
+@rc-component/checkbox 基于 [MIT](./LICENSE.md) 许可证发布。
