@@ -80,14 +80,14 @@ npm start
 | 参数 | 说明 | 类型 | 默认值 |
 | -------------- | ------------------------------------------ | -------------------------------------- | ------------- |
 | checked        | 复选框是否被选中            | boolean                                | -             |
-| className      | 附加className                      | string                                 | -             |
+| className      | 附加 className                      | string                                 | -             |
 | defaultChecked | 复选框是否默认选中 | boolean                                | false         |
 | disabled       | 复选框是否禁用           | boolean                                | false         |
 | name           | 与原生 checkbox input 一致 `name`       | string                                 | -             |
-| prefixCls      | 组件className前缀                | string                                 | `rc-checkbox` |
-| 风格          | 包装器的内联样式               | `React.CSSProperties`                  | -             |
+| prefixCls      | 组件 className 前缀                | string                                 | `rc-checkbox` |
+| style          | 包装器的内联样式               | `React.CSSProperties`                  | -             |
 | type           | 原生输入类型                          | string                                 | `checkbox`    |
-| 价值          | 与原生 checkbox input 一致 `value`      | 字符串\|数字\|只读字符串[]  | -             |
+| value          | 与原生 checkbox input 一致 `value`      | string \| number \| readonly string[]  | -             |
 | onChange       | 勾选状态改变时回调        | `(event: CheckboxChangeEvent) => void` | -             |
 
 还支持其他本机输入属性。
@@ -96,8 +96,8 @@ npm start
 
 | 参数      | 说明                    | 类型                               |
 | ------------- | ------------------------------ | ---------------------------------- |
-| 模糊          | 从复选框中移除焦点 | `() => void`                       |
-| 重点         | 聚焦复选框             | `(options?: FocusOptions) => void` |
+| blur          | 从复选框中移除焦点 | `() => void`                       |
+| focus         | 聚焦复选框             | `(options?: FocusOptions) => void` |
 | input         | 原生输入元素           | `HTMLInputElement \| null`         |
 | nativeElement | 包装元素                | `HTMLElement \| null`              |
 
