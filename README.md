@@ -64,14 +64,14 @@ export default function App() {
 
 ## Examples
 
+Run the local dumi site:
+
 ```bash
 npm install
 npm start
 ```
 
 Then open `http://localhost:8000`.
-
-Online demo: https://react-component.github.io/checkbox/
 
 ## API
 
