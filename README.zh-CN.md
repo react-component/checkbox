@@ -1,10 +1,10 @@
 <div align="center">
   <h1>@rc-component/checkbox</h1>
-  <p><sub>Part of the Ant Design ecosystem.</sub></p>
-  <p>☑️ A small, accessible checkbox primitive for React.</p>
+  <p><sub>Ant Design 生态的一部分。</sub></p>
+  <p>☑️ 轻量、可访问的 React 复选框基础组件。</p>
 </div>
 
-<p align="center">English | <a href="./README.zh-CN.md">简体中文</a></p>
+<p align="center"><a href="./README.md">English</a> | 简体中文</p>
 
 
 <div align="center">
@@ -31,20 +31,20 @@
 [dumi-image]: https://img.shields.io/badge/docs%20by-dumi-blue?style=flat-square
 [dumi-url]: https://github.com/umijs/dumi
 
-## Highlights
+## 特性
 
-- Works as a controlled or uncontrolled checkbox.
-- Exposes an imperative ref for focus, blur, and DOM access.
-- Keeps native input attributes available while normalizing the change event.
-- Ships compiled JavaScript, TypeScript definitions, and a standalone CSS asset.
+- 可 as a controlled or uncontrolled checkbox.
+- 暴露 an imperative ref for focus, blur, and DOM access.
+- 保留 native input attributes available while normalizing the change event.
+- 提供编译后的 JavaScript、TypeScript 类型定义和独立 CSS 资源。
 
-## Install
+## 安装
 
 ```bash
 npm install @rc-component/checkbox
 ```
 
-## Usage
+## 使用
 
 ```tsx
 import Checkbox from '@rc-component/checkbox';
@@ -62,22 +62,22 @@ export default function App() {
 }
 ```
 
-## Examples
+## 示例
 
 ```bash
 npm install
 npm start
 ```
 
-Then open `http://localhost:8000`.
+然后打开 `http://localhost:8000`。
 
-Online demo: https://react-component.github.io/checkbox/
+在线演示： https://react-component.github.io/checkbox/
 
 ## API
 
 ### Checkbox
 
-| Property       | Description                                | Type                                   | Default       |
+| 参数 | 说明 | 类型 | 默认值 |
 | -------------- | ------------------------------------------ | -------------------------------------- | ------------- |
 | checked        | Whether the checkbox is checked            | boolean                                | -             |
 | className      | Additional class name                      | string                                 | -             |
@@ -94,14 +94,14 @@ Other native input attributes are also supported.
 
 ### Ref
 
-| Property      | Description                    | Type                               |
+| 参数      | 说明                    | 类型                               |
 | ------------- | ------------------------------ | ---------------------------------- |
 | blur          | Remove focus from the checkbox | `() => void`                       |
 | focus         | Focus the checkbox             | `(options?: FocusOptions) => void` |
 | input         | Native input element           | `HTMLInputElement \| null`         |
 | nativeElement | Wrapper element                | `HTMLElement \| null`              |
 
-## Development
+## 本地开发
 
 ```bash
 npm install
@@ -116,7 +116,7 @@ npm run compile
 npm run build
 ```
 
-## Release
+## 发布
 
 ```bash
 npm run prepublishOnly
@@ -124,6 +124,6 @@ npm run prepublishOnly
 
 The release flow is handled by `@rc-component/np` through the `rc-np` command after the package build.
 
-## License
+## 许可证
 
 @rc-component/checkbox is released under the [MIT](./LICENSE.md) license.
