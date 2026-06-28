@@ -6,7 +6,6 @@
 
 <p align="center">English | <a href="./README.zh-CN.md">简体中文</a></p>
 
-
 <div align="center">
 
 [![NPM version][npm-image]][npm-url]
@@ -107,6 +106,8 @@ Other native input attributes are also supported.
 npm install
 npm start
 ```
+
+The dumi site runs at `http://localhost:8000` by default.
 
 ```bash
 npm test

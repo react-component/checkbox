@@ -6,7 +6,6 @@
 
 <p align="center"><a href="./README.md">English</a> | 简体中文</p>
 
-
 <div align="center">
 
 [![NPM version][npm-image]][npm-url]
@@ -77,29 +76,29 @@ npm start
 
 ### Checkbox
 
-| 参数 | 说明 | 类型 | 默认值 |
-| -------------- | ------------------------------------------ | -------------------------------------- | ------------- |
-| checked        | 复选框是否被选中            | boolean                                | -             |
-| className      | 附加 className                      | string                                 | -             |
-| defaultChecked | 复选框是否默认选中 | boolean                                | false         |
-| disabled       | 复选框是否禁用           | boolean                                | false         |
-| name           | 与原生 checkbox input 一致 `name`       | string                                 | -             |
+| 参数           | 说明                               | 类型                                   | 默认值        |
+| -------------- | ---------------------------------- | -------------------------------------- | ------------- |
+| checked        | 复选框是否被选中                   | boolean                                | -             |
+| className      | 附加 className                     | string                                 | -             |
+| defaultChecked | 复选框是否默认选中                 | boolean                                | false         |
+| disabled       | 复选框是否禁用                     | boolean                                | false         |
+| name           | 与原生 checkbox input 一致 `name`  | string                                 | -             |
 | prefixCls      | 组件 className 前缀                | string                                 | `rc-checkbox` |
-| style          | 包装器的内联样式               | `React.CSSProperties`                  | -             |
-| type           | 原生输入类型                          | string                                 | `checkbox`    |
-| value          | 与原生 checkbox input 一致 `value`      | string \| number \| readonly string[]  | -             |
-| onChange       | 勾选状态改变时回调        | `(event: CheckboxChangeEvent) => void` | -             |
+| style          | 包装器的内联样式                   | `React.CSSProperties`                  | -             |
+| type           | 原生输入类型                       | string                                 | `checkbox`    |
+| value          | 与原生 checkbox input 一致 `value` | string \| number \| readonly string[]  | -             |
+| onChange       | 勾选状态改变时回调                 | `(event: CheckboxChangeEvent) => void` | -             |
 
 还支持其他本机输入属性。
 
 ### Ref
 
-| 参数      | 说明                    | 类型                               |
-| ------------- | ------------------------------ | ---------------------------------- |
+| 参数          | 说明               | 类型                               |
+| ------------- | ------------------ | ---------------------------------- |
 | blur          | 从复选框中移除焦点 | `() => void`                       |
-| focus         | 聚焦复选框             | `(options?: FocusOptions) => void` |
-| input         | 原生输入元素           | `HTMLInputElement \| null`         |
-| nativeElement | 包装元素                | `HTMLElement \| null`              |
+| focus         | 聚焦复选框         | `(options?: FocusOptions) => void` |
+| input         | 原生输入元素       | `HTMLInputElement \| null`         |
+| nativeElement | 包装元素           | `HTMLElement \| null`              |
 
 ## 本地开发
 
@@ -107,6 +106,8 @@ npm start
 npm install
 npm start
 ```
+
+dumi 站点默认运行在 `http://localhost:8000`。
 
 ```bash
 npm test
