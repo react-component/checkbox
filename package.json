@@ -19,7 +19,7 @@
   "license": "MIT",
   "main": "lib/index.js",
   "module": "es/index.js",
-  "typings": "es/index.d.ts",
+  "types": "./es/index.d.ts",
   "files": [
     "assets/*.css",
     "es",
