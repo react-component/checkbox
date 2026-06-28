@@ -19,7 +19,7 @@
 
 - 可作为受控或非受控复选框。
 - 引入用于焦点、模糊和 DOM 访问的命令式引用。
-- 在规范化更改事件时保留可用的本机输入属性。
+- 在规范化变更事件时保留可用的原生 input 属性。
 - 提供编译后的 JavaScript、TypeScript 类型定义和独立 CSS 资源。
 
 ## 安装
@@ -74,7 +74,7 @@ npm start
 | value          | 与原生 checkbox input 一致 `value` | string \| number \| readonly string[]  | -             |
 | onChange       | 勾选状态改变时回调                 | `(event: CheckboxChangeEvent) => void` | -             |
 
-还支持其他本机输入属性。
+还支持其他原生 input 属性。
 
 ### Ref
 
