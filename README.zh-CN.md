@@ -14,6 +14,7 @@
 </div>
 
 <p align="center"><a href="./README.md">English</a> | 简体中文</p>
+
 ## 特性
 
 - 可作为受控或非受控复选框。

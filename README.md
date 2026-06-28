@@ -14,6 +14,7 @@
 </div>
 
 <p align="center">English | <a href="./README.zh-CN.md">简体中文</a></p>
+
 ## Highlights
 
 - Works as a controlled or uncontrolled checkbox.
