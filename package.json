@@ -39,12 +39,7 @@
     "tsc": "tsc --noEmit"
   },
   "lint-staged": {
-    "*.{js,jsx,less,md,json}": [
-      "prettier --write --ignore-unknown"
-    ],
-    "*.ts?(x)": [
-      "prettier --write --ignore-unknown"
-    ]
+    "*": "prettier --write --ignore-unknown"
   },
   "dependencies": {
     "@rc-component/util": "^1.11.1",
