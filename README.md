@@ -1,112 +1,115 @@
-# rc-checkbox
+<div align="center">
+  <h1>@rc-component/checkbox</h1>
+  <p><sub><img alt="Ant Design" height="14" src="https://gw.alipayobjects.com/zos/rmsportal/KDpgvguMpGfqaHPjicRK.svg" style="vertical-align: -0.125em;" /> Part of the Ant Design ecosystem.</sub></p>
+  <p>☑️ A small, accessible checkbox primitive for React.</p>
 
----
+  <p>
+    <a href="https://npmjs.org/package/@rc-component/checkbox"><img alt="NPM version" src="https://img.shields.io/npm/v/@rc-component/checkbox.svg?style=flat-square"></a>
+    <a href="https://npmjs.org/package/@rc-component/checkbox"><img alt="npm downloads" src="https://img.shields.io/npm/dm/@rc-component/checkbox.svg?style=flat-square"></a>
+    <a href="https://github.com/react-component/checkbox/actions/workflows/main.yml"><img alt="build status" src="https://github.com/react-component/checkbox/actions/workflows/main.yml/badge.svg"></a>
+    <a href="https://app.codecov.io/gh/react-component/checkbox"><img alt="Codecov" src="https://img.shields.io/codecov/c/github/react-component/checkbox/master.svg?style=flat-square"></a>
+    <a href="https://bundlephobia.com/package/@rc-component/checkbox"><img alt="bundle size" src="https://img.shields.io/bundlephobia/minzip/@rc-component/checkbox?style=flat-square"></a>
+    <a href="https://github.com/umijs/dumi"><img alt="dumi" src="https://img.shields.io/badge/docs%20by-dumi-blue?style=flat-square"></a>
+  </p>
+</div>
 
-Checkbox ui component for react.
+<p align="center">English | <a href="./README.zh-CN.md">简体中文</a></p>
 
-[![NPM version][npm-image]][npm-url]
-[![npm download][download-image]][download-url]
-[![build status][github-actions-image]][github-actions-url]
-[![Codecov][codecov-image]][codecov-url]
-[![bundle size][bundlephobia-image]][bundlephobia-url]
-[![dumi][dumi-image]][dumi-url]
+## Highlights
 
-[npm-image]: http://img.shields.io/npm/v/rc-checkbox.svg?style=flat-square
-[npm-url]: http://npmjs.org/package/rc-checkbox
-[travis-image]: https://img.shields.io/travis/react-component/checkbox/master?style=flat-square
-[travis-url]: https://travis-ci.com/react-component/checkbox
-[github-actions-image]: https://github.com/react-component/checkbox/workflows/CI/badge.svg
-[github-actions-url]: https://github.com/react-component/checkbox/actions
-[codecov-image]: https://img.shields.io/codecov/c/github/react-component/checkbox/master.svg?style=flat-square
-[codecov-url]: https://app.codecov.io/gh/react-component/checkbox
-[david-url]: https://david-dm.org/react-component/checkbox
-[david-image]: https://david-dm.org/react-component/checkbox/status.svg?style=flat-square
-[david-dev-url]: https://david-dm.org/react-component/checkbox?type=dev
-[david-dev-image]: https://david-dm.org/react-component/checkbox/dev-status.svg?style=flat-square
-[download-image]: https://img.shields.io/npm/dm/rc-checkbox.svg?style=flat-square
-[download-url]: https://npmjs.org/package/rc-checkbox
-[bundlephobia-url]: https://bundlephobia.com/package/rc-checkbox
-[bundlephobia-image]: https://badgen.net/bundlephobia/minzip/rc-checkbox
-[dumi-url]: https://github.com/umijs/dumi
-[dumi-image]: https://img.shields.io/badge/docs%20by-dumi-blue?style=flat-square
+- Works as a controlled or uncontrolled checkbox.
+- Exposes an imperative ref for focus, blur, and DOM access.
+- Keeps native input attributes available while normalizing the change event.
+- Ships compiled JavaScript, TypeScript definitions, and a standalone CSS asset.
 
 ## Install
 
-[![rc-checkbox](https://nodei.co/npm/rc-checkbox.png)](https://npmjs.org/package/rc-checkbox)
+```bash
+npm install @rc-component/checkbox
+```
 
 ## Usage
 
-```js
-import checkbox from '@rc-component/checkbox';
+```tsx
+import Checkbox from '@rc-component/checkbox';
+import '@rc-component/checkbox/assets/index.css';
 
-export default () => <checkbox />;
+export default function App() {
+  return (
+    <Checkbox
+      defaultChecked
+      onChange={(event) => {
+        console.log(event.target.checked);
+      }}
+    />
+  );
+}
 ```
 
-## Compatibility
+## Examples
 
-| [<img src="https://raw.githubusercontent.com/alrra/browser-logos/master/src/edge/edge_48x48.png" alt="IE / Edge" width="24px" height="24px" />](http://godban.github.io/browsers-support-badges/)<br>IE / Edge | [<img src="https://raw.githubusercontent.com/alrra/browser-logos/master/src/firefox/firefox_48x48.png" alt="Firefox" width="24px" height="24px" />](http://godban.github.io/browsers-support-badges/)<br>Firefox | [<img src="https://raw.githubusercontent.com/alrra/browser-logos/master/src/chrome/chrome_48x48.png" alt="Chrome" width="24px" height="24px" />](http://godban.github.io/browsers-support-badges/)<br>Chrome | [<img src="https://raw.githubusercontent.com/alrra/browser-logos/master/src/safari/safari_48x48.png" alt="Safari" width="24px" height="24px" />](http://godban.github.io/browsers-support-badges/)<br>Safari | [<img src="https://raw.githubusercontent.com/alrra/browser-logos/master/src/electron/electron_48x48.png" alt="Electron" width="24px" height="24px" />](http://godban.github.io/browsers-support-badges/)<br>Electron |
-| --- | --- | --- | --- | --- |
-| IE11, Edge | last 2 versions | last 2 versions | last 2 versions | last 2 versions |
+Run the local dumi site:
 
-## API
-
-<table class="table table-bordered table-striped">
-  <thead>
-  <tr>
-    <th style="width: 100px;">name</th>
-    <th style="width: 50px;">type</th>
-    <th style="width: 50px;">default</th>
-    <th>description</th>
-  </tr>
-  </thead>
-  <tbody>
-    <tr>
-      <td>prefixCls</td>
-      <td>String</td>
-      <td>rc-checkbox</td>
-      <td></td>
-    </tr>
-    <tr>
-      <td>className</td>
-      <td>String</td>
-      <td>''</td>
-      <td>additional class name of root node</td>
-    </tr>
-      <tr>
-      <td>name</td>
-      <td>String</td>
-      <td></td>
-      <td>same with native input checkbox</td>
-    </tr>
-    <tr>
-      <td>checked</td>
-      <td>enum: 0,1,2</td>
-      <td></td>
-      <td></td>
-    </tr>
-    <tr>
-      <td>defaultChecked</td>
-      <td>enum: 0,1,2</td>
-      <td>0</td>
-      <td>same with native input checkbox</td>
-    <tr>
-      <td>onChange</td>
-      <td>Function(e:Event, checked:Number)</td>
-      <td></td>
-      <td>called when checkbox is changed. e is native event, checked is original checked state.</td>
-    </tr>
-  </tbody>
-</table>
-
-## Development
-
-```
+```bash
 npm install
 npm start
 ```
 
-Online demo: http://react-component.github.io/checkbox/
+Then open `http://localhost:8000`.
+
+## API
+
+### Checkbox
+
+| Property       | Description                                | Type                                   | Default       |
+| -------------- | ------------------------------------------ | -------------------------------------- | ------------- |
+| checked        | Whether the checkbox is checked            | boolean                                | -             |
+| className      | Additional class name                      | string                                 | -             |
+| defaultChecked | Whether the checkbox is checked by default | boolean                                | false         |
+| disabled       | Whether the checkbox is disabled           | boolean                                | false         |
+| name           | Same as native checkbox input `name`       | string                                 | -             |
+| prefixCls      | Component class name prefix                | string                                 | `rc-checkbox` |
+| style          | Inline style for the wrapper               | `React.CSSProperties`                  | -             |
+| type           | Native input type                          | string                                 | `checkbox`    |
+| value          | Same as native checkbox input `value`      | string \| number \| readonly string[]  | -             |
+| onChange       | Callback when checked state changes        | `(event: CheckboxChangeEvent) => void` | -             |
+
+Other native input attributes are also supported.
+
+### Ref
+
+| Property      | Description                    | Type                               |
+| ------------- | ------------------------------ | ---------------------------------- |
+| blur          | Remove focus from the checkbox | `() => void`                       |
+| focus         | Focus the checkbox             | `(options?: FocusOptions) => void` |
+| input         | Native input element           | `HTMLInputElement \| null`         |
+| nativeElement | Wrapper element                | `HTMLElement \| null`              |
+
+## Development
+
+```bash
+npm install
+npm start
+```
+
+The dumi site runs at `http://localhost:8000` by default.
+
+```bash
+npm test
+npm run tsc
+npm run lint
+npm run compile
+npm run build
+```
+
+## Release
+
+```bash
+npm run prepublishOnly
+```
+
+The release flow is handled by `@rc-component/np` through the `rc-np` command after the package build.
 
 ## License
 
-rc-checkbox is released under the MIT license.
+@rc-component/checkbox is released under the [MIT](./LICENSE) license.

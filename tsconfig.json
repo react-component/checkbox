@@ -9,10 +9,22 @@
     "skipLibCheck": true,
     "esModuleInterop": true,
     "paths": {
-      "@/*": ["src/*"],
-      "@@/*": [".dumi/tmp/*"],
-      "@rc-component/checkbox": ["src/index.tsx"]
-    }
+      "@/*": [
+        "src/*"
+      ],
+      "@@/*": [
+        ".dumi/tmp/*"
+      ],
+      "@rc-component/checkbox": [
+        "src/index.tsx"
+      ]
+    },
+    "ignoreDeprecations": "5.0"
   },
-  "include": [".dumirc.ts", "**/*.ts", "**/*.tsx"]
+  "include": [
+    ".fatherrc.ts",
+    ".dumirc.ts",
+    "**/*.ts",
+    "**/*.tsx"
+  ]
 }
