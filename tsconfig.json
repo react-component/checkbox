@@ -20,12 +20,5 @@
     "strictBindCallApply": false,
     "module": "ESNext"
   },
-  "include": [
-    "react-compat.d.ts",
-    "global.d.ts",
-    ".fatherrc.ts",
-    ".dumirc.ts",
-    "**/*.ts",
-    "**/*.tsx"
-  ]
+  "include": ["global.d.ts", ".fatherrc.ts", ".dumirc.ts", "**/*.ts", "**/*.tsx"]
 }
