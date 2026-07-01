@@ -51,7 +51,7 @@ export default function App() {
 Run the local dumi site:
 
 ```bash
-npm install
+ut install
 npm start
 ```
 
@@ -88,7 +88,7 @@ Other native input attributes are also supported.
 ## Development
 
 ```bash
-npm install
+ut install
 npm start
 ```
 
