@@ -2,7 +2,7 @@
   "compilerOptions": {
     "target": "esnext",
     "moduleResolution": "bundler",
-    "strict": false,
+    "strict": true,
     "jsx": "preserve",
     "declaration": true,
     "skipLibCheck": true,
@@ -12,12 +12,6 @@
       "@@/*": ["./.dumi/tmp/*"],
       "@rc-component/checkbox": ["./src/index.tsx"]
     },
-    "noImplicitAny": false,
-    "strictNullChecks": false,
-    "strictPropertyInitialization": false,
-    "strictFunctionTypes": false,
-    "noImplicitThis": false,
-    "strictBindCallApply": false,
     "module": "ESNext"
   },
   "include": ["global.d.ts", ".fatherrc.ts", ".dumirc.ts", "**/*.ts", "**/*.tsx"]
