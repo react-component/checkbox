@@ -13,8 +13,6 @@ npm install @rc-component/checkbox --save
 # yarn install
 yarn add @rc-component/checkbox
 
-# pnpm install
-pnpm i @rc-component/checkbox
 ```
 
 ## 🔨 Usage

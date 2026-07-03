@@ -1,30 +1,18 @@
 {
   "compilerOptions": {
     "target": "esnext",
-    "moduleResolution": "node",
-    "baseUrl": "./",
+    "moduleResolution": "bundler",
     "strict": true,
     "jsx": "preserve",
     "declaration": true,
     "skipLibCheck": true,
     "esModuleInterop": true,
     "paths": {
-      "@/*": [
-        "src/*"
-      ],
-      "@@/*": [
-        ".dumi/tmp/*"
-      ],
-      "@rc-component/checkbox": [
-        "src/index.tsx"
-      ]
+      "@/*": ["./src/*"],
+      "@@/*": ["./.dumi/tmp/*"],
+      "@rc-component/checkbox": ["./src/index.tsx"]
     },
-    "ignoreDeprecations": "5.0"
+    "module": "ESNext"
   },
-  "include": [
-    ".fatherrc.ts",
-    ".dumirc.ts",
-    "**/*.ts",
-    "**/*.tsx"
-  ]
+  "include": ["global.d.ts", ".fatherrc.ts", ".dumirc.ts", "**/*.ts", "**/*.tsx"]
 }
